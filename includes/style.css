@@ -1,0 +1,154 @@
+*{
+	padding: 0;
+	margin: 0;
+	
+	direction:rtl;
+}
+
+header, footer, nav, main, section, article, nav, aside {
+	display: block;
+}
+
+body{
+	width:7683px;
+}
+main{
+	position:relative;
+	height:768px;
+	background: #F2EEE5;
+}
+
+footer{
+	background: #ac8c73;
+	height:54px;
+}
+
+#basketPrice{
+	height:376px;
+	width:370px;
+	position:absolute;
+	top:93px;
+	right:104px;
+	color:#9f161e;
+	font-size:50px;
+}
+#basketPrice h3{
+	color:#9e8986;
+	font-size:30px;
+	margin-top:20px;
+}
+#agala{
+	width:150px;
+	height:134px;
+	background: url("../images/agala.png");
+	position:absolute;
+	bottom:0px;
+	right:104px;
+	margin:0px;
+}
+#hezim{
+	width:145px;
+	height:64px;
+	background: url("../images/hezim.png");
+	position:absolute;
+	bottom:34px;
+	right:314px;
+	margin:0px;
+}
+
+img{
+	width:76px;
+	height:121px;
+	margin-left:15px;
+	margin-bottom:28px;
+}
+
+/*/////////////////////////////////// Sections //////////////////////////////*/
+section{
+	position:absolute;
+	top:169px;
+}
+.perotAndYerakot{
+	width:1240px;
+	right:830px;
+}
+
+.milk{
+	width:386px;
+	right:2308px;
+}
+.shimurim{
+	width:282px;
+	right:2991px;
+}
+.basar{
+	width:382px;
+	right:3545px;
+}
+
+.lehem{
+	width:376px;
+	right:4151px;
+}
+.shemen{
+	width:477px;
+	right:4805px;
+}
+.mashkaot{
+	width:187px;
+	right:5504px;
+}
+
+/*/////////////////////////////////// Signs //////////////////////////////*/
+#perotAndYerakotSign{
+	width:335px;
+	height:91px;
+	background: url("../images/shelet yarakot.png");
+	position:absolute;
+	right:1318px;
+}
+#milkSign{
+	width:297px;
+	height:118px;
+	background: url("../images/shelet musrei halav.png");
+	position:absolute;
+	right:2350px;
+}
+#shimurimSign{
+	width:399px;
+	height:118px;
+	background: url("../images/shelet shimurim.png");
+	position:absolute;
+	right:2927px;
+}
+#basarSign{
+	width:340px;
+	height:109px;
+	background: url("../images/shelet of ve dagim.png");
+	position:absolute;
+	right:3545px;
+}
+#lehemSign{
+	width:293px;
+	height:120px;
+	background: url("../images/shelet lehem dganim.png");
+	position:absolute;
+	right:4212px;
+}
+#shemenSign{
+	width:449px;
+	height:110px;
+	background: url("../images/shelet shemen sukar mamtakim.png");
+	position:absolute;
+	right:4811px;
+}
+#mashkaotSign{
+	
+	width:320px;
+	height:109px;
+	background: url("../images/shelet mashkaot.png");
+	position:absolute;
+	right:5436px;
+}
+
+
