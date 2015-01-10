@@ -1,53 +1,63 @@
+var imgsManagerArray;
+var imgsManagerIdsArray;
+
 window.onload = function() {
+	imgsManagerArray = [fruitsAndVedgArray,milkArray,shimurimArray,basarArray,lehemArray,shemenArray,mashkaotArray];
+	imgsManagerIdsArray = new Array("perotAndYerakot","milk","shimurim","basar","lehem","shemen","mashkaot");
+	arraySize=imgsManagerArray.length;
+		for (var i=0; i<arraySize;i++){
+			new ImgsManager(imgsManagerArray[i],imgsManagerIdsArray[i]);
+		}
+};
 
-}
-var arrImgs = new Array("images/tapuah.png", "images/tapuah yonatan.png");
+var fruitsAndVedgArray = new Array("images/tapuah.png", "images/tapuah yonatan.png","images/halav be sakit.png","images/banana.png",
+	"images/tapuah shmuti.png","images/tapuz valensiya.png","images/klemantina.png","images/eshkolit.png","images/agvaniya.png","images/melafefon.png",
+	"images/pilpel yarok.png","images/pilpel yarok bahir.png","images/pilpel yarok kehe.png","images/shauit yaruka.png","images/agas.png",
+	"images/afarsek.png","images/mishmesh.jpg","images/shezif sagol.png","images/shezif zahov.png","images/anavom shorim.png","images/anavim yarukim.png",
+	"images/kruvit.png","images/hazil.png","images/gezer.png","images/tapuah adama.png","images/tiras.png","images/mango.png","images/avokado.png",
+	"images/melon galya.png","images/avatiah.png","images/afarsemon.png","images/limon.png","images/bazal.png","images/hasa.png","images/kruv lavan.png",
+	"images/agvaniot shery.png","images/znon.png");
 
-function Img(iCurrentImg) {
+var milkArray=new Array("images/tapuz valensiya.png","images/yogurt tevi.png","images/shamenet hamuza.png","images/koteg.png","images/hema.png",
+				"images/leben.png","images/gvina levana.png","images/bezim medium.png","images/bezim larj.png");
+var shimurimArray = new Array("images/afunat gina.png","images/tiras.png","images/resek sgvaniot.png","images/salat hazilim.png",
+				"images/salat humus.png","images/zeitim be mishkal.png");
+var basarArray = new Array("images/haze of.png","images/karpion.png","images/file nesihat ha nilus.png","images/pastrama.png",
+				"images/basar bakar haze.png","images/basar bakar zlaot.png","images/naknikiot.png","images/of tari.png","images/of kafu.png");
+var lehemArray = new Array("images/hala.png","images/biskuitim.png","images/itriot.png","images/orez ragil.png","images/orez male.png",
+				"images/kornfleks.png","images/spagety.png","images/leham lavan ahid.png","images/lehem ahid kehe.png");
+var shemenArray = new Array("images/shemen soya.png","images/margarina.png","images/margarina le mericha.png","images/shemen zait.png",
+				"images/tahlif halav.png","images/te.png","images/kafe shahor.png","images/kafe names.png","images/avkat kakao.png","images/sugar.png",
+				"images/riba.png","images/konfetura.png","images/sukariot toffi.png","images/shokolad.png");
+var mashkaotArray = new Array("images/bira levana.png","images/mashke mugaz.png","images/mashke pri hadar.png","images/brendy.png");
+
+
+function Img(imgSrc,id) {
 	//global var. anyone can access it
-	var imgObj = document.createElement("a");
-	imgObj.setAttribute('href', "#");
-	// private.
-
-	imgObj.src = arrImgs[iCurrentImg];
-
-	imgObj.className = "perotAndYerakot";
-	imgObj.style.background = url(imgObj.src);
-
+	var linkObj = document.createElement("a");
+	linkObj.setAttribute('href', "#");
+	var imgObj=document.createElement("img");
+	imgObj.setAttribute("src", imgSrc);
+	imgObj.className='groceries';
+	linkObj.appendChild(imgObj);
 	//private func
 	var appendImg = function() {
-		imgObj.addEventListener('click', onMinimize);
-		//register event
-		//Add the img to the 'body'
-		document.getElementsByTagName("perotAndYerakotSign")[0].appendChild(imgObj);
-	}
-	//creating event. private
-	var onMinimize = function() {
-		console.log("i was minimized!!");
+		//Add the img to the 'section' 
+		document.getElementById(id).appendChild(linkObj);
 	};
 
-	//global function to access private var imgObj.src
-	this.getImgSrc = function() {
-		return (imgObj.src);
-	};
+	appendImg(); 
+};
 
-	//global function to set private var imgObj.src
-	this.setImgSrc = function(sPath) {
-		imgObj.src = sPath;
-	}
-	appendImg();
-}
+function ImgsManager(groceryArray,id) {
+	var iImgsNum = groceryArray.length;
 
-function ImgsManager() {
-	var iImgsNum = arrImgs.length();
 	//The number of images to create
-
+	
 	//Creates the imgs
 	for (var i = 0; i < iImgsNum; i++) {
 		//Create new img instance
-		var img = new Img(i);
-		console.log("img " + i + " src is: " + img.getImgSrc());
+		var img = new Img(groceryArray[i],id);
 	}
 };
-var imgsManager = new ImgsManager();
-})();
+

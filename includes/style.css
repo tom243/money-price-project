@@ -1,28 +1,23 @@
 *{
 	padding: 0;
 	margin: 0;
-	
-	direction:rtl;
 }
-
 header, footer, nav, main, section, article, nav, aside {
 	display: block;
 }
-
 body{
 	width:7683px;
+	direction:rtl;
 }
 main{
 	position:relative;
 	height:768px;
 	background: #F2EEE5;
 }
-
 footer{
 	background: #ac8c73;
 	height:54px;
 }
-
 #basketPrice{
 	height:376px;
 	width:370px;
@@ -44,7 +39,6 @@ footer{
 	position:absolute;
 	bottom:0px;
 	right:104px;
-	margin:0px;
 }
 #hezim{
 	width:145px;
@@ -53,48 +47,46 @@ footer{
 	position:absolute;
 	bottom:34px;
 	right:314px;
-	margin:0px;
 }
 
-img{
+.groceries{
 	width:76px;
 	height:121px;
 	margin-left:15px;
 	margin-bottom:28px;
 }
-
 /*/////////////////////////////////// Sections //////////////////////////////*/
 section{
 	position:absolute;
 	top:169px;
 }
-.perotAndYerakot{
+#perotAndYerakot{
 	width:1240px;
 	right:830px;
 }
 
-.milk{
+#milk{
 	width:386px;
 	right:2308px;
 }
-.shimurim{
+#shimurim{
 	width:282px;
 	right:2991px;
 }
-.basar{
+#basar{
 	width:382px;
 	right:3545px;
 }
 
-.lehem{
+#lehem{
 	width:376px;
 	right:4151px;
 }
-.shemen{
+#shemen{
 	width:477px;
 	right:4805px;
 }
-.mashkaot{
+#mashkaot{
 	width:187px;
 	right:5504px;
 }
