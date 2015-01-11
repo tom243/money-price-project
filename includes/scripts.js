@@ -3,7 +3,7 @@ var imgsManagerIdsArray;
 
 window.onload = function() {
 	imgsManagerArray = [fruitsAndVedgArray,milkArray,CannedFoodArray,meatArray,breadArray,oilArray,drinksArray];
-	imgsManagerIdsArray = new Array("perotAndYerakot","milk","CannedFood","meat","bread","oil","drinks");
+	imgsManagerIdsArray = new Array("fruitsAndVedg","milk","CannedFood","meat","bread","oil","drinks");
 	arraySize=imgsManagerArray.length;
 		for (var i=0; i<arraySize;i++){
 			new ImgsManager(imgsManagerArray[i],imgsManagerIdsArray[i]);

@@ -18,7 +18,7 @@ footer{
 	background: #ac8c73;
 	height:54px;
 }
-#basketPrice{
+main>article{
 	height:376px;
 	width:370px;
 	position:absolute;
@@ -27,20 +27,21 @@ footer{
 	color:#9f161e;
 	font-size:50px;
 }
-#basketPrice h3{
+main>article>h3{
 	color:#9e8986;
 	font-size:30px;
 	margin-top:20px;
 }
-#agala{
+#cart{
 	width:150px;
 	height:134px;
 	background: url("../images/agala.png");
-	position:absolute;
-	bottom:0px;
+	position:fixed;
+	bottom:54px;
 	right:104px;
+	z-index: 1;
 }
-#hezim{
+#arrows{
 	width:145px;
 	height:64px;
 	background: url("../images/hezim.png");
@@ -56,11 +57,12 @@ footer{
 	margin-bottom:28px;
 }
 /*/////////////////////////////////// Sections //////////////////////////////*/
-section{
+
+#fruitsAndVedg,#milk,#CannedFood,#meat,#bread,#oil,#drinks{
 	position:absolute;
 	top:169px;
 }
-#perotAndYerakot{
+#fruitsAndVedg{
 	width:1240px;
 	right:830px;
 }
@@ -92,7 +94,7 @@ section{
 }
 
 /*/////////////////////////////////// Signs //////////////////////////////*/
-#perotAndYerakotSign{
+#fruitsAndVedgSign{
 	width:335px;
 	height:91px;
 	background: url("../images/shelet yarakot.png");
@@ -106,35 +108,35 @@ section{
 	position:absolute;
 	right:2350px;
 }
-#shimurimSign{
+#CannedFoodSign{
 	width:399px;
 	height:118px;
 	background: url("../images/shelet shimurim.png");
 	position:absolute;
 	right:2927px;
 }
-#basarSign{
+#meatSign{
 	width:340px;
 	height:109px;
 	background: url("../images/shelet of ve dagim.png");
 	position:absolute;
 	right:3545px;
 }
-#lehemSign{
+#breadSign{
 	width:293px;
 	height:120px;
 	background: url("../images/shelet lehem dganim.png");
 	position:absolute;
 	right:4212px;
 }
-#shemenSign{
+#oilSign{
 	width:449px;
 	height:110px;
 	background: url("../images/shelet shemen sukar mamtakim.png");
 	position:absolute;
 	right:4811px;
 }
-#mashkaotSign{
+#drinksSign{
 	
 	width:320px;
 	height:109px;
