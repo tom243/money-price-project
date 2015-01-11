@@ -11,7 +11,7 @@ body{
 }
 main{
 	position:relative;
-	height:768px;
+	height:762px;
 	background: #F2EEE5;
 }
 footer{
@@ -145,4 +145,20 @@ main>article>h3{
 	right:5436px;
 }
 
-
+#whiteBoard{
+	position:absolute;
+	right:5788px;
+	top:0px;
+	width:245px;
+	height:620px;
+	background: #ffffff;
+	overflow-y: auto;
+}
+#cashier{
+	position:absolute;
+	right:6199px;
+	top:0px;
+	width:281px;
+	height:469px;
+	background: url("../images/shelet kupa.png");
+}
