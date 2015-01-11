@@ -2,8 +2,8 @@ var imgsManagerArray;
 var imgsManagerIdsArray;
 
 window.onload = function() {
-	imgsManagerArray = [fruitsAndVedgArray,milkArray,shimurimArray,basarArray,lehemArray,shemenArray,mashkaotArray];
-	imgsManagerIdsArray = new Array("perotAndYerakot","milk","shimurim","basar","lehem","shemen","mashkaot");
+	imgsManagerArray = [fruitsAndVedgArray,milkArray,CannedFoodArray,meatArray,breadArray,oilArray,drinksArray];
+	imgsManagerIdsArray = new Array("perotAndYerakot","milk","CannedFood","meat","bread","oil","drinks");
 	arraySize=imgsManagerArray.length;
 		for (var i=0; i<arraySize;i++){
 			new ImgsManager(imgsManagerArray[i],imgsManagerIdsArray[i]);
@@ -20,16 +20,16 @@ var fruitsAndVedgArray = new Array("images/tapuah.png", "images/tapuah yonatan.p
 
 var milkArray=new Array("images/tapuz valensiya.png","images/yogurt tevi.png","images/shamenet hamuza.png","images/koteg.png","images/hema.png",
 				"images/leben.png","images/gvina levana.png","images/bezim medium.png","images/bezim larj.png");
-var shimurimArray = new Array("images/afunat gina.png","images/tiras.png","images/resek sgvaniot.png","images/salat hazilim.png",
+var CannedFoodArray = new Array("images/afunat gina.png","images/tiras.png","images/resek sgvaniot.png","images/salat hazilim.png",
 				"images/salat humus.png","images/zeitim be mishkal.png");
-var basarArray = new Array("images/haze of.png","images/karpion.png","images/file nesihat ha nilus.png","images/pastrama.png",
+var meatArray = new Array("images/haze of.png","images/karpion.png","images/file nesihat ha nilus.png","images/pastrama.png",
 				"images/basar bakar haze.png","images/basar bakar zlaot.png","images/naknikiot.png","images/of tari.png","images/of kafu.png");
-var lehemArray = new Array("images/hala.png","images/biskuitim.png","images/itriot.png","images/orez ragil.png","images/orez male.png",
+var breadArray = new Array("images/hala.png","images/biskuitim.png","images/itriot.png","images/orez ragil.png","images/orez male.png",
 				"images/kornfleks.png","images/spagety.png","images/leham lavan ahid.png","images/lehem ahid kehe.png");
-var shemenArray = new Array("images/shemen soya.png","images/margarina.png","images/margarina le mericha.png","images/shemen zait.png",
+var oilArray = new Array("images/shemen soya.png","images/margarina.png","images/margarina le mericha.png","images/shemen zait.png",
 				"images/tahlif halav.png","images/te.png","images/kafe shahor.png","images/kafe names.png","images/avkat kakao.png","images/sugar.png",
 				"images/riba.png","images/konfetura.png","images/sukariot toffi.png","images/shokolad.png");
-var mashkaotArray = new Array("images/bira levana.png","images/mashke mugaz.png","images/mashke pri hadar.png","images/brendy.png");
+var drinksArray = new Array("images/bira levana.png","images/mashke mugaz.png","images/mashke pri hadar.png","images/brendy.png");
 
 
 function Img(imgSrc,id) {
