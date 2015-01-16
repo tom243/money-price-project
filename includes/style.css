@@ -6,14 +6,11 @@ header, footer, nav, main, section, article, nav, aside {
 	display: block;
 }
 body{
-<<<<<<< HEAD
-=======
 	background: #F2EEE5;
->>>>>>> origin/master
 	direction:rtl;
-	position:relative;
 }
 main{
+	position: relative;
 	height:762px;
 }
 footer{
