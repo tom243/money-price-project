@@ -53,3 +53,7 @@ function ImgsManager(groceryArray, id) {
 	}
 };
 
+$(document).ready(function() {
+	var width=$( document ).width();
+	$('footer').css('width',width + 'px');
+});

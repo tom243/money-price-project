@@ -12,6 +12,7 @@ body{
 main{
 	position: relative;
 	height:762px;
+	width:100%;
 }
 footer{
 	background: #ac8c73;
@@ -159,3 +160,12 @@ main>article>h3{
 	height:282px;
 	background: url("../images/cashier.png");
 }
+
+
+    .footer_contents {
+
+        height:24px; // Replace with the height your footer should be
+        width: 1000px; // Visible width of footer
+        margin:auto;
+
+    }
