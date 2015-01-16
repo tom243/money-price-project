@@ -6,12 +6,15 @@ header, footer, nav, main, section, article, nav, aside {
 	display: block;
 }
 body{
+<<<<<<< HEAD
+=======
+	background: #F2EEE5;
+>>>>>>> origin/master
 	direction:rtl;
 	position:relative;
 }
 main{
 	height:762px;
-	background: #F2EEE5;
 }
 footer{
 	background: #ac8c73;
@@ -48,7 +51,6 @@ main>article>h3{
 	bottom:34px;
 	right:314px;
 }
-
 .groceries{
 	width:76px;
 	height:121px;
@@ -65,7 +67,6 @@ main>article>h3{
 	width:1240px;
 	right:830px;
 }
-
 #milk{
 	width:386px;
 	right:2308px;
@@ -78,7 +79,6 @@ main>article>h3{
 	width:382px;
 	right:3545px;
 }
-
 #bread{
 	width:376px;
 	right:4151px;
@@ -141,7 +141,6 @@ main>article>h3{
 	background: url("../images/shelet mashkaot.png");
 	right:5436px;
 }
-
 #whiteBoard{
 	right:5788px;
 	width:245px;
