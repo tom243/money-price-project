@@ -6,11 +6,10 @@ header, footer, nav, main, section, article, nav, aside {
 	display: block;
 }
 body{
-	width:7683px;
 	direction:rtl;
+	position:relative;
 }
 main{
-	position:relative;
 	height:762px;
 	background: #F2EEE5;
 }
@@ -94,46 +93,45 @@ main>article>h3{
 }
 
 /*/////////////////////////////////// Signs //////////////////////////////*/
+
+#fruitsAndVedgSign,#milkSign,#CannedFoodSign,#meatSign,#breadSign,#oilSign,#drinksSign,#whiteBoard,#cashier,#checkout{
+	
+	position:absolute;
+}
 #fruitsAndVedgSign{
 	width:335px;
 	height:91px;
 	background: url("../images/shelet yarakot.png");
-	position:absolute;
 	right:1318px;
 }
 #milkSign{
 	width:297px;
 	height:118px;
 	background: url("../images/shelet musrei halav.png");
-	position:absolute;
 	right:2350px;
 }
 #CannedFoodSign{
 	width:399px;
 	height:118px;
 	background: url("../images/shelet shimurim.png");
-	position:absolute;
 	right:2927px;
 }
 #meatSign{
 	width:340px;
 	height:109px;
 	background: url("../images/shelet of ve dagim.png");
-	position:absolute;
 	right:3545px;
 }
 #breadSign{
 	width:293px;
 	height:120px;
 	background: url("../images/shelet lehem dganim.png");
-	position:absolute;
 	right:4212px;
 }
 #oilSign{
 	width:449px;
 	height:110px;
 	background: url("../images/shelet shemen sukar mamtakim.png");
-	position:absolute;
 	right:4811px;
 }
 #drinksSign{
@@ -141,24 +139,27 @@ main>article>h3{
 	width:320px;
 	height:109px;
 	background: url("../images/shelet mashkaot.png");
-	position:absolute;
 	right:5436px;
 }
 
 #whiteBoard{
-	position:absolute;
 	right:5788px;
-	top:0px;
 	width:245px;
 	height:620px;
 	background: #ffffff;
 	overflow-y: auto;
+	opacity:0.8;
 }
-#cashier{
-	position:absolute;
+#checkout{
 	right:6199px;
-	top:0px;
 	width:281px;
 	height:469px;
 	background: url("../images/shelet kupa.png");
+}
+#cashier{
+	top:480px;
+	right:6199px;
+	width:286px;
+	height:282px;
+	background: url("../images/cashier.png");
 }
