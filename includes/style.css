@@ -141,7 +141,7 @@ main>article>h3{
 }
 #whiteBoard{
 	right:5788px;
-	width:245px;
+	width:370px;
 	height:620px;
 	background: #ffffff;
 	overflow-y: auto;
@@ -169,3 +169,10 @@ main>article>h3{
         margin:auto;
 
     }
+    
+input[type=checkbox] {
+	width: 76px;
+	height: 121px;
+	vertical-align: 32px;
+	margin-left:10px;
+}

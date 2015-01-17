@@ -1,6 +1,9 @@
 var imgsManagerArray;
 var imgsManagerIdsArray;
 var foodArray = [];
+var existFood = [];
+var grocerieObj;
+var i=0,clicks=0;
 window.onload = function() {
 	imgsManagerArray = [fruitsAndVedgArray, milkArray, CannedFoodArray, meatArray, breadArray, oilArray, drinksArray];
 	imgsManagerIdsArray = new Array("fruitsAndVedg", "milk", "CannedFood", "meat", "bread", "oil", "drinks");
@@ -21,25 +24,36 @@ var drinksArray = new Array("images/bira levana.png", "images/mashke mugaz.png",
 function Img(imgSrc, id) {
 	//global var. anyone can access it
 	var linkObj = document.createElement("a");
-	linkObj.setAttribute('href', "#");
 	var imgObj = document.createElement("img");
+	linkObj.setAttribute('href',"#");
+	linkObj.setAttribute('onclick',"clicks()");
+	linkObj.setAttribute('id',i);
+	foodArray.push({id:i,count:0});
 	imgObj.setAttribute("src", imgSrc);
 	imgObj.className = 'groceries';
 	linkObj.appendChild(imgObj);
+	i++;
 	//private func
-	var appendImg = function() {
 		//Add the img to the 'section'
 		document.getElementById(id).appendChild(linkObj);
 		linkObj.onclick = function() {
-			if ($.inArray(imgSrc, foodArray) > -1)
-				alert("exist");
-			foodArray.push(imgSrc);
-			$img = $(this).clone().appendTo($('#whiteBoard'));
-			$('<input />', { type: 'checkbox' }).appendTo($('#whiteBoard'));
+			
+			foodArray[linkObj.getAttribute('id')].count +=1;
+			
+			if ($.inArray(imgSrc, existFood) == -1)//if the img not exist in the whiteboard
+			{
+				existFood.push(imgSrc);
+				$(this).clone().appendTo($('#whiteBoard'));
+				$('<input />', {type : 'checkbox', checked:"checked"}).appendTo($('#whiteBoard'));
+			}
+				$('#whiteBoard').append($('<h3>').text(foodArray[linkObj.getAttribute('id')].count));
 		};
-	};
-	appendImg();
+	
 };
+
+function clicks() {
+     document.getElementById('i'+i).value = ++clicks;
+}
 
 function ImgsManager(groceryArray, id) {
 	var iImgsNum = groceryArray.length;
@@ -54,6 +68,6 @@ function ImgsManager(groceryArray, id) {
 };
 
 $(document).ready(function() {
-	var width=$( document ).width();
-	$('footer').css('width',width + 'px');
+	var width = $(document).width();
+	$('footer').css('width', width + 'px');
 });
