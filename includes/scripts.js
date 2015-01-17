@@ -37,6 +37,7 @@ function Img(imgSrc, id) {
 		//Add the img to the 'section'
 		document.getElementById(id).appendChild(linkObj);
 		linkObj.onclick = function() {
+			var idObj = linkObj.getAttribute('id');
 			foodArray[linkObj.getAttribute('id')].count +=1;
 			if ($.inArray(imgSrc, existFood) == -1)//if the img not exist in the whiteboard
 			{
@@ -44,10 +45,16 @@ function Img(imgSrc, id) {
 				$(this).clone().appendTo($('#whiteBoard'));
 				$('<input />', {type : 'checkbox', checked:"checked"}).appendTo($('#whiteBoard'));
 				$('<input />', {type : 'textbox',id: linkObj.getAttribute('id'), val:foodArray[linkObj.getAttribute('id')].count}).appendTo($('#whiteBoard'));
+				$('<input />', {type : 'button',id: linkObj.getAttribute('id'),value:'-'}).appendTo($('#whiteBoard'));
+				$("input[type='button'][id='" +idObj+ "']").click(function() {
+					if(foodArray[linkObj.getAttribute('id')].count >1){
+  					foodArray[linkObj.getAttribute('id')].count -=1;
+  					$("input[type='textbox'][id='" +idObj+ "']").val(foodArray[linkObj.getAttribute('id')].count);
+  					}
+				});
 			}
 			else{	//the obj is not in the exist array
-				var idObj = linkObj.getAttribute('id');
-				$("input[type='textbox'][id='84']").val(foodArray[linkObj.getAttribute('id')].count);
+				$("input[type='textbox'][id='" +idObj+ "']").val(foodArray[linkObj.getAttribute('id')].count);
 			}
 		};
 	
@@ -69,10 +76,14 @@ function ImgsManager(groceryArray, id) {
 	}
 };
 
+
 $(document).ready(function() {
 	var width = $(document).width();
 	$('footer').css('width', width + 'px');
 });
+
+
+
 
 /*$(document).ready(function() {
         function autoResizeDiv()

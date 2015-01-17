@@ -142,7 +142,7 @@ main>article>h3{
 }
 #whiteBoard{
 	right:5770px;
-	width:300px;
+	width:350px;
 	height:620px;
 	background: #ffffff;
 	overflow-y: auto;
@@ -162,9 +162,6 @@ main>article>h3{
 	background: url("../images/cashier.png");
 }
 
-p{
-   display:inline;
-}
 input[type=checkbox] {
 	width: 76px;
 	height: 121px;
@@ -177,5 +174,10 @@ input[type=textbox] {
 	vertical-align: 85px;
 	margin-left:10px;
 	font-size:30px;
+}
+input[type=button] {
+	width: 76px;
+	height: 60px;
+	vertical-align: 85px;
 }
 
