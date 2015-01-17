@@ -11,8 +11,7 @@ body{
 }
 main{
 	position: relative;
-	height:762px;
-	width:100%;
+	min-height:762px;
 }
 footer{
 	background: #ac8c73;
@@ -25,11 +24,13 @@ main>article{
 	top:93px;
 	right:104px;
 	color:#9f161e;
-	font-size:50px;
+}
+main>article>h1{
+	font-size:3.125em;
 }
 main>article>h3{
 	color:#9e8986;
-	font-size:30px;
+	font-size:1.875em;
 	margin-top:20px;
 }
 #cart{
@@ -160,12 +161,3 @@ main>article>h3{
 	height:282px;
 	background: url("../images/cashier.png");
 }
-
-
-    .footer_contents {
-
-        height:24px; // Replace with the height your footer should be
-        width: 1000px; // Visible width of footer
-        margin:auto;
-
-    }
