@@ -161,20 +161,10 @@ main>article>h3{
 	height:282px;
 	background: url("../images/cashier.png");
 }
-<<<<<<< HEAD
-=======
 
-
-    .footer_contents {
-
-        height:24px; // Replace with the height your footer should be
-        width: 1000px; // Visible width of footer
-        margin:auto;
-
-    }
-    p{
-    	display:inline;
-    }
+p{
+   display:inline;
+}
 input[type=checkbox] {
 	width: 76px;
 	height: 121px;
@@ -188,4 +178,4 @@ input[type=textbox] {
 	margin-left:10px;
 	font-size:30px;
 }
->>>>>>> origin/master
+
