@@ -37,16 +37,18 @@ function Img(imgSrc, id) {
 		//Add the img to the 'section'
 		document.getElementById(id).appendChild(linkObj);
 		linkObj.onclick = function() {
-			
 			foodArray[linkObj.getAttribute('id')].count +=1;
-			
 			if ($.inArray(imgSrc, existFood) == -1)//if the img not exist in the whiteboard
 			{
 				existFood.push(imgSrc);
 				$(this).clone().appendTo($('#whiteBoard'));
 				$('<input />', {type : 'checkbox', checked:"checked"}).appendTo($('#whiteBoard'));
+				$('<input />', {type : 'textbox',id: linkObj.getAttribute('id'), val:foodArray[linkObj.getAttribute('id')].count}).appendTo($('#whiteBoard'));
 			}
-				$('#whiteBoard').append($('<h3>').text(foodArray[linkObj.getAttribute('id')].count));
+			else{	//the obj is not in the exist array
+				var idObj = linkObj.getAttribute('id');
+				$("input[type='textbox'][id='84']").val(foodArray[linkObj.getAttribute('id')].count);
+			}
 		};
 	
 };

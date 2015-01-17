@@ -140,8 +140,8 @@ main>article>h3{
 	right:5436px;
 }
 #whiteBoard{
-	right:5788px;
-	width:370px;
+	right:5770px;
+	width:300px;
 	height:620px;
 	background: #ffffff;
 	overflow-y: auto;
@@ -169,10 +169,19 @@ main>article>h3{
         margin:auto;
 
     }
-    
+    p{
+    	display:inline;
+    }
 input[type=checkbox] {
 	width: 76px;
 	height: 121px;
 	vertical-align: 32px;
 	margin-left:10px;
+}
+input[type=textbox] {
+	width: 40px;
+	height:40px;
+	vertical-align: 85px;
+	margin-left:10px;
+	font-size:30px;
 }
