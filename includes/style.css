@@ -35,17 +35,15 @@ footer {
 	width: 7683px;
 }
 main > article {
-	height: 376px;
 	width: 370px;
 	position: absolute;
-	top: 93px;
 	right: 104px;
 	color: #9f161e;
 }
 main > article > h1 {
 	font-size: 3.125em;
 }
-main > article > h3 {
+main > article > p {
 	color: #9e8986;
 	font-size: 1.875em;
 	margin-top: 20px;
@@ -64,11 +62,11 @@ main > article > h3 {
 
 #fruitsAndVedg, #milk, #CannedFood, #meat, #bread, #oil, #drinks {
 	position: absolute;
-	top: 169px;
+	top: 45px;
 }
 #fruitsAndVedg {
 	width: 1240px;
-	right: 830px;
+	right: 997px;
 }
 #milk {
 	width: 386px;
@@ -105,7 +103,7 @@ main > article > h3 {
 	width: 335px;
 	height: 91px;
 	background: url("../images/shelet yarakot.png");
-	right: 1318px;
+	right: 644px;
 }
 #milkSign {
 	width: 297px;
