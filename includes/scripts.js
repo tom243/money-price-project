@@ -76,7 +76,7 @@ function ImgsManager(groceryArray, id) {
 	}
 };
 
-
+/*
 $(document).ready(function() {
 	var width = $(document).width();
 	$('footer').css('width', width + 'px');
@@ -84,7 +84,7 @@ $(document).ready(function() {
 
 
 
-/*$(document).ready(function() {
+$(document).ready(function() {
         function autoResizeDiv()
         {
         	$('main').css('height',window.innerHeight + 'px');
