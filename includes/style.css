@@ -3,17 +3,15 @@ header, footer, nav, main, section, article, nav, aside {
 }
 @import url(http://fonts.googleapis.com/earlyaccess/alefhebrew.css);
 html, body {
-    /* get rid of default spacing on the edges */
-    margin: 0;
-    padding: 0;
-
-    /* get rid of that 2px window border in Internet Explorer 6 */
-    border: 0;
-
-    /* fill the height of the browser */
-    height: 100%;
-    /* no more scroll bar */
-    overflow-y: hidden;
+	/* get rid of default spacing on the edges */
+	margin: 0;
+	padding: 0;
+	/* get rid of that 2px window border in Internet Explorer 6 */
+	border: 0;
+	/* fill the height of the browser */
+	height: 100%;
+	/* no more scroll bar */
+	overflow-y: hidden;
 }
 body {
 	background: #F2EEE5;
@@ -22,17 +20,15 @@ body {
 	font-family: "Alef Hebrew", Arial;
 }
 
-
-main{
-	height:95%;
-	
+main {
+	height: 95%;
 }
 footer {
 	position: absolute;
-	bottom:0px;
+	bottom: 0px;
 	background: #ac8c73;
 	height: 5%;
-	width: 7683px;
+	width: 8683px;
 }
 main > article {
 	width: 400px;
@@ -49,8 +45,6 @@ main > article > p {
 	line-height: 40px;
 }
 
-
-
 .groceries {
 	width: 5%;
 	height: 5%;
@@ -66,36 +60,36 @@ main > article > p {
 }
 #fruitsAndVedg {
 	width: 1240px;
-	right: 997px;
+	right: 1010px;
 }
 #milk {
 	width: 386px;
-	right: 2308px;
+	right: 2668px;
 }
 #CannedFood {
 	width: 282px;
-	right: 2991px;
+	right: 3591px;
 }
 #meat {
 	width: 382px;
-	right: 3545px;
+	right: 4420px;
 }
 #bread {
 	width: 376px;
-	right: 4151px;
+	right: 5231px;
 }
 #oil {
 	width: 477px;
-	right: 4805px;
+	right: 6290px;
 }
 #drinks {
 	width: 187px;
-	right: 5504px;
+	right: 7292px;
 }
 
 /*/////////////////////////////////// Signs //////////////////////////////*/
 
-#fruitsAndVedgSign, #milkSign, #CannedFoodSign, #meatSign, #breadSign, #oilSign, #drinksSign, #whiteBoard, #cashier, #checkout,#cart,#arrows {
+#fruitsAndVedgSign, #milkSign, #CannedFoodSign, #meatSign, #breadSign, #oilSign, #drinksSign, #whiteBoard, #cashier, #checkout, #cart, #arrows {
 
 	position: absolute;
 }
@@ -115,35 +109,35 @@ main > article > p {
 	width: 399px;
 	height: 118px;
 	background: url("../images/shelet shimurim.png");
-	right: 2927px;
+	right: 3163px;
 }
 #meatSign {
 	width: 340px;
 	height: 109px;
 	background: url("../images/shelet of ve dagim.png");
-	right: 3545px;
+	right: 4045px;
 }
 #breadSign {
 	width: 293px;
 	height: 120px;
 	background: url("../images/shelet lehem dganim.png");
-	right: 4212px;
+	right: 4912px;
 }
 #oilSign {
 	width: 449px;
 	height: 110px;
 	background: url("../images/shelet shemen sukar mamtakim.png");
-	right: 4811px;
+	right: 5787px;
 }
 #drinksSign {
 
 	width: 320px;
 	height: 109px;
 	background: url("../images/shelet mashkaot.png");
-	right: 5436px;
+	right: 6904px;
 }
 #whiteBoard {
-	right: 5770px;
+	right: 7670px;
 	width: 350px;
 	height: 620px;
 	background: #ffffff;
@@ -151,14 +145,14 @@ main > article > p {
 	opacity: 0.8;
 }
 #checkout {
-	right: 6199px;
+	right: 8070px;
 	width: 281px;
 	height: 469px;
 	background: url("../images/shelet kupa.png");
 }
 #cashier {
-	right: 6199px;
-	bottom:30px;
+	right: 8070px;
+	bottom: 30px;
 	width: 286px;
 	height: 282px;
 	background: url("../images/cashier.png");
@@ -166,19 +160,23 @@ main > article > p {
 
 #cart {
 	right: 104px;
+<<<<<<< HEAD
 	bottom:7.5%;
+=======
+	bottom: 7.5%;
+>>>>>>> origin/master
 	width: 150px;
 	height: 134px;
 	background: url("../images/agala.png");
-	position:fixed;
-	z-index:1;
+	position: fixed;
+	z-index: 1;
 }
 
 #arrows {
 	width: 145px;
 	height: 64px;
 	background: url("../images/hezim.png");
-	bottom:10%;
+	bottom: 10%;
 	right: 314px;
 }
 input[type=checkbox] {
@@ -199,4 +197,37 @@ input[type=button] {
 	height: 60px;
 	vertical-align: 85px;
 }
+/*/////////////////////////////////// INFO //////////////////////////////*/
 
+#fruitINFO,#milkINFO,#CannedFoodINFO,#meatINFO,#breadINFO,#oilINFO,#drinksINFO{
+	width: 334px;
+	height: 253px;
+	margin: 143px auto;
+}
+#fruitINFO {
+	background-color: #565b3b;
+}
+#milkINFO{
+	width: 270px;
+	background-color: #2e3d90;
+}
+#CannedFoodINFO{
+	width: 368px;
+	background-color: #dec223;
+}
+#meatINFO{
+	background-color: #9f161e;
+}
+#breadINFO{
+	width: 286px;
+	background-color: #565b3b;
+}
+#oilINFO{
+	width:402px;
+	background-color: #dec223;
+}
+#drinksINFO{
+	float:right;
+		width:280px;
+	background-color: #2e3d90;
+}
