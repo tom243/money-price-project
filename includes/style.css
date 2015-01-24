@@ -11,7 +11,7 @@ body{
 }
 main{
 	position: relative;
-	min-height:520px;
+	min-height:762px;
 }
 footer{
 	background: #ac8c73;
@@ -21,8 +21,8 @@ main>article{
 	height:376px;
 	width:370px;
 	position:absolute;
-	top:62px;
-	right:52px;
+	top:93px;
+	right:104px;
 	color:#9f161e;
 }
 main>article>h1{
@@ -60,11 +60,11 @@ main>article>h3{
 
 #fruitsAndVedg,#milk,#CannedFood,#meat,#bread,#oil,#drinks{
 	position:absolute;
-	top:45px;
+	top:169px;
 }
 #fruitsAndVedg{
-	width:1800px;
-	right:997px;
+	width:1240px;
+	right:830px;
 }
 #milk{
 	width:386px;
@@ -101,7 +101,7 @@ main>article>h3{
 	width:335px;
 	height:91px;
 	background: url("../images/shelet yarakot.png");
-	right:645px;
+	right:1318px;
 }
 #milkSign{
 	width:297px;
