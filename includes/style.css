@@ -1,7 +1,7 @@
 header, footer, nav, main, section, article, nav, aside {
 	display: block;
 }
-
+@import url(http://fonts.googleapis.com/earlyaccess/alefhebrew.css);
 html, body {
     /* get rid of default spacing on the edges */
     margin: 0;
@@ -19,7 +19,7 @@ body {
 	background: #F2EEE5;
 	direction: rtl;
 	position: relative;
-	
+	font-family: "Alef Hebrew", Arial;
 }
 
 
