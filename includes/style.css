@@ -21,8 +21,8 @@ main>article{
 	height:376px;
 	width:370px;
 	position:absolute;
-	top:62px;
-	right:52px;
+	margin-top:62px;
+	margin-right:52px;
 	color:#9f161e;
 }
 main>article>h1{
@@ -60,7 +60,7 @@ main>article>h3{
 
 #fruitsAndVedg,#milk,#CannedFood,#meat,#bread,#oil,#drinks{
 	position:absolute;
-	top:45px;
+	margin-top:45px;
 }
 #fruitsAndVedg{
 	width:1800px;
@@ -155,8 +155,8 @@ main>article>h3{
 	background: url("../images/shelet kupa.png");
 }
 #cashier{
-	top:480px;
-	right:6199px;
+	margin-top:480px;
+	margin-right:6199px;
 	width:286px;
 	height:282px;
 	background: url("../images/cashier.png");

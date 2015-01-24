@@ -5,6 +5,8 @@ var existFood = [];
 var grocerieObj;
 var i=0,clicks=0;
 window.onload = function() {
+$height = $( document ).height();
+$("footer").css("margin-top",$height + "px");
 	imgsManagerArray = [fruitsAndVedgArray, milkArray, CannedFoodArray, meatArray, breadArray, oilArray, drinksArray];
 	imgsManagerIdsArray = new Array("fruitsAndVedg", "milk", "CannedFood", "meat", "bread", "oil", "drinks");
 	arraySize = imgsManagerArray.length;
@@ -81,7 +83,6 @@ $(document).ready(function() {
 	var width = $(document).width();
 	$('footer').css('width', width + 'px');
 });
-
 
 
 
