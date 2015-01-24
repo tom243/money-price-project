@@ -60,9 +60,6 @@ function Img(imgSrc, id) {
 	
 };
 
-function clicks() {
-     document.getElementById('i'+i).value = ++clicks;
-}
 
 function ImgsManager(groceryArray, id) {
 	var iImgsNum = groceryArray.length;
