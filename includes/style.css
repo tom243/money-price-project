@@ -35,7 +35,7 @@ footer {
 	width: 7683px;
 }
 main > article {
-	width: 370px;
+	width: 400px;
 	position: absolute;
 	right: 104px;
 	color: #9f161e;
@@ -45,17 +45,17 @@ main > article > h1 {
 }
 main > article > p {
 	color: #9e8986;
-	font-size: 1.875em;
-	margin-top: 20px;
+	font-size: 1.4em;
+	line-height: 40px;
 }
 
 
 
 .groceries {
-	width: 76px;
-	height: 121px;
+	width: 5%;
+	height: 5%;
 	margin-left: 15px;
-	margin-bottom: 28px;
+	margin-bottom: 10px;
 }
 
 /*/////////////////////////////////// Sections //////////////////////////////*/
@@ -166,7 +166,7 @@ main > article > p {
 
 #cart {
 	right: 104px;
-	bottom:5%;
+	bottom:7.5%;
 	width: 150px;
 	height: 134px;
 	background: url("../images/agala.png");
