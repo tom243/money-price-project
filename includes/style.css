@@ -21,13 +21,8 @@ main>article{
 	height:376px;
 	width:370px;
 	position:absolute;
-<<<<<<< HEAD
 	top:93px;
 	right:104px;
-=======
-	margin-top:62px;
-	margin-right:52px;
->>>>>>> origin/master
 	color:#9f161e;
 }
 main>article>h1{
@@ -65,11 +60,7 @@ main>article>h3{
 
 #fruitsAndVedg,#milk,#CannedFood,#meat,#bread,#oil,#drinks{
 	position:absolute;
-<<<<<<< HEAD
 	top:169px;
-=======
-	margin-top:45px;
->>>>>>> origin/master
 }
 #fruitsAndVedg{
 	width:1240px;
