@@ -46,26 +46,27 @@ main > article > p {
 }
 
 .groceries {
-	width: 5%;
-	height: 5%;
+	width: 76px;
+	height: 121px;
 	margin-left: 15px;
 	margin-bottom: 10px;
 }
 
-.products{
+.products {
 	font-family: "Alef Hebrew", Arial;
-	font-size:20px;
-	color:#59332a;
-	float:left;
-	display:inline;
-	position:absolute;
-	right:90px;
-	margin-top:0px;
+	font-size: 20px;
+	color: #59332a;
+	float: left;
+	display: inline;
+	position: absolute;
+	right: 90px;
+	margin-top: 0px;
 }
-.sectionWhiteBoard{
-	position:relative;
-	width:230px;
-	display:block;
+.sectionWhiteBoard {
+	position: relative;
+	width: 230px;
+	display: block;
+	height: 40px;
 }
 /*/////////////////////////////////// Sections //////////////////////////////*/
 
@@ -156,7 +157,13 @@ main > article > p {
 	width: 230px;
 	height: 500px;
 	background: #ffffff;
+	overflow-y: auto;
 	opacity: 0.8;
+	margin-right: 20px;
+}
+#whiteBoard h2 {
+	margin-top: 50px;
+	color: #9e151c;
 }
 #checkout {
 	margin-top: -150px;
@@ -175,11 +182,7 @@ main > article > p {
 
 #cart {
 	right: 104px;
-<<<<<<< HEAD
-	bottom:7.5%;
-=======
 	bottom: 7.5%;
->>>>>>> origin/master
 	width: 150px;
 	height: 134px;
 	background: url("../images/agala.png");
@@ -195,11 +198,9 @@ main > article > p {
 	right: 314px;
 }
 #whiteBoard input[type=textbox] {
-	width: 20px;
-	height: 20px;
-	vertical-align: 85px;
-	margin-left: 10px;
-	font-size: 20px;
+	width: 23px;
+	height: 24px;
+	vertical-align: 87px;
 }
 #whiteBoard input[type=button] {
 	width: 30px;
@@ -208,7 +209,7 @@ main > article > p {
 }
 /*/////////////////////////////////// INFO //////////////////////////////*/
 
-#fruitINFO,#milkINFO,#CannedFoodINFO,#meatINFO,#breadINFO,#oilINFO,#drinksINFO{
+#fruitINFO, #milkINFO, #CannedFoodINFO, #meatINFO, #breadINFO, #oilINFO, #drinksINFO {
 	width: 334px;
 	height: 253px;
 	margin: 143px auto;
@@ -216,27 +217,27 @@ main > article > p {
 #fruitINFO {
 	background-color: #565b3b;
 }
-#milkINFO{
+#milkINFO {
 	width: 270px;
 	background-color: #2e3d90;
 }
-#CannedFoodINFO{
+#CannedFoodINFO {
 	width: 368px;
 	background-color: #dec223;
 }
-#meatINFO{
+#meatINFO {
 	background-color: #9f161e;
 }
-#breadINFO{
+#breadINFO {
 	width: 286px;
 	background-color: #565b3b;
 }
-#oilINFO{
-	width:402px;
+#oilINFO {
+	width: 402px;
 	background-color: #dec223;
 }
-#drinksINFO{
-	float:right;
-		width:280px;
+#drinksINFO {
+	float: right;
+	width: 280px;
 	background-color: #2e3d90;
 }

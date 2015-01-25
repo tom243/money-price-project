@@ -42,58 +42,61 @@ function Img(imgSrc, id) {
 	//Add the img to the 'section'
 	document.getElementById(id).appendChild(linkObj);
 	linkObj.onclick = function() {
-		var idObj = linkObj.getAttribute('id'); 
+		var idObj = linkObj.getAttribute('id');
 		var product = null;
 		foodArray[linkObj.getAttribute('id')].count += 1;
 		if ($.inArray(imgSrc, existFood) == -1)//if the img not exist in the whiteboard
 		{
-			
-			
-			$('<section>').appendTo("#whiteBoard").addClass("sectionWhiteBoard");
 			existFood.push(imgSrc);
-			//$(this).clone().appendTo($('#whiteBoard'));
-			//$('<input />', {type : 'checkbox', checked:"checked"}).appendTo($('#whiteBoard'));
+
+			$x = $('<section>').appendTo("#whiteBoard").addClass("sectionWhiteBoard");
+
+			//plus
+			$('<input />', {
+				type : 'button',
+				id : linkObj.getAttribute('id'),
+				value : '+'
+			}).appendTo($($x));
+			$("input[type='button'][value='+'][id='" + idObj + "']").click(function() {
+				foodArray[linkObj.getAttribute('id')].count += 1;
+				$("input[type='textbox'][id='" + idObj + "']").val(foodArray[linkObj.getAttribute('id')].count);
+			});
 			
+			//number
+			$('<input />', {
+				type : 'textbox',
+				id : linkObj.getAttribute('id'),
+				val : foodArray[linkObj.getAttribute('id')].count
+			}).appendTo($($x));
+			
+			//minus
 			$('<input />', {
 				type : 'button',
 				id : linkObj.getAttribute('id'),
 				value : '-'
-			}).appendTo($('#whiteBoard'));
+			}).appendTo($($x));
 			$("input[type='button'][value='-'][id='" + idObj + "']").click(function() {
 				if (foodArray[linkObj.getAttribute('id')].count > 1) {
 					foodArray[linkObj.getAttribute('id')].count -= 1;
 					$("input[type='textbox'][id='" + idObj + "']").val(foodArray[linkObj.getAttribute('id')].count);
 				}
 			});
-			$('<input />', {
-				type : 'button',
-				id : linkObj.getAttribute('id'),
-				value : '+'
-			}).appendTo($('#whiteBoard'));
-			$("input[type='button'][value='+'][id='" + idObj + "']").click(function() {
-				foodArray[linkObj.getAttribute('id')].count += 1;
-				$("input[type='textbox'][id='" + idObj + "']").val(foodArray[linkObj.getAttribute('id')].count);
-			});
-			$('<input />', {
-				type : 'textbox',
-				id : linkObj.getAttribute('id'),
-				val : foodArray[linkObj.getAttribute('id')].count
-			}).appendTo($('#whiteBoard'));
+			//product name
 			$.getJSON("jsons/objects.json", function(data) {
 				$.each(data, function(key, val) {
 					$.each(val, function(key2, val2) {
 						//	alert("key: " + key2 + " val: " + val2.image);
 						if (val2.image == imgSrc) {
-							$("<p>" + val2.name + "</p>").appendTo("#whiteBoard").addClass("products");
+							$("<p>" + val2.name + "</p>").appendTo($x).addClass("products");
 						}
 					});
 				});
 			});
-			$('</section>').appendTo("#whiteBoard").addClass("sectionWhiteBoard");
+			("#whiteBoard" ).append("</section> ");
 		} else {//the obj is not in the exist array
 			$("input[type='textbox'][id='" + idObj + "']").val(foodArray[linkObj.getAttribute('id')].count);
 		}
-		
+
 	};
 
 };
