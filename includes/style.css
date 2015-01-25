@@ -46,8 +46,8 @@ main > article > p {
 }
 
 .groceries {
-	width: 5%;
-	height: 5%;
+	width: 76px;
+	height: 121px;
 	margin-left: 15px;
 	margin-bottom: 10px;
 }
@@ -145,6 +145,7 @@ main > article > p {
 	opacity: 0.8;
 }
 #checkout {
+	margin-top:-150px;
 	right: 8070px;
 	width: 281px;
 	height: 469px;
@@ -160,11 +161,7 @@ main > article > p {
 
 #cart {
 	right: 104px;
-<<<<<<< HEAD
 	bottom:7.5%;
-=======
-	bottom: 7.5%;
->>>>>>> origin/master
 	width: 150px;
 	height: 134px;
 	background: url("../images/agala.png");

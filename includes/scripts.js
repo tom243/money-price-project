@@ -43,7 +43,7 @@ function Img(imgSrc, id) {
 			{
 				existFood.push(imgSrc);
 				$(this).clone().appendTo($('#whiteBoard'));
-				$('<input />', {type : 'checkbox', checked:"checked"}).appendTo($('#whiteBoard'));
+				//$('<input />', {type : 'checkbox', checked:"checked"}).appendTo($('#whiteBoard'));
 				$('<input />', {type : 'textbox',id: linkObj.getAttribute('id'), val:foodArray[linkObj.getAttribute('id')].count}).appendTo($('#whiteBoard'));
 				$('<input />', {type : 'button',id: linkObj.getAttribute('id'),value:'-'}).appendTo($('#whiteBoard'));
 				$("input[type='button'][id='" +idObj+ "']").click(function() {
