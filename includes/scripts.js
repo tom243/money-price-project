@@ -39,25 +39,6 @@ function Img(imgSrc, id) {
 	linkObj.appendChild(imgObj);
 	i++;
 	//private func
-<<<<<<< HEAD
-		//Add the img to the 'section'
-		document.getElementById(id).appendChild(linkObj);
-		linkObj.onclick = function() {
-			var idObj = linkObj.getAttribute('id');
-			foodArray[linkObj.getAttribute('id')].count +=1;
-			if ($.inArray(imgSrc, existFood) == -1)//if the img not exist in the whiteboard
-			{
-				existFood.push(imgSrc);
-				$(this).clone().appendTo($('#whiteBoard'));
-				//$('<input />', {type : 'checkbox', checked:"checked"}).appendTo($('#whiteBoard'));
-				$('<input />', {type : 'textbox',id: linkObj.getAttribute('id'), val:foodArray[linkObj.getAttribute('id')].count}).appendTo($('#whiteBoard'));
-				$('<input />', {type : 'button',id: linkObj.getAttribute('id'),value:'-'}).appendTo($('#whiteBoard'));
-				$("input[type='button'][id='" +idObj+ "']").click(function() {
-					if(foodArray[linkObj.getAttribute('id')].count >1){
-  					foodArray[linkObj.getAttribute('id')].count -=1;
-  					$("input[type='textbox'][id='" +idObj+ "']").val(foodArray[linkObj.getAttribute('id')].count);
-  					}
-=======
 	//Add the img to the 'section'
 	document.getElementById(id).appendChild(linkObj);
 	linkObj.onclick = function() {
@@ -106,7 +87,6 @@ function Img(imgSrc, id) {
 							$("<p>" + val2.name + "</p>").appendTo("#whiteBoard").addClass("products");
 						}
 					});
->>>>>>> origin/master
 				});
 			});
 			$('</section>').appendTo("#whiteBoard").addClass("sectionWhiteBoard");
