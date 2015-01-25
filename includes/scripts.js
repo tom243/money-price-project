@@ -3,7 +3,8 @@ var imgsManagerIdsArray;
 var foodArray = [];
 var existFood = [];
 var grocerieObj;
-var i=0,clicks=0;
+var image;
+var i = 0, clicks = 0;
 window.onload = function() {
 	imgsManagerArray = [fruitsAndVedgArray, milkArray, CannedFoodArray, meatArray, breadArray, oilArray, drinksArray];
 	imgsManagerIdsArray = new Array("fruitsAndVedg", "milk", "CannedFood", "meat", "bread", "oil", "drinks");
@@ -11,6 +12,7 @@ window.onload = function() {
 	for (var i = 0; i < arraySize; i++) {
 		new ImgsManager(imgsManagerArray[i], imgsManagerIdsArray[i]);
 	}
+
 };
 
 var fruitsAndVedgArray = new Array("images/tapuah.png", "images/tapuah yonatan.png", "images/halav be sakit.png", "images/banana.png", "images/tapuah shmuti.png", "images/tapuz valensiya.png", "images/klemantina.png", "images/eshkolit.png", "images/agvaniya.png", "images/melafefon.png", "images/pilpel yarok.png", "images/pilpel yarok bahir.png", "images/pilpel yarok kehe.png", "images/shauit yaruka.png", "images/agas.png", "images/afarsek.png", "images/mishmesh.jpg", "images/shezif sagol.png", "images/shezif zahov.png", "images/anavom shorim.png", "images/anavim yarukim.png", "images/kruvit.png", "images/hazil.png", "images/gezer.png", "images/tapuah adama.png", "images/tiras.png", "images/mango.png", "images/avokado.png", "images/melon galya.png", "images/avatiah.png", "images/afarsemon.png", "images/limon.png", "images/bazal.png", "images/hasa.png", "images/kruv lavan.png", "images/agvaniot shery.png", "images/znon.png");
@@ -25,15 +27,19 @@ function Img(imgSrc, id) {
 	//global var. anyone can access it
 	var linkObj = document.createElement("a");
 	var imgObj = document.createElement("img");
-	linkObj.setAttribute('href',"#");
-	linkObj.setAttribute('onclick',"clicks()");
-	linkObj.setAttribute('id',i);
-	foodArray.push({id:i,count:0});
+	linkObj.setAttribute('href', "#");
+	linkObj.setAttribute('onclick', "clicks()");
+	linkObj.setAttribute('id', i);
+	foodArray.push({
+		id : i,
+		count : 0
+	});
 	imgObj.setAttribute("src", imgSrc);
 	imgObj.className = 'groceries';
 	linkObj.appendChild(imgObj);
 	i++;
 	//private func
+<<<<<<< HEAD
 		//Add the img to the 'section'
 		document.getElementById(id).appendChild(linkObj);
 		linkObj.onclick = function() {
@@ -51,15 +57,66 @@ function Img(imgSrc, id) {
   					foodArray[linkObj.getAttribute('id')].count -=1;
   					$("input[type='textbox'][id='" +idObj+ "']").val(foodArray[linkObj.getAttribute('id')].count);
   					}
+=======
+	//Add the img to the 'section'
+	document.getElementById(id).appendChild(linkObj);
+	linkObj.onclick = function() {
+		var idObj = linkObj.getAttribute('id'); 
+		var product = null;
+		foodArray[linkObj.getAttribute('id')].count += 1;
+		if ($.inArray(imgSrc, existFood) == -1)//if the img not exist in the whiteboard
+		{
+			
+			
+			$('<section>').appendTo("#whiteBoard").addClass("sectionWhiteBoard");
+			existFood.push(imgSrc);
+			//$(this).clone().appendTo($('#whiteBoard'));
+			//$('<input />', {type : 'checkbox', checked:"checked"}).appendTo($('#whiteBoard'));
+			
+			$('<input />', {
+				type : 'button',
+				id : linkObj.getAttribute('id'),
+				value : '-'
+			}).appendTo($('#whiteBoard'));
+			$("input[type='button'][value='-'][id='" + idObj + "']").click(function() {
+				if (foodArray[linkObj.getAttribute('id')].count > 1) {
+					foodArray[linkObj.getAttribute('id')].count -= 1;
+					$("input[type='textbox'][id='" + idObj + "']").val(foodArray[linkObj.getAttribute('id')].count);
+				}
+			});
+			$('<input />', {
+				type : 'button',
+				id : linkObj.getAttribute('id'),
+				value : '+'
+			}).appendTo($('#whiteBoard'));
+			$("input[type='button'][value='+'][id='" + idObj + "']").click(function() {
+				foodArray[linkObj.getAttribute('id')].count += 1;
+				$("input[type='textbox'][id='" + idObj + "']").val(foodArray[linkObj.getAttribute('id')].count);
+			});
+			$('<input />', {
+				type : 'textbox',
+				id : linkObj.getAttribute('id'),
+				val : foodArray[linkObj.getAttribute('id')].count
+			}).appendTo($('#whiteBoard'));
+			$.getJSON("jsons/objects.json", function(data) {
+				$.each(data, function(key, val) {
+					$.each(val, function(key2, val2) {
+						//	alert("key: " + key2 + " val: " + val2.image);
+						if (val2.image == imgSrc) {
+							$("<p>" + val2.name + "</p>").appendTo("#whiteBoard").addClass("products");
+						}
+					});
+>>>>>>> origin/master
 				});
-			}
-			else{	//the obj is not in the exist array
-				$("input[type='textbox'][id='" +idObj+ "']").val(foodArray[linkObj.getAttribute('id')].count);
-			}
-		};
-	
-};
+			});
+			$('</section>').appendTo("#whiteBoard").addClass("sectionWhiteBoard");
+		} else {//the obj is not in the exist array
+			$("input[type='textbox'][id='" + idObj + "']").val(foodArray[linkObj.getAttribute('id')].count);
+		}
+		
+	};
 
+};
 
 function ImgsManager(groceryArray, id) {
 	var iImgsNum = groceryArray.length;
@@ -74,18 +131,16 @@ function ImgsManager(groceryArray, id) {
 };
 
 /*
-$(document).ready(function() {
-	var width = $(document).width();
-	$('footer').css('width', width + 'px');
-});
+ $(document).ready(function() {
+ var width = $(document).width();
+ $('footer').css('width', width + 'px');
+ });
 
-
-
-$(document).ready(function() {
-        function autoResizeDiv()
-        {
-        	$('main').css('height',window.innerHeight + 'px');
-        }
-        window.onresize = autoResizeDiv;
-        autoResizeDiv();
-});*/
+ $(document).ready(function() {
+ function autoResizeDiv()
+ {
+ $('main').css('height',window.innerHeight + 'px');
+ }
+ window.onresize = autoResizeDiv;
+ autoResizeDiv();
+ });*/

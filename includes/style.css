@@ -52,6 +52,21 @@ main > article > p {
 	margin-bottom: 10px;
 }
 
+.products{
+	font-family: "Alef Hebrew", Arial;
+	font-size:20px;
+	color:#59332a;
+	float:left;
+	display:inline;
+	position:absolute;
+	right:90px;
+	margin-top:0px;
+}
+.sectionWhiteBoard{
+	position:relative;
+	width:230px;
+	display:block;
+}
 /*/////////////////////////////////// Sections //////////////////////////////*/
 
 #fruitsAndVedg, #milk, #CannedFood, #meat, #bread, #oil, #drinks {
@@ -84,7 +99,7 @@ main > article > p {
 }
 #drinks {
 	width: 187px;
-	right: 7292px;
+	right: 7258px;
 }
 
 /*/////////////////////////////////// Signs //////////////////////////////*/
@@ -138,14 +153,17 @@ main > article > p {
 }
 #whiteBoard {
 	right: 7670px;
-	width: 350px;
-	height: 620px;
+	width: 230px;
+	height: 500px;
 	background: #ffffff;
-	overflow-y: auto;
 	opacity: 0.8;
 }
 #checkout {
+<<<<<<< HEAD
 	margin-top:-150px;
+=======
+	margin-top: -150px;
+>>>>>>> origin/master
 	right: 8070px;
 	width: 281px;
 	height: 469px;
@@ -176,22 +194,16 @@ main > article > p {
 	bottom: 10%;
 	right: 314px;
 }
-input[type=checkbox] {
-	width: 76px;
-	height: 121px;
-	vertical-align: 32px;
-	margin-left: 10px;
-}
-input[type=textbox] {
-	width: 40px;
-	height: 40px;
+#whiteBoard input[type=textbox] {
+	width: 20px;
+	height: 20px;
 	vertical-align: 85px;
 	margin-left: 10px;
-	font-size: 30px;
+	font-size: 20px;
 }
-input[type=button] {
-	width: 76px;
-	height: 60px;
+#whiteBoard input[type=button] {
+	width: 30px;
+	height: 30px;
 	vertical-align: 85px;
 }
 /*/////////////////////////////////// INFO //////////////////////////////*/
