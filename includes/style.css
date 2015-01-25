@@ -166,7 +166,7 @@ main > article > p {
 	color: #9e151c;
 }
 #checkout {
-	margin-top: -150px;
+	margin-top:-150px;
 	right: 8070px;
 	width: 281px;
 	height: 469px;
@@ -182,7 +182,11 @@ main > article > p {
 
 #cart {
 	right: 104px;
+<<<<<<< HEAD
 	bottom: 7.5%;
+=======
+	bottom:7.5%;
+>>>>>>> origin/master
 	width: 150px;
 	height: 134px;
 	background: url("../images/agala.png");
