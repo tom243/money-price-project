@@ -34,8 +34,10 @@ footer {
 }
 main > article {
 	width: 400px;
-	position: absolute;
-	right: 104px;
+	/*position: absolute;
+	right: 104px;*/
+	float:right;
+	margin-right:104px;
 	color: #9f161e;
 }
 main > article > h1 {
@@ -60,7 +62,6 @@ main > article > p {
 	font-family: "Alef Hebrew", Arial;
 	font-size: 20px;
 	color: #59332a;
-	float: left;
 	display: inline;
 	position: absolute;
 	right: 90px;
