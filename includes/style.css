@@ -73,6 +73,11 @@ main > article > p {
 	display: block;
 	height: 40px;
 }
+
+.links{
+	text-decoration: none;
+	color:#9c1823;
+}
 /*/////////////////////////////////// Sections //////////////////////////////*/
 
 #fruitsAndVedg, #milk, #CannedFood, #meat, #bread, #oil, #drinks {
@@ -192,11 +197,12 @@ main > article > p {
 }
 
 #arrows {
-	width: 145px;
-	height: 64px;
-	background: url("../images/hezim.png");
+	width: 42px;
+	height: 55px;
+	background: url("../images/scroll left.png");
 	bottom: 10%;
-	right: 314px;
+	position:fixed;
+	left:39px;
 }
 #whiteBoard input[type=textbox] {
 	width: 23px;
