@@ -29,7 +29,6 @@ main {
 footer {
 	position: absolute;
 	bottom: 0px;
-	background: #ac8c73;
 	background: url("../images/rizpa.png");
 	height: 5%;
 	width: 8683px;
@@ -37,9 +36,6 @@ footer {
 main > article {
 	width: 400px;
 	/*position: absolute;
-	 right: 104px;*/
-	float: right;
-	margin-right: 104px;
 	right: 104px;*/
 	float:right;
 	margin-right:104px;
@@ -48,7 +44,6 @@ main > article {
 }
 main > article > h1 {
 	font-size: 3.3em;
-	font-weight: 800;
 	font-weight:800;
 	
 }
@@ -82,14 +77,11 @@ margin-top: -1px;
 	height: 28px;
 }
 
-.links {
 .links{
 	text-decoration: none;
-	color: #9c1823;
 	color:#9c1823;
 }
 
-<<<<<<< HEAD
 
 /*/////////////////////////////////// Main Sections /////////////////////////*/
 #fruitsAndVedgClass,#milkClass,#CannedFoodClass,#meatClass,#breadClass,#oilClass,#drinksClass{
@@ -120,8 +112,6 @@ margin-top: -1px;
 	width:527px;
 }
 
-=======
->>>>>>> origin/master
 /*/////////////////////////////////// Sections //////////////////////////////*/
 
 #fruitsAndVedg, #milk, #CannedFood, #meat, #bread, #oil, #drinks {
@@ -164,12 +154,7 @@ margin-top: -1px;
 	float:right;
 	margin-left:33px;
 }
-<<<<<<< HEAD
 #fruitsAndVedgSign,#milkSign,#CannedFoodSign,#meatSign,#breadSign,#oilSign,#drinksSign{
-=======
-
-#fruitsAndVedgSign, #milkSign, #CannedFoodSign, #meatSign, #breadSign, #oilSign, #drinksSign {
->>>>>>> origin/master
 	width: 307px;
 	height:114px;
 }
@@ -179,45 +164,36 @@ margin-top: -1px;
 	/*right: 646px;*/
 }
 #milkSign {
-	height: 118px;
 	background: url("../images/shelet musrei halav.png");
 	/*right: 2351px;*/
 }
 #CannedFoodSign {
-	height: 118px;
 	background: url("../images/shelet shimurim.png");
 	/*right: 3191px;*/
 }
 #meatSign {
-	height: 109px;
 	background: url("../images/shelet of ve dagim.png");
 	/*right: 3927px;*/
 }
 #breadSign {
-	height: 120px;
 	background: url("../images/shelet lehem dganim.png");
 	/*right: 4763px;*/
 }
 #oilSign {
-	height: 110px;
 	background: url("../images/shelet shemen sukar mamtakim.png");
 	/*right: 5593px;*/
 }
 #drinksSign {
-	height: 109px;
 	background: url("../images/shelet mashkaot.png");
 	/*right: 6524px;*/
 }
 #whiteBoard {
 	width: 292px;
 	height: 500px;
-	background: #ffffff;
 	background: url("../images/kabala background.png");
 	overflow-y: auto;
 	opacity: 0.8;
 	margin-right: 145px;
-	margin-left:89px;
-	float: right;
 	margin-left: 89px;
 	float:right;
 }
@@ -230,31 +206,11 @@ margin-top: -1px;
 	float:right;
 }
 #payment>section:nth-child(1){
-	margin-top:-150px;
-=======
-#whiteBoard > a:nth-child(1){
-	width:180px;
-	height:31px;
-	display:block;
-	position:absolute;
-	bottom:34px;
-	right:56px;
-	background: url("../images/continue.png");
-}
-#checkout {
-	margin-top: -150px;
-	right: 7350px;
->>>>>>> origin/master
-	width: 281px;
-	height: 469px;
 	width: 278px;
 	height:316px;
 	background: url("../images/shelet kupa.png");
 }
 #payment>section:nth-child(2){
-	float:right;
-	width: 286px;
-	height: 282px;
 	position:absolute;
 	width: 278px;
 	height: 260px;
@@ -277,8 +233,6 @@ margin-top: -1px;
 	height: 55px;
 	background: url("../images/scroll left.png");
 	bottom: 10%;
-	position: fixed;
-	left: 39px;
 	position:fixed;
 	left:39px;
 }
@@ -296,10 +250,6 @@ padding-bottom: 11px;
  background: transparent;
     border: none;
 }
-#whiteBoard input[type=image] {
-	width: 11px;
-	height: 7px;
-	padding-bottom: 10px;
 #whiteBoard input[type=button] {
 	width: 30px;
 	height: 30px;
