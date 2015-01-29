@@ -79,9 +79,6 @@ margin-top: -1px;
 	text-decoration: none;
 	color: #9c1823;
 }
-
-<<<<<<< HEAD
-
 /*/////////////////////////////////// Main Sections /////////////////////////*/
 #fruitsAndVedgClass,#milkClass,#CannedFoodClass,#meatClass,#breadClass,#oilClass,#drinksClass{
 	min-height: 408px;
@@ -110,9 +107,6 @@ margin-top: -1px;
 #drinksClass{
 	width:527px;
 }
-
-=======
->>>>>>> origin/master
 /*/////////////////////////////////// Sections //////////////////////////////*/
 
 #fruitsAndVedg, #milk, #CannedFood, #meat, #bread, #oil, #drinks {
@@ -200,10 +194,6 @@ margin-top: -1px;
 	/*right: 6524px;*/
 }
 #whiteBoard {
-<<<<<<< HEAD
-=======
-	right: 7051px;
->>>>>>> origin/master
 	width: 292px;
 	height: 500px;
 	background: #ffffff;
@@ -218,13 +208,6 @@ margin-top: -1px;
 	margin-right: 13px;
 	color: #9e151c;
 }
-<<<<<<< HEAD
-#payment{
-	float:right;
-}
-#payment>section:nth-child(1){
-	margin-top:-150px;
-=======
 #whiteBoard > a:nth-child(1){
 	width:180px;
 	height:31px;
@@ -234,10 +217,11 @@ margin-top: -1px;
 	right:56px;
 	background: url("../images/continue.png");
 }
-#checkout {
-	margin-top: -150px;
-	right: 7350px;
->>>>>>> origin/master
+#payment{
+	float:right;
+}
+#payment>section:nth-child(1){
+	margin-top:-150px;
 	width: 281px;
 	height: 469px;
 	background: url("../images/shelet kupa.png");
@@ -248,7 +232,6 @@ margin-top: -1px;
 	height: 282px;
 	background: url("../images/cashier.png");
 }
-
 #cart {
 	right: 104px;
 	bottom: 7.5%;
@@ -258,7 +241,6 @@ margin-top: -1px;
 	position: fixed;
 	z-index: 1;
 }
-
 #arrows {
 	width: 42px;
 	height: 55px;
@@ -286,12 +268,7 @@ padding-bottom: 11px;
 /*/////////////////////////////////// INFO //////////////////////////////*/
 #fruitINFO, #milkINFO, #CannedFoodINFO, #meatINFO, #breadINFO, #oilINFO, #drinksINFO {
 	width: 307px;
-<<<<<<< HEAD
 	height: 328px;
-=======
-	height: 254px;
-	margin-top: 182px;
->>>>>>> origin/master
 }
 #fruitINFO {
 	background: url("../images/sipur yerakot.png");
