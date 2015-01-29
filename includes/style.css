@@ -23,6 +23,7 @@ body {
 }
 
 main {
+	width: 8683px;
 	height: 95%;
 }
 footer {
@@ -39,6 +40,7 @@ main > article {
 	float:right;
 	margin-right:104px;
 	color: #9f161e;
+	margin-left:246px;
 }
 main > article > h1 {
 	font-size: 3.3em;
@@ -78,109 +80,143 @@ main > article > p {
 	text-decoration: none;
 	color:#9c1823;
 }
+
+
+/*/////////////////////////////////// Main Sections /////////////////////////*/
+#fruitsAndVedgClass,#milkClass,#CannedFoodClass,#meatClass,#breadClass,#oilClass,#drinksClass{
+	min-height: 408px;
+	margin-top:45px;
+	float:right;
+	margin-left:114px;
+}
+#fruitsAndVedgClass{
+	width:1580px;
+}
+#milkClass{
+	width:726px;
+}
+#CannedFoodClass{
+	width:622px;
+}
+#meatClass{
+	width:722px;
+}
+#breadClass{
+	width:716px;
+}
+#oilClass{
+	width:817px;
+}
+#drinksClass{
+	width:527px;
+}
+
 /*/////////////////////////////////// Sections //////////////////////////////*/
 
 #fruitsAndVedg, #milk, #CannedFood, #meat, #bread, #oil, #drinks {
-	position: absolute;
-	top: 45px;
+	/*position: absolute;
+	top: 45px;*/
+	float:right;
 }
 #fruitsAndVedg {
 	width: 1240px;
-	right: 997px;
+	/*right: 997px;*/
 }
 #milk {
 	width: 386px;
-	right: 2691px;
+	/*right: 2691px;*/
 }
 #CannedFood {
 	width: 282px;
-	right: 3531px;
+	/*right: 3531px;*/
 }
 #meat {
 	width: 382px;
-	right: 4267px;
+	/*right: 4267px;*/
 }
 #bread {
 	width: 376px;
-	right: 5103px;
+	/*right: 5103px*/;
 }
 #oil {
 	width: 477px;
-	right: 5933px;
+	/*right: 5933px;*/
 }
 #drinks {
 	width: 187px;
-	right: 6864px;
+	/*right: 6864px;*/
 }
 
 /*/////////////////////////////////// Signs //////////////////////////////*/
-
-#fruitsAndVedgSign, #milkSign, #CannedFoodSign, #meatSign, #breadSign, #oilSign, #drinksSign, #whiteBoard, #cashier, #checkout, #cart, #arrows {
-
-	position: absolute;
+.stories{
+	margin-top: -45px;
+	float:right;
+	margin-left:33px;
 }
-
 #fruitsAndVedgSign,#milkSign,#CannedFoodSign,#meatSign,#breadSign,#oilSign,#drinksSign{
 	width: 307px;
+	height:114px;
 }
 
 #fruitsAndVedgSign {
 	background: url("../images/shelet yarakot.png");
-	right: 646px;
+	/*right: 646px;*/
 }
 #milkSign {
 	height: 118px;
 	background: url("../images/shelet musrei halav.png");
-	right: 2351px;
+	/*right: 2351px;*/
 }
 #CannedFoodSign {
 	height: 118px;
 	background: url("../images/shelet shimurim.png");
-	right: 3191px;
+	/*right: 3191px;*/
 }
 #meatSign {
 	height: 109px;
 	background: url("../images/shelet of ve dagim.png");
-	right: 3927px;
+	/*right: 3927px;*/
 }
 #breadSign {
 	height: 120px;
 	background: url("../images/shelet lehem dganim.png");
-	right: 4763px;
+	/*right: 4763px;*/
 }
 #oilSign {
 	height: 110px;
 	background: url("../images/shelet shemen sukar mamtakim.png");
-	right: 5593px;
+	/*right: 5593px;*/
 }
 #drinksSign {
 	height: 109px;
 	background: url("../images/shelet mashkaot.png");
-	right: 6524px;
+	/*right: 6524px;*/
 }
 #whiteBoard {
-	right: 7051px;
-	width: 230px;
+	width: 292px;
 	height: 500px;
 	background: #ffffff;
 	overflow-y: auto;
 	opacity: 0.8;
-	margin-right: 20px;
+	margin-right: 145px;
+	margin-left:89px;
+	float: right;
 }
 #whiteBoard h2 {
 	margin-top: 50px;
 	color: #9e151c;
 }
-#checkout {
+#payment{
+	float:right;
+}
+#payment>section:nth-child(1){
 	margin-top:-150px;
-	right: 7350px;
 	width: 281px;
 	height: 469px;
 	background: url("../images/shelet kupa.png");
 }
-#cashier {
-	right: 7350px;
-	bottom: 30px;
+#payment>section:nth-child(2){
+	float:right;
 	width: 286px;
 	height: 282px;
 	background: url("../images/cashier.png");
@@ -215,30 +251,28 @@ main > article > p {
 	vertical-align: 85px;
 }
 /*/////////////////////////////////// INFO //////////////////////////////*/
-
 #fruitINFO, #milkINFO, #CannedFoodINFO, #meatINFO, #breadINFO, #oilINFO, #drinksINFO {
 	width: 307px;
-	height: 254px;
-	margin-top: 182px ;
+	height: 328px;
 }
 #fruitINFO {
-	background-color: #565b3b;
+	background: url("../images/sipur yerakot.png");
 }
 #milkINFO {
-	background-color: #2e3d90;
+	background: url("../images/sipur halav.png");
 }
 #CannedFoodINFO {
-	background-color: #dec223;
+	background: url("../images/sipur shimurim.png");
 }
 #meatINFO {
-	background-color: #9f161e;
+	background: url("../images/sipur basar.png");
 }
 #breadINFO {
-	background-color: #565b3b;
+	background: url("../images/sipur dganim.png");
 }
 #oilINFO {
-	background-color: #dec223;
+	background: url("../images/sipur shemen sucar.png");
 }
 #drinksINFO {
-	background-color: #2e3d90;
+	background: url("../images/sipur drinks.png");
 }
