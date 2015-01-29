@@ -50,29 +50,32 @@ function Img(imgSrc, id) {
 			existFood.push(imgSrc);
 
 			$x = $('<section>').appendTo("#whiteBoard").addClass("sectionWhiteBoard");
-
+			$sectionForButton = $('<article>').appendTo($x).addClass("plusMinusButtons");
+			$sectionForButton2 = $('<article id="minus">').appendTo($x).addClass("plusMinusButtons");
+			
+			
 			//plus
-			$('<input />', {
-				type : 'button',
-				id : linkObj.getAttribute('id'),
-				value : '+'
-			}).appendTo($($x));
-			$("input[type='button'][value='+'][id='" + idObj + "']").click(function() {
-				foodArray[linkObj.getAttribute('id')].count += 1;
-				$("input[type='textbox'][id='" + idObj + "']").val(foodArray[linkObj.getAttribute('id')].count);
+			$( $sectionForButton ).append( "<a id='idObj' val='+' href='#'><img src='images/up.png'></a>" ).click(function() {
+				foodArray[idObj].count += 1;
+				$("input[type='textbox'][id='" + idObj + "']").val(foodArray[idObj].count);
 			});
+			
+			
+			
 			//minus
-			$('<input />', {
-				type : 'button',
-				id : linkObj.getAttribute('id'),
-				value : '-'
-			}).appendTo($($x));
-			$("input[type='button'][value='-'][id='" + idObj + "']").click(function() {
-				if (foodArray[linkObj.getAttribute('id')].count > 1) {
-					foodArray[linkObj.getAttribute('id')].count -= 1;
-					$("input[type='textbox'][id='" + idObj + "']").val(foodArray[linkObj.getAttribute('id')].count);
-				}
+			$( $sectionForButton2 ).append( "<a id='idObj' val='-' href='#'><img src='images/down.png'></a>" ).click(function() {
+				if (foodArray[idObj].count > 1)
+					foodArray[idObj].count -= 1;
+				$("input[type='textbox'][id='" + idObj + "']").val(foodArray[idObj].count);
 			});
+			
+			
+			
+			
+			
+			
+			
+			
 			
 			//number
 			$('<input />', {
