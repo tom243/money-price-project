@@ -247,14 +247,21 @@ margin-top: -1px;
 >>>>>>> origin/master
 	width: 281px;
 	height: 469px;
+	width: 278px;
+	height:316px;
 	background: url("../images/shelet kupa.png");
 }
 #payment>section:nth-child(2){
 	float:right;
 	width: 286px;
 	height: 282px;
+	position:absolute;
+	width: 278px;
+	height: 260px;
 	background: url("../images/cashier.png");
+	bottom: 31px;
 }
+
 #cart {
 	right: 104px;
 	bottom: 7.5%;
@@ -264,6 +271,7 @@ margin-top: -1px;
 	position: fixed;
 	z-index: 1;
 }
+
 #arrows {
 	width: 42px;
 	height: 55px;
@@ -271,7 +279,10 @@ margin-top: -1px;
 	bottom: 10%;
 	position: fixed;
 	left: 39px;
+	position:fixed;
+	left:39px;
 }
+
 #whiteBoard input[type=textbox] {
 	width: 23px;
 	height: 24px;
