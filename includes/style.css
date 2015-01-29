@@ -79,6 +79,7 @@ margin-top: -1px;
 }
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 /*/////////////////////////////////// Main Sections /////////////////////////*/
 #fruitsAndVedgClass,#milkClass,#CannedFoodClass,#meatClass,#breadClass,#oilClass,#drinksClass{
 	min-height: 408px;
@@ -107,6 +108,8 @@ margin-top: -1px;
 #drinksClass{
 	width:527px;
 }
+=======
+>>>>>>> parent of 0727300... Transfers all projects to floats
 =======
 >>>>>>> parent of 0727300... Transfers all projects to floats
 =======
@@ -155,6 +158,10 @@ margin-top: -1px;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+
+>>>>>>> parent of 0727300... Transfers all projects to floats
 =======
 
 >>>>>>> parent of 0727300... Transfers all projects to floats
@@ -219,6 +226,7 @@ margin-top: -1px;
 }
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 #whiteBoard > a:nth-child(1){
 	width:180px;
 	height:31px;
@@ -232,6 +240,9 @@ margin-top: -1px;
 	float:right;
 }
 #payment>section:nth-child(1){
+=======
+#checkout {
+>>>>>>> parent of 0727300... Transfers all projects to floats
 =======
 #checkout {
 >>>>>>> parent of 0727300... Transfers all projects to floats
@@ -312,6 +323,7 @@ padding-bottom: 11px;
 #drinksINFO {
 	background-color: #2e3d90;
 <<<<<<< HEAD
+<<<<<<< HEAD
 }
 
 .plusMinusButtons {
@@ -323,6 +335,8 @@ padding-bottom: 11px;
 #minus{
 margin-top: 13px;
 margin-right: -14px;
+=======
+>>>>>>> parent of 0727300... Transfers all projects to floats
 =======
 >>>>>>> parent of 0727300... Transfers all projects to floats
 }
