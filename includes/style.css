@@ -23,7 +23,6 @@ body {
 }
 
 main {
-	width: 8683px;
 	height: 95%;
 }
 footer {
@@ -40,7 +39,6 @@ main > article {
 	float: right;
 	margin-right: 104px;
 	color: #9f161e;
-	margin-left:246px;
 }
 main > article > h1 {
 	font-size: 3.3em;
@@ -79,6 +77,7 @@ margin-top: -1px;
 	text-decoration: none;
 	color: #9c1823;
 }
+<<<<<<< HEAD
 /*/////////////////////////////////// Main Sections /////////////////////////*/
 #fruitsAndVedgClass,#milkClass,#CannedFoodClass,#meatClass,#breadClass,#oilClass,#drinksClass{
 	min-height: 408px;
@@ -107,107 +106,111 @@ margin-top: -1px;
 #drinksClass{
 	width:527px;
 }
+=======
+>>>>>>> parent of 0727300... Transfers all projects to floats
 /*/////////////////////////////////// Sections //////////////////////////////*/
 
 #fruitsAndVedg, #milk, #CannedFood, #meat, #bread, #oil, #drinks {
-	/*position: absolute;
-	top: 45px;*/
-	float:right;
+	position: absolute;
+	top: 45px;
 }
 #fruitsAndVedg {
 	width: 1240px;
-	/*right: 997px;*/
+	right: 997px;
 }
 #milk {
 	width: 386px;
-	/*right: 2691px;*/
+	right: 2691px;
 }
 #CannedFood {
 	width: 282px;
-	/*right: 3531px;*/
+	right: 3531px;
 }
 #meat {
 	width: 382px;
-	/*right: 4267px;*/
+	right: 4267px;
 }
 #bread {
 	width: 376px;
-	/*right: 5103px*/;
+	right: 5103px;
 }
 #oil {
 	width: 477px;
-	/*right: 5933px;*/
+	right: 5933px;
 }
 #drinks {
 	width: 187px;
-	/*right: 6864px;*/
+	right: 6864px;
 }
 
 /*/////////////////////////////////// Signs //////////////////////////////*/
-.stories{
-	margin-top: -45px;
-	float:right;
-	margin-left:33px;
+
+#fruitsAndVedgSign, #milkSign, #CannedFoodSign, #meatSign, #breadSign, #oilSign, #drinksSign, #whiteBoard, #cashier, #checkout, #cart, #arrows {
+
+	position: absolute;
 }
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+
+>>>>>>> parent of 0727300... Transfers all projects to floats
 #fruitsAndVedgSign,#milkSign,#CannedFoodSign,#meatSign,#breadSign,#oilSign,#drinksSign{
 =======
 
 #fruitsAndVedgSign, #milkSign, #CannedFoodSign, #meatSign, #breadSign, #oilSign, #drinksSign {
 >>>>>>> origin/master
 	width: 307px;
-	height:114px;
 }
 
 #fruitsAndVedgSign {
 	background: url("../images/shelet yarakot.png");
-	/*right: 646px;*/
+	right: 646px;
 }
 #milkSign {
 	height: 118px;
 	background: url("../images/shelet musrei halav.png");
-	/*right: 2351px;*/
+	right: 2351px;
 }
 #CannedFoodSign {
 	height: 118px;
 	background: url("../images/shelet shimurim.png");
-	/*right: 3191px;*/
+	right: 3191px;
 }
 #meatSign {
 	height: 109px;
 	background: url("../images/shelet of ve dagim.png");
-	/*right: 3927px;*/
+	right: 3927px;
 }
 #breadSign {
 	height: 120px;
 	background: url("../images/shelet lehem dganim.png");
-	/*right: 4763px;*/
+	right: 4763px;
 }
 #oilSign {
 	height: 110px;
 	background: url("../images/shelet shemen sukar mamtakim.png");
-	/*right: 5593px;*/
+	right: 5593px;
 }
 #drinksSign {
 	height: 109px;
 	background: url("../images/shelet mashkaot.png");
-	/*right: 6524px;*/
+	right: 6524px;
 }
 #whiteBoard {
-	width: 292px;
+	right: 7051px;
+	width: 230px;
 	height: 500px;
 	background: #ffffff;
 	overflow-y: auto;
 	opacity: 0.8;
-	margin-right: 145px;
-	margin-left:89px;
-	float: right;
+	margin-right: 20px;
 }
 #whiteBoard h2 {
 	margin-top: 50px;
 	margin-right: 13px;
 	color: #9e151c;
 }
+<<<<<<< HEAD
 #whiteBoard > a:nth-child(1){
 	width:180px;
 	height:31px;
@@ -221,13 +224,18 @@ margin-top: -1px;
 	float:right;
 }
 #payment>section:nth-child(1){
+=======
+#checkout {
+>>>>>>> parent of 0727300... Transfers all projects to floats
 	margin-top:-150px;
+	right: 7350px;
 	width: 281px;
 	height: 469px;
 	background: url("../images/shelet kupa.png");
 }
-#payment>section:nth-child(2){
-	float:right;
+#cashier {
+	right: 7350px;
+	bottom: 30px;
 	width: 286px;
 	height: 282px;
 	background: url("../images/cashier.png");
@@ -266,30 +274,32 @@ padding-bottom: 11px;
 	padding-bottom: 10px;
 }
 /*/////////////////////////////////// INFO //////////////////////////////*/
+
 #fruitINFO, #milkINFO, #CannedFoodINFO, #meatINFO, #breadINFO, #oilINFO, #drinksINFO {
 	width: 307px;
-	height: 328px;
+	height: 254px;
+	margin-top: 182px ;
 }
 #fruitINFO {
-	background: url("../images/sipur yerakot.png");
+	background-color: #565b3b;
 }
 #milkINFO {
-	background: url("../images/sipur halav.png");
+	background-color: #2e3d90;
 }
 #CannedFoodINFO {
-	background: url("../images/sipur shimurim.png");
+	background-color: #dec223;
 }
 #meatINFO {
-	background: url("../images/sipur basar.png");
+	background-color: #9f161e;
 }
 #breadINFO {
-	background: url("../images/sipur dganim.png");
+	background-color: #565b3b;
 }
 #oilINFO {
-	background: url("../images/sipur shemen sucar.png");
+	background-color: #dec223;
 }
 #drinksINFO {
-	background: url("../images/sipur drinks.png");
+	background-color: #2e3d90;
 }
 
 .plusMinusButtons {
