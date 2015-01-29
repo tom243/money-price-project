@@ -35,15 +35,14 @@ footer {
 main > article {
 	width: 400px;
 	/*position: absolute;
-	right: 104px;*/
-	float:right;
-	margin-right:104px;
+	 right: 104px;*/
+	float: right;
+	margin-right: 104px;
 	color: #9f161e;
 }
 main > article > h1 {
 	font-size: 3.3em;
-	font-weight:800;
-	
+	font-weight: 800;
 }
 main > article > p {
 	color: #9e8986;
@@ -64,20 +63,21 @@ main > article > p {
 	color: #59332a;
 	display: inline;
 	position: absolute;
-	right: 90px;
-	margin-top: 0px;
+right: 57px;
+margin-top: -1px;
 }
 .sectionWhiteBoard {
 	position: relative;
 	width: 230px;
 	display: block;
-	height: 40px;
+	height: 28px;
 }
 
-.links{
+.links {
 	text-decoration: none;
-	color:#9c1823;
+	color: #9c1823;
 }
+
 /*/////////////////////////////////// Sections //////////////////////////////*/
 
 #fruitsAndVedg, #milk, #CannedFood, #meat, #bread, #oil, #drinks {
@@ -120,7 +120,7 @@ main > article > p {
 	position: absolute;
 }
 
-#fruitsAndVedgSign,#milkSign,#CannedFoodSign,#meatSign,#breadSign,#oilSign,#drinksSign{
+#fruitsAndVedgSign, #milkSign, #CannedFoodSign, #meatSign, #breadSign, #oilSign, #drinksSign {
 	width: 307px;
 }
 
@@ -160,7 +160,7 @@ main > article > p {
 }
 #whiteBoard {
 	right: 7051px;
-	width: 230px;
+	width: 292px;
 	height: 500px;
 	background: #ffffff;
 	overflow-y: auto;
@@ -169,10 +169,20 @@ main > article > p {
 }
 #whiteBoard h2 {
 	margin-top: 50px;
+	margin-right: 13px;
 	color: #9e151c;
 }
+#whiteBoard > a:nth-child(1){
+	width:180px;
+	height:31px;
+	display:block;
+	position:absolute;
+	bottom:34px;
+	right:56px;
+	background: url("../images/continue.png");
+}
 #checkout {
-	margin-top:-150px;
+	margin-top: -150px;
 	right: 7350px;
 	width: 281px;
 	height: 469px;
@@ -201,25 +211,31 @@ main > article > p {
 	height: 55px;
 	background: url("../images/scroll left.png");
 	bottom: 10%;
-	position:fixed;
-	left:39px;
+	position: fixed;
+	left: 39px;
 }
 #whiteBoard input[type=textbox] {
 	width: 23px;
 	height: 24px;
 	vertical-align: 87px;
+	border:0;
+	color:#59332a;
+	font-size: 20px;
+	font-family: "Alef Hebrew";
+	font-size: 24px;
+padding-bottom: 11px;
 }
-#whiteBoard input[type=button] {
-	width: 30px;
-	height: 30px;
-	vertical-align: 85px;
+#whiteBoard input[type=image] {
+	width: 11px;
+	height: 7px;
+	padding-bottom: 10px;
 }
 /*/////////////////////////////////// INFO //////////////////////////////*/
 
 #fruitINFO, #milkINFO, #CannedFoodINFO, #meatINFO, #breadINFO, #oilINFO, #drinksINFO {
 	width: 307px;
 	height: 254px;
-	margin-top: 182px ;
+	margin-top: 182px;
 }
 #fruitINFO {
 	background-color: #565b3b;
@@ -241,4 +257,15 @@ main > article > p {
 }
 #drinksINFO {
 	background-color: #2e3d90;
+}
+
+.plusMinusButtons {
+	float: right;
+	width: 14px;
+	height: 10px;
+	margin-right: 10px;
+}
+#minus{
+margin-top: 13px;
+margin-right: -14px;
 }
