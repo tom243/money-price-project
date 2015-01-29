@@ -3,7 +3,6 @@
 header, footer, nav, main, section, article, nav, aside {
 	display: block;
 }
-
 html, body {
 	/* get rid of default spacing on the edges */
 	margin: 0;
@@ -21,7 +20,6 @@ body {
 	position: relative;
 	font-family: "Alef Hebrew", Arial;
 }
-
 main {
 	width: 8683px;
 	height: 95%;
@@ -35,8 +33,6 @@ footer {
 }
 main > article {
 	width: 400px;
-	/*position: absolute;
-	right: 104px;*/
 	float:right;
 	margin-right:104px;
 	color: #9f161e;
@@ -52,37 +48,31 @@ main > article > p {
 	font-size: 1.4em;
 	line-height: 30px;
 }
-
 .groceries {
 	width: 76px;
 	height: 120px;
 	margin-left: 15px;
 	margin-bottom: 10px;
 }
-
 .products {
 	font-family: "Alef Hebrew", Arial;
 	font-size: 20px;
 	color: #59332a;
 	display: inline;
 	position: absolute;
-right: 57px;
-margin-top: -1px;
+	right: 57px;
+	margin-top: -1px;
 }
-
 .sectionWhiteBoard {
 	position: relative;
 	width: 230px;
 	display: block;
 	height: 28px;
 }
-
 .links{
 	text-decoration: none;
 	color:#9c1823;
 }
-
-
 /*/////////////////////////////////// Main Sections /////////////////////////*/
 #fruitsAndVedgClass,#milkClass,#CannedFoodClass,#meatClass,#breadClass,#oilClass,#drinksClass{
 	min-height: 408px;
@@ -111,43 +101,32 @@ margin-top: -1px;
 #drinksClass{
 	width:527px;
 }
-
 /*/////////////////////////////////// Sections //////////////////////////////*/
 
 #fruitsAndVedg, #milk, #CannedFood, #meat, #bread, #oil, #drinks {
-	/*position: absolute;
-	top: 45px;*/
 	float:right;
 }
 #fruitsAndVedg {
 	width: 1240px;
-	/*right: 997px;*/
 }
 #milk {
 	width: 386px;
-	/*right: 2691px;*/
 }
 #CannedFood {
 	width: 282px;
-	/*right: 3531px;*/
 }
 #meat {
 	width: 382px;
-	/*right: 4267px;*/
 }
 #bread {
 	width: 376px;
-	/*right: 5103px*/;
 }
 #oil {
 	width: 477px;
-	/*right: 5933px;*/
 }
 #drinks {
 	width: 187px;
-	/*right: 6864px;*/
 }
-
 /*/////////////////////////////////// Signs //////////////////////////////*/
 .stories{
 	margin-top: -45px;
@@ -158,34 +137,26 @@ margin-top: -1px;
 	width: 307px;
 	height:114px;
 }
-
 #fruitsAndVedgSign {
 	background: url("../images/shelet yarakot.png");
-	/*right: 646px;*/
 }
 #milkSign {
 	background: url("../images/shelet musrei halav.png");
-	/*right: 2351px;*/
 }
 #CannedFoodSign {
 	background: url("../images/shelet shimurim.png");
-	/*right: 3191px;*/
 }
 #meatSign {
 	background: url("../images/shelet of ve dagim.png");
-	/*right: 3927px;*/
 }
 #breadSign {
 	background: url("../images/shelet lehem dganim.png");
-	/*right: 4763px;*/
 }
 #oilSign {
 	background: url("../images/shelet shemen sukar mamtakim.png");
-	/*right: 5593px;*/
 }
 #drinksSign {
 	background: url("../images/shelet mashkaot.png");
-	/*right: 6524px;*/
 }
 #whiteBoard {
 	width: 292px;
@@ -217,7 +188,6 @@ margin-top: -1px;
 	background: url("../images/cashier.png");
 	bottom: 31px;
 }
-
 #cart {
 	right: 104px;
 	bottom: 7.5%;
@@ -227,7 +197,6 @@ margin-top: -1px;
 	position: fixed;
 	z-index: 1;
 }
-
 #arrows {
 	width: 42px;
 	height: 55px;
@@ -236,7 +205,6 @@ margin-top: -1px;
 	position:fixed;
 	left:39px;
 }
-
 #whiteBoard input[type=textbox] {
 	width: 23px;
 	height: 24px;
@@ -295,11 +263,6 @@ padding-bottom: 11px;
 #milkINFO>p,#CannedFoodINFO>p,#drinksINFO>p{
 	font-size: 18px;
 }
-
-
-
-
-
 .plusMinusButtons {
 	float: right;
 	width: 14px;
