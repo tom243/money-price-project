@@ -181,6 +181,14 @@ main > article > p {
 #whiteBoard > h5 > a {
 	color: #9e151c;
 }
+#receipt > a:last-child {
+	width: 180px;
+	height: 31px;
+	margin-top: 34px;
+	margin-right: 56px;
+	display: block;
+	background: url("../images/continue.png");
+}
 #payment {
 	float: right;
 }
@@ -214,7 +222,7 @@ main > article > p {
 	left: 39px;
 }
 #whiteBoard input[type=textbox] {
-	width: 23px;
+	width: 50px;
 	border: 0;
 	color: #9e171e;
 	font-family: "Alef Hebrew", Arial;
@@ -281,7 +289,7 @@ main > article > p {
 	display: none;
 	width: 14px;
 	height: 14px;
-	margin-left: 25px;
+	margin-left: 35px;
 	margin-top: 10px;
 	background: url("../images/remove.png") no-repeat;
 }
