@@ -278,7 +278,7 @@ main > article > p {
 }
 .WhiteBoardHover {
 	float: left;
-	display: block;
+	display: none;
 	width: 14px;
 	height: 14px;
 	margin-left: 25px;

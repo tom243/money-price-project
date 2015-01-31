@@ -49,11 +49,11 @@ function Img(imgSrc, id) {
 		{
 			existFood.push(imgSrc);
 
-			$WhiteBoardProduct = $('<section>').appendTo("#whiteBoard").addClass("sectionWhiteBoard");
+			$WhiteBoardProduct = $("<section>").attr("id",idObj+"section").appendTo("#whiteBoard").addClass("sectionWhiteBoard");
 
 			$buttons = $('<section>').appendTo($WhiteBoardProduct).addClass("plusMinusButtons");
-			$plus = $("<a id='idObj' val='+' href='#'><img src='images/up.png'></a>").appendTo($buttons);
-			$minus = $("<a id='idObj' val='-' href='#'><img src='images/down.png'></a>").appendTo($buttons);
+			$plus = $("<a val='+' href='#'><img src='images/up.png'></a>").appendTo($buttons);
+			$minus = $("<a  val='-' href='#'><img src='images/down.png'></a>").appendTo($buttons);
 
 			//plus
 			$($plus).click(function() {
@@ -85,13 +85,30 @@ function Img(imgSrc, id) {
 						}
 					});
 				});
-
-				$hoverSectionWhiteBorad = $("<a id='' val='+' href='#'></a>").appendTo($WhiteBoardProduct).addClass("WhiteBoardHover");
-				
-				($WhiteBoardProduct).hover(function() {
-					($hoverSectionWhiteBorad).css("display", "block");
+				$hoverSectionWhiteBorad = $("<a href=# id="+idObj+"type></a>").appendTo($WhiteBoardProduct).addClass("WhiteBoardHover");
+				$($WhiteBoardProduct).hover(function() {
+					if($("#"+idObj+"type").css('display') == 'none')
+						$("#"+idObj+"type").css("display", "block");
+						
+					else
+						$("#"+idObj+"type").css("display", "none");
 				});
+				$( "#"+idObj+"type" ).click(function() {
+					$("#"+idObj+"section").remove();
+  					foodArray[idObj].count = 0;
+  					var index = existFood.indexOf(imgSrc);
+  					if (index > -1) {
+   						 existFood.splice(index, 1);
+					}
+				});	
 			});
+			
+			
+			
+
+
+			
+			
 		} else {//the obj is not in the exist array
 			$("input[type='textbox'][id='" + idObj + "']").val(foodArray[linkObj.getAttribute('id')].count);
 		}
