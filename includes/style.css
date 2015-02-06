@@ -312,3 +312,39 @@ main > article > p {
 	margin-right: -14px;
 }
 
+#d3{
+	float:right;
+}
+
+
+
+
+
+
+
+/*//////////// D3 ///////////////*/
+
+.axis path,
+.axis line {
+  fill: none;
+  stroke: #000;
+  shape-rendering: crispEdges;
+}
+
+.x.axis path {
+  display: none;
+}
+
+.line {
+  fill: none;
+  stroke: steelblue;
+  stroke-width: 1.5px;
+}
+.line {
+	fill: none;
+	stroke: #4f241d;
+	stroke-width: 5px;
+}
+.point {
+	fill: rgb(159,22,30);
+}
