@@ -5,7 +5,19 @@ var existFood = [];
 var grocerieObj;
 var image;
 var i = 0, clicks = 0;
+var jsonProducts = [];
+
+$.getJSON("jsons/objects.json", function(data) {
+	$.each(data, function(key, val) {
+		objects.push(key);
+		$.each(val, function(key2, val2) {
+			jsonProducts.push([val2.image, val2.id]);
+		});
+	});
+});
+
 window.onload = function() {
+
 	imgsManagerArray = [fruitsAndVedgArray, milkArray, CannedFoodArray, meatArray, breadArray, oilArray, drinksArray];
 	imgsManagerIdsArray = new Array("fruitsAndVedg", "milk", "CannedFood", "meat", "bread", "oil", "drinks");
 	arraySize = imgsManagerArray.length;
@@ -13,6 +25,9 @@ window.onload = function() {
 		new ImgsManager(imgsManagerArray[i], imgsManagerIdsArray[i]);
 	}
 
+	$('#continue').on('click', function() {
+		objectsFunc();
+	});
 };
 
 var fruitsAndVedgArray = new Array("images/tapuah.png", "images/tapuah yonatan.png", "images/banana.png", "images/tapuz shmuti.png", "images/tapuz valensiya.png", "images/klemantina.png", "images/eshkolit.png", "images/agvaniya.png", "images/melafefon.png", "images/pilpel yarok.png", "images/pilpel yarok bahir.png", "images/pilpel yarok kehe.png", "images/shauit yaruka.png", "images/agas.png", "images/afarsek.png", "images/mishmesh.png", "images/shezif sagol.png", "images/shezif zahov.png", "images/anavom shorim.png", "images/anavim yarukim.png", "images/kruvit.png", "images/hazil.png", "images/gezer.png", "images/tapuah adama.png", "images/tiras 2.png", "images/mango.png", "images/avokado.png", "images/melon galya.png", "images/avatiah.png", "images/afarsemon.png", "images/limon.png", "images/bazal.png", "images/hasa.png", "images/kruv lavan.png", "images/agvaniot shery.png", "images/znon.png");
@@ -28,10 +43,10 @@ function Img(imgSrc, id) {
 	var linkObj = document.createElement("a");
 	linkObj.className = 'groceriesLinks';
 	var imgObj = document.createElement("img");
-	var circleCount=document.createElement("section");
+	var circleCount = document.createElement("section");
 	circleCount.className = 'circlesCounter';
-	var clicks=document.createElement("p");
-	clicks.className= 'numberOfClicks';
+	var clicks = document.createElement("p");
+	clicks.className = 'numberOfClicks';
 	circleCount.appendChild(clicks);
 	linkObj.setAttribute('href', "#");
 	linkObj.setAttribute('onclick', "clicks()");
@@ -114,7 +129,6 @@ function Img(imgSrc, id) {
 			$("input[type='textbox'][id='" + idObj + "']").val(foodArray[linkObj.getAttribute('id')].count);
 		}
 	};
-
 };
 
 function ImgsManager(groceryArray, id) {
@@ -135,6 +149,9 @@ var salaryArray = [];
 var yearsArray = [];
 var data = [];
 var k;
+
+var objects = [];
+
 $(document).ready(function() {
 	$.getJSON("jsons/salary.json", function(data) {
 		$.each(data, function(key, val) {
@@ -210,12 +227,40 @@ function readyJson() {
 		});
 	}
 
-
-	$('body').on('click', function() {
-		console.log('click');
-		selected_year -= 1;
-		set_radius();
-	});
+	/*
+	 $('body').on('click', function() {
+	 console.log('click');
+	 selected_year -= 1;
+	 set_radius();
+	 });*/
 
 	set_radius();
+
+}
+
+function objectsFunc() {
+	var productsIds = [];
+
+	var existFoodLength = existFood.length;
+	var fruitsAndVedgLength = fruitsAndVedgArray.length;
+	var jsonProductsLength = jsonProducts.length;
+
+	var i = 0, j = 0;
+	for ( i = 0; i < existFoodLength; i++) {
+		for ( j = 0; j < jsonProductsLength; j++) {
+			if (existFood[i] == jsonProductsLength[j].image)
+				productsIds.push(jsonProductsLength[j].id);
+		}
+	}
+	console.log(productsIds);
+/*
+
+	for ( i = 0; i < existFoodLength; i++) {
+		for ( j = 0; j < fruitsAndVedgLength; j++) {
+			if (existFood[i] == fruitsAndVedgArray[j])
+
+		}
+	}*/
+
+
 }
