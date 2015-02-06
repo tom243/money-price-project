@@ -16,6 +16,19 @@ $.getJSON("jsons/objects.json", function(data) {
 	});
 });
 
+var fruitsJson = [];
+$.getJSON("jsons/fruits.json", function(data) {
+	$.each(data, function(key, val) {
+		//key = year
+		//val = all the object in the year
+		$.each(val, function(key2, val2) {
+			//key2 = name
+			//val2 = price
+			fruitsJson.push(key2);
+		});
+	});
+});
+
 window.onload = function() {
 
 	imgsManagerArray = [fruitsAndVedgArray, milkArray, CannedFoodArray, meatArray, breadArray, oilArray, drinksArray];
@@ -248,19 +261,17 @@ function objectsFunc() {
 	var i = 0, j = 0;
 	for ( i = 0; i < existFoodLength; i++) {
 		for ( j = 0; j < jsonProductsLength; j++) {
-			if (existFood[i] == jsonProductsLength[j].image)
-				productsIds.push(jsonProductsLength[j].id);
+			if (existFood[i] == jsonProducts[j][0]) {
+				productsIds.push(jsonProducts[j][1]);
+			}
 		}
 	}
-	console.log(productsIds);
-/*
-
+	//till here we have the id of every product from the recipt in productsIds
 	for ( i = 0; i < existFoodLength; i++) {
 		for ( j = 0; j < fruitsAndVedgLength; j++) {
+			//check if the product image in fruitsAndVedgArray
 			if (existFood[i] == fruitsAndVedgArray[j])
-
+				console.log(fruitsJson[jsonProducts[i][1]]);	//need to print the same name from the fruitsJson for checking
 		}
-	}*/
-
-
+	}
 }
