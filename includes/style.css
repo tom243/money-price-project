@@ -21,15 +21,15 @@ body {
 	font-family: "Alef Hebrew", Arial;
 }
 main {
-	width: 8683px;
+	width: 10000px;
 	height: 95%;
 }
 footer {
 	position: absolute;
 	bottom: 0px;
-	background: url("../images/rizpa.png");
+	background: url("../images/rizpa.png") repeat-x;
 	height: 5%;
-	width: 8683px;
+	width: 10000px;
 }
 main > article {
 	width: 400px;
@@ -46,6 +46,10 @@ main > article > p {
 	color: #9e8986;
 	font-size: 1.4em;
 	line-height: 30px;
+}
+.groceriesLinks{
+	display:inline-block;
+	position: relative;
 }
 .groceries {
 	width: 76px;
@@ -64,6 +68,22 @@ main > article > p {
 .links {
 	text-decoration: none;
 	color: #9c1823;
+}
+.circlesCounter{
+	width:33px;
+	height:33px;
+	border-radius:33px;
+	text-align:center;
+	background:#a1161b;
+	z-index:1;
+	position: absolute;
+	top:0px;
+	left:0px;
+}
+.numberOfClicks{
+	text-align:center;
+	font-size:15px;
+	color:#FFFFFF;
 }
 /*/////////////////////////////////// Main Sections /////////////////////////*/
 #fruitsAndVedgClass, #milkClass, #CannedFoodClass, #meatClass, #breadClass, #oilClass, #drinksClass {
@@ -191,6 +211,8 @@ main > article > p {
 }
 #payment {
 	float: right;
+	width:278px;
+	height: 595px;
 }
 #payment > section:nth-child(1) {
 	width: 278px;
@@ -198,11 +220,10 @@ main > article > p {
 	background: url("../images/shelet kupa.png");
 }
 #payment > section:nth-child(2) {
-	position: absolute;
 	width: 278px;
 	height: 260px;
 	background: url("../images/cashier.png");
-	bottom: 31px;
+	margin-top: 19px;
 }
 #cart {
 	right: 104px;
@@ -314,6 +335,9 @@ main > article > p {
 
 #d3{
 	float:right;
+	width:1350px;
+	height:480px;
+	margin-right:559px;
 }
 
 

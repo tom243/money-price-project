@@ -26,7 +26,13 @@ var drinksArray = new Array("images/bira levana.png", "images/mashke mugaz.png",
 function Img(imgSrc, id) {
 	//global var. anyone can access it
 	var linkObj = document.createElement("a");
+	linkObj.className = 'groceriesLinks';
 	var imgObj = document.createElement("img");
+	var circleCount=document.createElement("section");
+	circleCount.className = 'circlesCounter';
+	var clicks=document.createElement("p");
+	clicks.className= 'numberOfClicks';
+	circleCount.appendChild(clicks);
 	linkObj.setAttribute('href', "#");
 	linkObj.setAttribute('onclick', "clicks()");
 	linkObj.setAttribute('id', i);
@@ -37,6 +43,7 @@ function Img(imgSrc, id) {
 	imgObj.setAttribute("src", imgSrc);
 	imgObj.className = 'groceries';
 	linkObj.appendChild(imgObj);
+	linkObj.appendChild(circleCount);
 	i++;
 	//private func
 	//Add the img to the 'section'
@@ -45,6 +52,7 @@ function Img(imgSrc, id) {
 		var idObj = linkObj.getAttribute('id');
 		var product = null;
 		foodArray[linkObj.getAttribute('id')].count += 1;
+		clicks.innerText(foodArray[idObj].count);
 		if ($.inArray(imgSrc, existFood) == -1)//if the img not exist in the whiteboard
 		{
 			existFood.push(imgSrc);
