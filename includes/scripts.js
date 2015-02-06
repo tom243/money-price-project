@@ -52,7 +52,7 @@ function Img(imgSrc, id) {
 		var idObj = linkObj.getAttribute('id');
 		var product = null;
 		foodArray[linkObj.getAttribute('id')].count += 1;
-		clicks.innerText(foodArray[idObj].count);
+		//clicks.innerText(foodArray[idObj].count);
 		if ($.inArray(imgSrc, existFood) == -1)//if the img not exist in the whiteboard
 		{
 			existFood.push(imgSrc);
