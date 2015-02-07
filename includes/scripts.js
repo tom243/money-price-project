@@ -4,8 +4,17 @@ var foodArray = [];
 var existFood = [];
 var grocerieObj;
 var image;
-var i = 0, clicks = 0;
+var i = 0, clicks = 0, k = 0;
 var jsonProducts = [];
+var yearsArray = [[]];
+var objects = [];
+var salaryArray = [];
+
+for ( i = 0; i < 27; i++) {
+	yearsArray[i] = [];
+}
+
+
 
 $.getJSON("jsons/objects.json", function(data) {
 	$.each(data, function(key, val) {
@@ -16,16 +25,31 @@ $.getJSON("jsons/objects.json", function(data) {
 	});
 });
 
-var fruitsJson = [];
+$.getJSON("jsons/salary.json", function(data) {
+	$.each(data, function(key, val) {
+		$.each(val, function(key2, val2) {
+			salaryArray.push(val2);
+			//salary each year
+			yearsArray.push(parseInt(key));
+			//years 1986-2013
+		});
+	});
+});
 $.getJSON("jsons/fruits.json", function(data) {
 	$.each(data, function(key, val) {
 		//key = year
 		//val = all the object in the year
-		$.each(val, function(key2, val2) {
-			//key2 = name
-			//val2 = price
-			fruitsJson.push(key2);
-		});
+		for ( i = 0; i < yearsArray.length; i++) {
+			//yearsArray[i] = [];
+			if (key == yearsArray[i]) {
+				$.each(val, function(key2, val2) {
+					//key2 = name
+					//val2 = price
+					yearsArray[i].push([key2, val2]);
+					//name,price
+				});
+			}
+		}
 	});
 });
 
@@ -156,29 +180,38 @@ function ImgsManager(groceryArray, id) {
 	}
 };
 
+function objectsFunc() {
+	var productsIds = [];
+
+	var existFoodLength = existFood.length;
+	var fruitsAndVedgLength = fruitsAndVedgArray.length;
+	var jsonProductsLength = jsonProducts.length;
+
+	var i = 0, j = 0;
+	for ( i = 0; i < existFoodLength; i++) {
+		for ( j = 0; j < jsonProductsLength; j++) {
+			if (existFood[i] == jsonProducts[j][0]) {
+				productsIds.push(jsonProducts[j][1]);
+			}
+		}
+	}
+
+	//till here we have the id of every product from the recipt in productsIds
+
+	for ( i = 0; i < existFoodLength; i++) {
+		for ( j = 0; j < fruitsAndVedgLength; j++) {
+			//check if the product image in fruitsAndVedgArray
+			if (existFood[i] == fruitsAndVedgArray[j])
+				console.log(fruitsJson[i]);
+			//year,name,price
+		}
+	}
+	readyJson();
+}
+
 ///////////////////////////////////////////////////////// D3 /////////////////////////////////////////////////////////
 
-var salaryArray = [];
-var yearsArray = [];
 var data = [];
-var k;
-
-var objects = [];
-
-$(document).ready(function() {
-	$.getJSON("jsons/salary.json", function(data) {
-		$.each(data, function(key, val) {
-			$.each(val, function(key2, val2) {
-				salaryArray.push(val2);
-				//salary each year
-				yearsArray.push(parseInt(key));
-				//years 1986-2013
-			});
-		});
-		readyJson();
-	});
-});
-
 function readyJson() {
 	var margin = {
 		top : 20,
@@ -208,7 +241,7 @@ function readyJson() {
 	var i;
 	for ( i = yearsArrayLength - 1; i >= 0; i--) {
 		data.push([yearsArray[i], salaryArray[i]]);
-	}
+	}//data = [[2013,9000],[2012,8000]]
 
 	x.domain(d3.extent(data, function(d) {
 		return d[0];
@@ -246,32 +279,7 @@ function readyJson() {
 	 selected_year -= 1;
 	 set_radius();
 	 });*/
-
 	set_radius();
 
 }
 
-function objectsFunc() {
-	var productsIds = [];
-
-	var existFoodLength = existFood.length;
-	var fruitsAndVedgLength = fruitsAndVedgArray.length;
-	var jsonProductsLength = jsonProducts.length;
-
-	var i = 0, j = 0;
-	for ( i = 0; i < existFoodLength; i++) {
-		for ( j = 0; j < jsonProductsLength; j++) {
-			if (existFood[i] == jsonProducts[j][0]) {
-				productsIds.push(jsonProducts[j][1]);
-			}
-		}
-	}
-	//till here we have the id of every product from the recipt in productsIds
-	for ( i = 0; i < existFoodLength; i++) {
-		for ( j = 0; j < fruitsAndVedgLength; j++) {
-			//check if the product image in fruitsAndVedgArray
-			if (existFood[i] == fruitsAndVedgArray[j])
-				console.log(fruitsJson[jsonProducts[i][1]]);	//need to print the same name from the fruitsJson for checking
-		}
-	}
-}
