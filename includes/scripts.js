@@ -9,7 +9,8 @@ var jsonProducts = [];
 var yearsArray = [];
 var objects = [];
 var salaryArray = [];
-
+var sumArray = [];
+	
 $.getJSON("jsons/objects.json", function(data) {
 	$.each(data, function(key, val) {
 		objects.push(key);
@@ -212,25 +213,20 @@ function objectsFunc() {
 			}
 		}
 	}
-	
-	var sumArray = [];
 	// [432,345,123]
+	for ( i = 0; i < yearsArray.length; i++) {	//run twice
+			sumArray.push(0);
+	}
+	
 	for ( i = 0; i < sumBillArray.length; i++) {	//run twice
 		for ( j = 0; j < sumBillArray[i].length; j++) {
-			if (typeof sumArray !== 'undefined' && sumArray.length > 0) {
-				sumArray[j] += sumBillArray[i][j];
-				console.log("second time");
-			}
-			else{
-				sumArray.push(sumBillArray[i][j]);
-				console.log("first time");
-			}
-			console.log(sumBillArray[i][j]);
-			break;
+			sumArray[j] +=sumBillArray[i][j];
 		}
 	}
-	//console.log(sumArray);
-
+		for ( i = 0; i < yearsArray.length; i++) {
+			sumArray[i] = (sumArray[i] / salaryArray[i])*4;
+	}
+	
 	readyJson();
 }
 
@@ -265,7 +261,10 @@ function readyJson() {
 
 	var i;
 	for ( i = yearsArrayLength - 1; i >= 0; i--) {
+		data.push([yearsArray[i], sumArray[i]]);
 	}//data = [[2013,9000],[2012,8000]]
+	console.log(data);
+	
 	x.domain(d3.extent(data, function(d) {
 		return d[0];
 	}));
