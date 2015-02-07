@@ -265,9 +265,7 @@ function readyJson() {
 
 	var i;
 	for ( i = yearsArrayLength - 1; i >= 0; i--) {
-		data.push([yearsArray[i], salaryArray[i]]);
 	}//data = [[2013,9000],[2012,8000]]
-
 	x.domain(d3.extent(data, function(d) {
 		return d[0];
 	}));
