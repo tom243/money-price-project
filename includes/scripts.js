@@ -6,16 +6,11 @@ var grocerieObj;
 var image;
 var i = 0, clicks = 0, k = 0;
 var jsonProducts = [];
-var yearsArray = [[]];
+var yearsArray = [];
 var objects = [];
 var salaryArray = [];
-
-for ( i = 0; i < 27; i++) {
-	yearsArray[i] = [];
-}
-
-
-
+var sumArray = [];
+	
 $.getJSON("jsons/objects.json", function(data) {
 	$.each(data, function(key, val) {
 		objects.push(key);
@@ -35,22 +30,27 @@ $.getJSON("jsons/salary.json", function(data) {
 		});
 	});
 });
+
+var allProductsArray = [];
+
 $.getJSON("jsons/fruits.json", function(data) {
 	$.each(data, function(key, val) {
 		//key = year
 		//val = all the object in the year
 		for ( i = 0; i < yearsArray.length; i++) {
-			//yearsArray[i] = [];
+
 			if (key == yearsArray[i]) {
+				allProductsArray[i] = [];
 				$.each(val, function(key2, val2) {
 					//key2 = name
 					//val2 = price
-					yearsArray[i].push([key2, val2]);
+					allProductsArray[i].push([key2, val2]);
 					//name,price
 				});
 			}
 		}
 	});
+	//console.log(allProductsArray);
 });
 
 window.onload = function() {
@@ -197,15 +197,36 @@ function objectsFunc() {
 	}
 
 	//till here we have the id of every product from the recipt in productsIds
+	/*
+	 for ( i = 0; i < existFoodLength; i++) {
+	 for ( j = 0; j < fruitsAndVedgLength; j++) {
+	 //check if the product image in fruitsAndVedgArray
+	 if (existFood[i] == fruitsAndVedgArray[j])*/
 
-	for ( i = 0; i < existFoodLength; i++) {
-		for ( j = 0; j < fruitsAndVedgLength; j++) {
-			//check if the product image in fruitsAndVedgArray
-			if (existFood[i] == fruitsAndVedgArray[j])
-				console.log(fruitsJson[i]);
-			//year,name,price
+	var sumBillArray = [];
+	for ( i = 0; i < productsIds.length; i++) {
+		sumBillArray[i] = [];
+		for ( j = 0; j < allProductsArray.length; j++) {
+			for ( k = 0; k < allProductsArray[j].length; k++) {
+				if (productsIds[i] == allProductsArray[j][k][0])
+					sumBillArray[i].push(allProductsArray[j][k][1]);
+			}
 		}
 	}
+	// [432,345,123]
+	for ( i = 0; i < yearsArray.length; i++) {	//run twice
+			sumArray.push(0);
+	}
+	
+	for ( i = 0; i < sumBillArray.length; i++) {	//run twice
+		for ( j = 0; j < sumBillArray[i].length; j++) {
+			sumArray[j] +=sumBillArray[i][j];
+		}
+	}
+		for ( i = 0; i < yearsArray.length; i++) {
+			sumArray[i] = (sumArray[i] / salaryArray[i])*4;
+	}
+	
 	readyJson();
 }
 
@@ -240,9 +261,10 @@ function readyJson() {
 
 	var i;
 	for ( i = yearsArrayLength - 1; i >= 0; i--) {
-		data.push([yearsArray[i], salaryArray[i]]);
+		data.push([yearsArray[i], sumArray[i]]);
 	}//data = [[2013,9000],[2012,8000]]
-
+	console.log(data);
+	
 	x.domain(d3.extent(data, function(d) {
 		return d[0];
 	}));
