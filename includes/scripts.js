@@ -6,15 +6,9 @@ var grocerieObj;
 var image;
 var i = 0, clicks = 0, k = 0;
 var jsonProducts = [];
-var yearsArray = [[]];
+var yearsArray = [];
 var objects = [];
 var salaryArray = [];
-
-for ( i = 0; i < 27; i++) {
-	yearsArray[i] = [];
-}
-
-
 
 $.getJSON("jsons/objects.json", function(data) {
 	$.each(data, function(key, val) {
@@ -35,22 +29,27 @@ $.getJSON("jsons/salary.json", function(data) {
 		});
 	});
 });
+
+var allProductsArray = [];
+
 $.getJSON("jsons/fruits.json", function(data) {
 	$.each(data, function(key, val) {
 		//key = year
 		//val = all the object in the year
 		for ( i = 0; i < yearsArray.length; i++) {
-			//yearsArray[i] = [];
+
 			if (key == yearsArray[i]) {
+				allProductsArray[i] = [];
 				$.each(val, function(key2, val2) {
 					//key2 = name
 					//val2 = price
-					yearsArray[i].push([key2, val2]);
+					allProductsArray[i].push([key2, val2]);
 					//name,price
 				});
 			}
 		}
 	});
+	//console.log(allProductsArray);
 });
 
 window.onload = function() {
@@ -197,15 +196,41 @@ function objectsFunc() {
 	}
 
 	//till here we have the id of every product from the recipt in productsIds
+	/*
+	 for ( i = 0; i < existFoodLength; i++) {
+	 for ( j = 0; j < fruitsAndVedgLength; j++) {
+	 //check if the product image in fruitsAndVedgArray
+	 if (existFood[i] == fruitsAndVedgArray[j])*/
 
-	for ( i = 0; i < existFoodLength; i++) {
-		for ( j = 0; j < fruitsAndVedgLength; j++) {
-			//check if the product image in fruitsAndVedgArray
-			if (existFood[i] == fruitsAndVedgArray[j])
-				console.log(fruitsJson[i]);
-			//year,name,price
+	var sumBillArray = [];
+	for ( i = 0; i < productsIds.length; i++) {
+		sumBillArray[i] = [];
+		for ( j = 0; j < allProductsArray.length; j++) {
+			for ( k = 0; k < allProductsArray[j].length; k++) {
+				if (productsIds[i] == allProductsArray[j][k][0])
+					sumBillArray[i].push(allProductsArray[j][k][1]);
+			}
 		}
 	}
+	
+	var sumArray = [];
+	// [432,345,123]
+	for ( i = 0; i < sumBillArray.length; i++) {	//run twice
+		for ( j = 0; j < sumBillArray[i].length; j++) {
+			if (typeof sumArray !== 'undefined' && sumArray.length > 0) {
+				sumArray[j] += sumBillArray[i][j];
+				console.log("second time");
+			}
+			else{
+				sumArray.push(sumBillArray[i][j]);
+				console.log("first time");
+			}
+			console.log(sumBillArray[i][j]);
+			break;
+		}
+	}
+	//console.log(sumArray);
+
 	readyJson();
 }
 
