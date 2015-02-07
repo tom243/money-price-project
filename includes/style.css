@@ -337,10 +337,26 @@ main > article > p {
 	float:right;
 	width:1350px;
 	height:480px;
-	margin-right:559px;
+	margin-right:109px;
+	position:relative;
+	top: 23px;
 }
 
-
+#precentage {
+	position:absolute;
+	top: 0px;
+	color: #9f1620;
+	font-family: "Alef Hebrew", Arial;
+	font-size:72px;
+}
+#year {
+	position:absolute;
+	top: 0px;
+	left:0px;
+	color: #9f1620;
+	font-family: "Alef Hebrew", Arial;
+	font-size:72px;
+}
 
 
 
@@ -372,3 +388,4 @@ main > article > p {
 .point {
 	fill: rgb(159,22,30);
 }
+

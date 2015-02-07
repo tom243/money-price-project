@@ -10,7 +10,7 @@ var yearsArray = [];
 var objects = [];
 var salaryArray = [];
 var sumArray = [];
-	
+
 $.getJSON("jsons/objects.json", function(data) {
 	$.each(data, function(key, val) {
 		objects.push(key);
@@ -214,19 +214,20 @@ function objectsFunc() {
 		}
 	}
 	// [432,345,123]
-	for ( i = 0; i < yearsArray.length; i++) {	//run twice
-			sumArray.push(0);
+	for ( i = 0; i < yearsArray.length; i++) {//run twice
+		sumArray.push(0);
 	}
-	
-	for ( i = 0; i < sumBillArray.length; i++) {	//run twice
+
+	for ( i = 0; i < sumBillArray.length; i++) {//run twice
 		for ( j = 0; j < sumBillArray[i].length; j++) {
-			sumArray[j] +=sumBillArray[i][j];
+			sumArray[j] += sumBillArray[i][j];
 		}
 	}
-		for ( i = 0; i < yearsArray.length; i++) {
-			sumArray[i] = (sumArray[i] / salaryArray[i])*4;
+	console.log(sumArray[0]);
+	for ( i = 0; i < yearsArray.length; i++) {
+		sumArray[i] = (sumArray[i] / salaryArray[i]) * 4;
 	}
-	
+
 	readyJson();
 }
 
@@ -264,7 +265,7 @@ function readyJson() {
 		data.push([yearsArray[i], sumArray[i]]);
 	}//data = [[2013,9000],[2012,8000]]
 	console.log(data);
-	
+
 	x.domain(d3.extent(data, function(d) {
 		return d[0];
 	}));
@@ -295,12 +296,17 @@ function readyJson() {
 		});
 	}
 
-	/*
-	 $('body').on('click', function() {
-	 console.log('click');
-	 selected_year -= 1;
-	 set_radius();
-	 });*/
+	var click = 0;
+	$("#d3").append("<p id='precentage'>" + data[click][1].toPrecision(2) + "% </p>");
+	$("#d3").append("<p id='year'>" + data[click][0] +"</p>");
+
+	$('#d3').on('click', function() {
+		$("#precentage").html(data[click][1].toPrecision(2) + "%");
+		$("#year").html(data[click][0]);
+		click++;
+		selected_year -= 1;
+		set_radius();
+	});
 	set_radius();
 
 }
