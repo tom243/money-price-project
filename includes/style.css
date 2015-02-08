@@ -47,8 +47,8 @@ main > article > p {
 	font-size: 1.4em;
 	line-height: 30px;
 }
-.groceriesLinks{
-	display:inline-block;
+.groceriesLinks {
+	display: inline-block;
 	position: relative;
 }
 .groceries {
@@ -69,21 +69,23 @@ main > article > p {
 	text-decoration: none;
 	color: #9c1823;
 }
-.circlesCounter{
-	width:33px;
-	height:33px;
-	border-radius:33px;
-	text-align:center;
-	background:#a1161b;
-	z-index:1;
+.circlesCounter {
+	width: 33px;
+	height: 33px;
+	border-radius: 33px;
+	text-align: center;
+	background: #a1161b;
+	z-index: 1;
 	position: absolute;
-	top:0px;
-	left:0px;
+	top: 0px;
+	left: 0px;
+	display:none;
 }
-.numberOfClicks{
-	text-align:center;
-	font-size:15px;
-	color:#FFFFFF;
+.numberOfClicks {
+	text-align: center;
+	font-size: 30px;
+	color: #FFFFFF;
+	margin: -7px;
 }
 /*/////////////////////////////////// Main Sections /////////////////////////*/
 #fruitsAndVedgClass, #milkClass, #CannedFoodClass, #meatClass, #breadClass, #oilClass, #drinksClass {
@@ -211,7 +213,7 @@ main > article > p {
 }
 #payment {
 	float: right;
-	width:278px;
+	width: 278px;
 	height: 595px;
 }
 #payment > section:nth-child(1) {
@@ -333,52 +335,47 @@ main > article > p {
 	margin-right: -14px;
 }
 
-#d3{
-	float:right;
-	width:1350px;
-	height:480px;
-	margin-right:109px;
-	position:relative;
+#d3 {
+	float: right;
+	width: 1350px;
+	height: 480px;
+	margin-right: 109px;
+	position: relative;
 	top: 23px;
 }
 
 #precentage {
-	position:absolute;
+	position: absolute;
 	top: 0px;
 	color: #9f1620;
 	font-family: "Alef Hebrew", Arial;
-	font-size:72px;
+	font-size: 72px;
 }
 #year {
-	position:absolute;
-	top: 0px;
-	left:0px;
+	position: absolute;
+	top: 15px;
+	right: 27px;
 	color: #9f1620;
 	font-family: "Alef Hebrew", Arial;
-	font-size:72px;
+	font-size: 100px;
 }
-
-
-
-
 
 /*//////////// D3 ///////////////*/
 
-.axis path,
-.axis line {
-  fill: none;
-  stroke: #000;
-  shape-rendering: crispEdges;
+.axis path, .axis line {
+	fill: none;
+	stroke: #000;
+	shape-rendering: crispEdges;
 }
 
 .x.axis path {
-  display: none;
+	display: none;
 }
 
 .line {
-  fill: none;
-  stroke: steelblue;
-  stroke-width: 1.5px;
+	fill: none;
+	stroke: steelblue;
+	stroke-width: 1.5px;
 }
 .line {
 	fill: none;

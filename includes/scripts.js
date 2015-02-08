@@ -4,7 +4,7 @@ var foodArray = [];
 var existFood = [];
 var grocerieObj;
 var image;
-var i = 0, clicks = 0, k = 0;
+var i = 0, clicks = 0, k = 0,idP=0;
 var jsonProducts = [];
 var yearsArray = [];
 var objects = [];
@@ -63,6 +63,7 @@ window.onload = function() {
 	}
 
 	$('#continue').on('click', function() {
+		$('#d3').empty();
 		objectsFunc();
 	});
 };
@@ -76,27 +77,33 @@ var oilArray = new Array("images/shemen soya.png", "images/margarina.png", "imag
 var drinksArray = new Array("images/bira levana.png", "images/mashke mugaz.png", "images/mashke pri hadar.png", "images/brendy.png");
 
 function Img(imgSrc, id) {
+	
 	//global var. anyone can access it
 	var linkObj = document.createElement("a");
 	linkObj.className = 'groceriesLinks';
 	var imgObj = document.createElement("img");
 	var circleCount = document.createElement("section");
 	circleCount.className = 'circlesCounter';
-	var clicks = document.createElement("p");
-	clicks.className = 'numberOfClicks';
-	circleCount.appendChild(clicks);
+	circleCount.id = 'circleCounter'+idP;
+	var clickOnProduct = document.createElement("p");
+	clickOnProduct.className = 'numberOfClicks';
+	clickOnProduct.id = "productClicks"+idP;
+	circleCount.appendChild(clickOnProduct);
 	linkObj.setAttribute('href', "#");
 	linkObj.setAttribute('onclick', "clicks()");
-	linkObj.setAttribute('id', i);
+	linkObj.setAttribute('id', idP);
 	foodArray.push({
-		id : i,
+		id : idP,
 		count : 0
 	});
 	imgObj.setAttribute("src", imgSrc);
 	imgObj.className = 'groceries';
 	linkObj.appendChild(imgObj);
 	linkObj.appendChild(circleCount);
-	i++;
+	idP++;
+	
+	//$("#country.save")...
+		
 	//private func
 	//Add the img to the 'section'
 	document.getElementById(id).appendChild(linkObj);
@@ -104,7 +111,8 @@ function Img(imgSrc, id) {
 		var idObj = linkObj.getAttribute('id');
 		var product = null;
 		foodArray[linkObj.getAttribute('id')].count += 1;
-		//clicks.innerText(foodArray[idObj].count);
+		$("#circleCounter"+idObj).css("display","block");
+		$("#productClicks"+idObj).html(foodArray[idObj].count);
 		if ($.inArray(imgSrc, existFood) == -1)//if the img not exist in the whiteboard
 		{
 			existFood.push(imgSrc);
@@ -119,6 +127,7 @@ function Img(imgSrc, id) {
 			$($plus).click(function() {
 				foodArray[idObj].count += 1;
 				$("input[type='textbox'][id='" + idObj + "']").val(foodArray[idObj].count);
+				$("#productClicks"+idObj).html(foodArray[idObj].count);
 			});
 
 			//minus
@@ -126,6 +135,8 @@ function Img(imgSrc, id) {
 				if (foodArray[idObj].count > 1)
 					foodArray[idObj].count -= 1;
 				$("input[type='textbox'][id='" + idObj + "']").val(foodArray[idObj].count);
+				$("#productClicks"+idObj).html(foodArray[idObj].count);
+		
 			});
 
 			//number
@@ -155,6 +166,9 @@ function Img(imgSrc, id) {
 				$("#" + idObj + "type").click(function() {
 					$("#" + idObj + "section").remove();
 					foodArray[idObj].count = 0;
+					
+					$("#circleCounter"+idObj).css("display","none");
+					
 					var index = existFood.indexOf(imgSrc);
 					if (index > -1) {
 						existFood.splice(index, 1);
@@ -240,7 +254,7 @@ function readyJson() {
 		right : 20,
 		bottom : 30,
 		left : 50
-	}, width = 1350 - margin.left - margin.right, height = 480 - margin.top - margin.bottom;
+	}, width = 1024 - margin.left - margin.right, height = 400 - margin.top - margin.bottom;
 
 	var parseDate = d3.time.format("%d-%b-%y").parse;
 
@@ -261,10 +275,13 @@ function readyJson() {
 	var yearsArrayLength = yearsArray.length;
 
 	var i;
+	if (data.length > 0) {
+		data.length = 0;
+	}
 	for ( i = yearsArrayLength - 1; i >= 0; i--) {
 		data.push([yearsArray[i], sumArray[i]]);
 	}//data = [[2013,9000],[2012,8000]]
-	console.log(data);
+
 
 	x.domain(d3.extent(data, function(d) {
 		return d[0];
@@ -289,25 +306,27 @@ function readyJson() {
 	function set_radius() {
 		svg.selectAll(".point").data(data).attr("r", function(d) {
 			if (d[0] != selected_year) {
-				return 14.3;
+				return 9;
 			} else {
-				return 27.7;
+				return 18;
 			}
 		});
 	}
 
-	var click = 0;
-	$("#d3").append("<p id='precentage'>" + data[click][1].toPrecision(2) + "% </p>");
-	$("#d3").append("<p id='year'>" + data[click][0] +"</p>");
-
+	var click;
+	console.log(data);
+	if ($('#precentage').length == 0) {
+		click=0;
+		$("#d3").append("<p id='precentage'>" + data[click][1].toPrecision(2) + "% </p>");
+		$("#d3").append("<p id='year'>" + data[click][0] + "</p>");
+	}
 	$('#d3').on('click', function() {
+		click++;
 		$("#precentage").html(data[click][1].toPrecision(2) + "%");
 		$("#year").html(data[click][0]);
-		click++;
 		selected_year -= 1;
 		set_radius();
 	});
 	set_radius();
-
 }
 
