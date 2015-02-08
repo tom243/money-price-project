@@ -21,7 +21,7 @@ body {
 	font-family: "Alef Hebrew", Arial;
 }
 main {
-	width: 10000px;
+	width: 9300px;
 	height: 95%;
 }
 footer {
@@ -29,7 +29,7 @@ footer {
 	bottom: 0px;
 	background: url("../images/rizpa.png") repeat-x;
 	height: 5%;
-	width: 10000px;
+	width: 9300px;
 }
 main > article {
 	width: 400px;
@@ -337,7 +337,7 @@ main > article > p {
 
 #d3 {
 	float: right;
-	width: 1350px;
+	width: 1000px;
 	height: 480px;
 	margin-right: 109px;
 	position: relative;
