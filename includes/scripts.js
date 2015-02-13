@@ -32,7 +32,7 @@ $.getJSON("jsons/salary.json", function(data) {
 });
 
 
-$.getJSON("jsons/fruits.json", function(data) {
+$.getJSON("jsons/allProducts.json", function(data) {
 	$.each(data, function(key, val) {
 		//key = year
 		//val = all the object in the year
