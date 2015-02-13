@@ -368,14 +368,9 @@ $(function() {
 });
 
 
-
-
-window.onscroll = function (event) {
-  // called when the window is scrolled.
-  alert("asd");
-}
-
-
+    $(window).scroll(function(){
+        alert(2);   
+    });
 
 
 
