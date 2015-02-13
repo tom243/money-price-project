@@ -9,7 +9,7 @@ var jsonProducts = [];
 var yearsArray = [];
 var objects = [];
 var salaryArray = [];
-var sumArray = [];
+var allProductsArray = [];
 
 $.getJSON("jsons/objects.json", function(data) {
 	$.each(data, function(key, val) {
@@ -31,7 +31,6 @@ $.getJSON("jsons/salary.json", function(data) {
 	});
 });
 
-var allProductsArray = [];
 
 $.getJSON("jsons/fruits.json", function(data) {
 	$.each(data, function(key, val) {
@@ -64,7 +63,7 @@ window.onload = function() {
 
 	$('#continue').on('click', function() {
 		
-	
+		
 		$('#d3').empty();
 		objectsFunc();
 	});
@@ -199,12 +198,20 @@ function ImgsManager(groceryArray, id) {
 
 function objectsFunc() {
 	var productsIds = [];
-
+	var sumBillArray = [];
+	var sumArray = [];
 	var existFoodLength = existFood.length;
 	var fruitsAndVedgLength = fruitsAndVedgArray.length;
 	var jsonProductsLength = jsonProducts.length;
-
 	var i = 0, j = 0;
+	
+	
+	//initialize the length of yearsArray
+	for ( i = 0; i < yearsArray.length; i++) {
+		sumArray.push(0);
+	}
+	
+	
 	for ( i = 0; i < existFoodLength; i++) {
 		for ( j = 0; j < jsonProductsLength; j++) {
 			if (existFood[i] == jsonProducts[j][0]) {
@@ -212,15 +219,8 @@ function objectsFunc() {
 			}
 		}
 	}
-
-	//till here we have the id of every product from the recipt in productsIds
-	/*
-	 for ( i = 0; i < existFoodLength; i++) {
-	 for ( j = 0; j < fruitsAndVedgLength; j++) {
-	 //check if the product image in fruitsAndVedgArray
-	 if (existFood[i] == fruitsAndVedgArray[j])*/
-
-	var sumBillArray = [];
+	
+		console.log("productsIds = " + productsIds);
 	for ( i = 0; i < productsIds.length; i++) {
 		sumBillArray[i] = [];
 		for ( j = 0; j < allProductsArray.length; j++) {
@@ -230,28 +230,27 @@ function objectsFunc() {
 			}
 		}
 	}
-	// [432,345,123]
-	for ( i = 0; i < yearsArray.length; i++) {//run twice
-		sumArray.push(0);
-	}
-
-	for ( i = 0; i < sumBillArray.length; i++) {//run twice
+	
+	console.log("sumBillArray = " + sumBillArray);
+	for ( i = 0; i < sumBillArray.length; i++) {
 		for ( j = 0; j < sumBillArray[i].length; j++) {
 			sumArray[j] += sumBillArray[i][j];
 		}
 	}
-	console.log(sumArray[0]);
 	for ( i = 0; i < yearsArray.length; i++) {
 		sumArray[i] = (sumArray[i] / salaryArray[i]) * 4;
 	}
-
-	readyJson();
+	
+	readyJson(sumArray);
 }
 
 ///////////////////////////////////////////////////////// D3 /////////////////////////////////////////////////////////
 
-var data = [];
-function readyJson() {
+
+function readyJson(sumArray) {
+	var data = [];
+	var click;
+	var selected_year = 2013;
 	var margin = {
 		top : 20,
 		right : 20,
@@ -277,17 +276,13 @@ function readyJson() {
 	var svg = d3.select("#d3").append("svg").attr("width", width + margin.left + margin.right).attr("height", height + margin.top + margin.bottom).append("g").attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 	var yearsArrayLength = yearsArray.length;
 
-	var i;
-	if (data.length > 0) {
-		data.length = 0;
-		
-	}
-	for ( i = yearsArrayLength - 1; i >= 0; i--) {
+
+
+	for ( var i = yearsArrayLength - 1; i >= 0; i--) {
 		data.push([yearsArray[i], sumArray[i]]);
 	}//data = [[2013,9000],[2012,8000]]
 	
-	sumArray.length = 0;
-
+	console.log("sumArray = " + sumArray);
 	x.domain(d3.extent(data, function(d) {
 		return d[0];
 	}));
@@ -307,7 +302,7 @@ function readyJson() {
 		return y(d[1]);
 	});
 
-	var selected_year = 2013;
+	
 	function set_radius() {
 		svg.selectAll(".point").data(data).attr("r", function(d) {
 			if (d[0] != selected_year) {
@@ -318,8 +313,8 @@ function readyJson() {
 		});
 	}
 
-	var click;
-	console.log(data);
+	
+	//console.log("data = " + data);
 	if ($('#precentage').length == 0) {
 		click=0;
 		$("#d3").append("<p id='precentage'>" + data[click][1].toPrecision(2) + "% </p>");
