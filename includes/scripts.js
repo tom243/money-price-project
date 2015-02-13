@@ -4,13 +4,14 @@ var foodArray = [];
 var existFood = [];
 var grocerieObj;
 var image;
-var i = 0, clicks = 0, k = 0,idP=0;
+var i = 0, clicks = 0, k = 0, idP = 0;
 var jsonProducts = [];
 var yearsArray = [];
 var objects = [];
 var salaryArray = [];
 var allProductsArray = [];
-var amountOfProducts=[];
+var amountOfProducts = [];
+var firstTimeContinue = true;
 $.getJSON("jsons/objects.json", function(data) {
 	$.each(data, function(key, val) {
 		objects.push(key);
@@ -30,7 +31,6 @@ $.getJSON("jsons/salary.json", function(data) {
 		});
 	});
 });
-
 
 $.getJSON("jsons/allProducts.json", function(data) {
 	$.each(data, function(key, val) {
@@ -62,8 +62,7 @@ window.onload = function() {
 	}
 
 	$('#continue').on('click', function() {
-		
-		
+		firstTimeContinue = true;
 		$('#d3').empty();
 		objectsFunc();
 	});
@@ -78,17 +77,17 @@ var oilArray = new Array("images/shemen soya.png", "images/margarina.png", "imag
 var drinksArray = new Array("images/bira levana.png", "images/mashke mugaz.png", "images/mashke pri hadar.png", "images/brendy.png");
 
 function Img(imgSrc, id) {
-	
+
 	//global var. anyone can access it
 	var linkObj = document.createElement("a");
 	linkObj.className = 'groceriesLinks';
 	var imgObj = document.createElement("img");
 	var circleCount = document.createElement("section");
 	circleCount.className = 'circlesCounter';
-	circleCount.id = 'circleCounter'+idP;
+	circleCount.id = 'circleCounter' + idP;
 	var clickOnProduct = document.createElement("p");
 	clickOnProduct.className = 'numberOfClicks';
-	clickOnProduct.id = "productClicks"+idP;
+	clickOnProduct.id = "productClicks" + idP;
 	circleCount.appendChild(clickOnProduct);
 	linkObj.setAttribute('href', "#");
 	linkObj.setAttribute('onclick', "clicks()");
@@ -102,9 +101,9 @@ function Img(imgSrc, id) {
 	linkObj.appendChild(imgObj);
 	linkObj.appendChild(circleCount);
 	idP++;
-	
+
 	//$("#country.save")...
-		
+
 	//private func
 	//Add the img to the 'section'
 	document.getElementById(id).appendChild(linkObj);
@@ -112,13 +111,13 @@ function Img(imgSrc, id) {
 		var idObj = linkObj.getAttribute('id');
 		var product = null;
 		foodArray[linkObj.getAttribute('id')].count += 1;
-		$("#circleCounter"+idObj).css("display","block");
-		$("#productClicks"+idObj).html(foodArray[idObj].count);
+		$("#circleCounter" + idObj).css("display", "block");
+		$("#productClicks" + idObj).html(foodArray[idObj].count);
 		if ($.inArray(imgSrc, existFood) == -1)//if the img not exist in the whiteboard
 		{
 			existFood.push(imgSrc);
 			amountOfProducts.push(idObj);
-			
+
 			$WhiteBoardProduct = $("<section>").attr("id", idObj + "section").appendTo("#whiteBoard").addClass("sectionWhiteBoard");
 
 			$buttons = $('<section>').appendTo($WhiteBoardProduct).addClass("plusMinusButtons");
@@ -129,7 +128,7 @@ function Img(imgSrc, id) {
 			$($plus).click(function() {
 				foodArray[idObj].count += 1;
 				$("input[type='textbox'][id='" + idObj + "']").val(foodArray[idObj].count);
-				$("#productClicks"+idObj).html(foodArray[idObj].count);
+				$("#productClicks" + idObj).html(foodArray[idObj].count);
 			});
 
 			//minus
@@ -137,7 +136,7 @@ function Img(imgSrc, id) {
 				if (foodArray[idObj].count > 1)
 					foodArray[idObj].count -= 1;
 				$("input[type='textbox'][id='" + idObj + "']").val(foodArray[idObj].count);
-				$("#productClicks"+idObj).html(foodArray[idObj].count);
+				$("#productClicks" + idObj).html(foodArray[idObj].count);
 			});
 
 			//number
@@ -146,8 +145,7 @@ function Img(imgSrc, id) {
 				id : linkObj.getAttribute('id'),
 				val : foodArray[linkObj.getAttribute('id')].count
 			}).appendTo($WhiteBoardProduct);
-			
-			
+
 			//product name
 			$.getJSON("jsons/objects.json", function(data) {
 				$.each(data, function(key, val) {
@@ -156,10 +154,10 @@ function Img(imgSrc, id) {
 						if (val2.image == imgSrc) {
 							$("<p>" + val2.name + "</p>").appendTo($WhiteBoardProduct).addClass("products");
 						}
-						
+
 					});
 				});
-			
+
 				$hoverSectionWhiteBorad = $("<a href=# id=" + idObj + "type></a>").appendTo($WhiteBoardProduct).addClass("WhiteBoardHover");
 				$($WhiteBoardProduct).hover(function() {
 					if ($("#" + idObj + "type").css('display') == 'none')
@@ -170,9 +168,9 @@ function Img(imgSrc, id) {
 				$("#" + idObj + "type").click(function() {
 					$("#" + idObj + "section").remove();
 					foodArray[idObj].count = 0;
-					
-					$("#circleCounter"+idObj).css("display","none");
-					
+
+					$("#circleCounter" + idObj).css("display", "none");
+
 					var indexImg = existFood.indexOf(imgSrc);
 					if (indexImg > -1) {
 						existFood.splice(indexImg, 1);
@@ -181,7 +179,7 @@ function Img(imgSrc, id) {
 					if (indexId > -1) {
 						amountOfProducts.splice(indexId, 1);
 					}
-					
+
 				});
 			});
 
@@ -212,13 +210,12 @@ function objectsFunc() {
 	var fruitsAndVedgLength = fruitsAndVedgArray.length;
 	var jsonProductsLength = jsonProducts.length;
 	var i = 0, j = 0;
-	
+
 	//initialize the length of yearsArray
 	for ( i = 0; i < yearsArray.length; i++) {
 		sumArray.push(0);
 	}
-	
-	
+
 	for ( i = 0; i < existFoodLength; i++) {
 		for ( j = 0; j < jsonProductsLength; j++) {
 			if (existFood[i] == jsonProducts[j][0]) {
@@ -232,41 +229,40 @@ function objectsFunc() {
 		sumBillArray[i] = [];
 		for ( j = 0; j < allProductsArray.length; j++) {
 			for ( k = 0; k < allProductsArray[j].length; k++) {
-				if (productsIds[i] == allProductsArray[j][k][0])
-				{
+				if (productsIds[i] == allProductsArray[j][k][0]) {
 					sumBillArray[i].push(allProductsArray[j][k][1]);
 				}
 			}
 		}
 	}
-	console.log("sumBillArray = " + sumBillArray);
-	for (i=0; i<amountOfProducts.length;i++){
-		for( j = 0; j < yearsArray.length; j++)
-		sumBillArray[i][j]*=foodArray[amountOfProducts[i]].count;
+	//console.log("sumBillArray = " + sumBillArray);
+	for ( i = 0; i < amountOfProducts.length; i++) {
+		for ( j = 0; j < yearsArray.length; j++)
+			sumBillArray[i][j] *= foodArray[amountOfProducts[i]].count;
 		//console.log("sumBillArray = " + sumBillArray[i][j]);
 		//console.log("counter = " + foodArray[amountOfProducts[i]].count);
 	}
-	console.log("sumBillArray = " + sumBillArray);
+	//console.log("sumBillArray = " + sumBillArray);
 	for ( i = 0; i < sumBillArray.length; i++) {
 		for ( j = 0; j < sumBillArray[i].length; j++) {
-			sumArray[j] += sumBillArray[i][j] ;
+			sumArray[j] += sumBillArray[i][j];
 		}
 	}
-	
-	console.log("sumArray = " + sumArray);
-	
+
+	//console.log("sumArray = " + sumArray);
+
 	for ( i = 0; i < yearsArray.length; i++) {
 		sumArray[i] = (sumArray[i] / salaryArray[i]) * 4;
 	}
-	
+
 	readyJson(sumArray);
 }
 
 ///////////////////////////////////////////////////////// D3 /////////////////////////////////////////////////////////
 
-
 function readyJson(sumArray) {
 	var data = [];
+
 	var click;
 	var selected_year = 2013;
 	var margin = {
@@ -282,7 +278,7 @@ function readyJson(sumArray) {
 
 	var y = d3.scale.linear().range([height, 0]);
 
-//	var xAxis = d3.svg.axis().scale(x).orient("bottom");
+	//	var xAxis = d3.svg.axis().scale(x).orient("bottom");
 
 	//var yAxis = d3.svg.axis().scale(y).orient("left");
 
@@ -294,12 +290,10 @@ function readyJson(sumArray) {
 	var svg = d3.select("#d3").append("svg").attr("width", width + margin.left + margin.right).attr("height", height + margin.top + margin.bottom).append("g").attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 	var yearsArrayLength = yearsArray.length;
 
-
-
-	for ( var i = yearsArrayLength - 1; i >= 0; i--) {
+	for (var i = yearsArrayLength - 1; i >= 0; i--) {
 		data.push([yearsArray[i], sumArray[i]]);
 	}//data = [[2013,9000],[2012,8000]]
-	
+
 	x.domain(d3.extent(data, function(d) {
 		return d[0];
 	}));
@@ -319,7 +313,6 @@ function readyJson(sumArray) {
 		return y(d[1]);
 	});
 
-	
 	function set_radius() {
 		svg.selectAll(".point").data(data).attr("r", function(d) {
 			if (d[0] != selected_year) {
@@ -330,23 +323,65 @@ function readyJson(sumArray) {
 		});
 	}
 
-	
-	if ($('#precentage').length == 0) {
-		click=0;
-		$("#d3").append("<p id='precentage'>" + data[click][1].toPrecision(2) + "% </p>");
+	if ($('#precentage').length == 0 && firstTimeContinue == true) {
+		firstTimeContinue = false;
+		console.log("firstTimeContinue");
+		click = 0;
+		$("#d3").append("<p id='precentage'>" + (data[click][1] * 100).toPrecision(5) + "% </p>");
 		$("#d3").append("<p id='year'>" + data[click][0] + "</p>");
+		set_radius();
 	}
-	$('#d3').on('click', function() {
+	$('#d3').unbind('click').on('click', function() {
 		click++;
-		$("#precentage").html(data[click][1].toPrecision(2) + "%");
+		$("#precentage").html((data[click][1] * 100).toPrecision(5) + "%");
 		$("#year").html(data[click][0]);
 		selected_year -= 1;
-		if(selected_year == 2013)
-		{
+		if (selected_year == 2013) {
 			selected_year -= 1;
 		}
 		set_radius();
 	});
-	set_radius();
 }
+
+////////////////////////////////////////// CART /////////////////////////////////////
+
+$(document).ready(function(e) {
+
+	$('#draggable2').on('click', function() {
+		var x = $("#draggable2").offset().left;
+		var y = $("#draggable2").offset().top;
+		console.log('x: ' + x + ' y: ' + y);
+	});
+
+});
+$(function() {
+	$("#draggable2").draggable({
+		axis : "x"
+	});
+
+	$("#draggable2").draggable({
+		containment : "#d3Container",
+		scroll : false
+	});
+
+
+});
+
+
+
+
+window.onscroll = function (event) {
+  // called when the window is scrolled.
+  alert("asd");
+}
+
+
+
+
+
+
+
+
+
+
 
