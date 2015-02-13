@@ -236,15 +236,9 @@ function objectsFunc() {
 		}
 	}
 	//console.log("sumBillArray = " + sumBillArray);
-<<<<<<< HEAD
-	for (i=0; i<amountOfProducts.length;i++){
-		for( j = 0; j < yearsArray.length; j++)
-		sumBillArray[i][j]*=foodArray[amountOfProducts[i]].count;
-=======
 	for ( i = 0; i < amountOfProducts.length; i++) {
 		for ( j = 0; j < yearsArray.length; j++)
 			sumBillArray[i][j] *= foodArray[amountOfProducts[i]].count;
->>>>>>> origin/master
 		//console.log("sumBillArray = " + sumBillArray[i][j]);
 		//console.log("counter = " + foodArray[amountOfProducts[i]].count);
 	}
@@ -254,15 +248,9 @@ function objectsFunc() {
 			sumArray[j] += sumBillArray[i][j];
 		}
 	}
-<<<<<<< HEAD
-	
-	//console.log("sumArray = " + sumArray);
-	
-=======
 
 	//console.log("sumArray = " + sumArray);
 
->>>>>>> origin/master
 	for ( i = 0; i < yearsArray.length; i++) {
 		sumArray[i] = (sumArray[i] / salaryArray[i]) * 4;
 	}
@@ -335,16 +323,10 @@ function readyJson(sumArray) {
 		});
 	}
 
-<<<<<<< HEAD
-	
-	if ($('#precentage').length == 0) {
-		click=0;
-=======
 	if ($('#precentage').length == 0 && firstTimeContinue == true) {
 		firstTimeContinue = false;
 		console.log("firstTimeContinue");
 		click = 0;
->>>>>>> origin/master
 		$("#d3").append("<p id='precentage'>" + (data[click][1] * 100).toPrecision(5) + "% </p>");
 		$("#d3").append("<p id='year'>" + data[click][0] + "</p>");
 		set_radius();
@@ -388,7 +370,7 @@ $(function() {
 
 
 
-window.onscroll = function (event) {
+window.onscrollLeft = function (event) {
   // called when the window is scrolled.
   alert("asd");
 }
