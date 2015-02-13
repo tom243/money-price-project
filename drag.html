@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script src="//code.jquery.com/jquery-1.10.2.js"></script>
+		<script src="//code.jquery.com/ui/1.11.3/jquery-ui.js"></script>
+		<style>
+			.draggable {
+				direction: rtl;
+				width: 90px;
+				height: 90px;
+				padding: 0.5em;
+				float: right;
+				margin: 0 10px 10px 0;
+			}
+			#draggable2 {
+				margin-bottom: 20px;
+				cursor: e-resize;
+			}
+		</style>
+		<script>
+			$(document).ready(function(e) {
+
+				$('#draggable2').on('click', function() {
+
+					var x = $("#draggable2").offset().left;
+					var y = $("#draggable2").offset().top;
+					console.log('x: ' + x + ' y: ' + y);
+				});
+
+			});
+			$(function() {
+				$("#draggable2").draggable({
+					axis : "x"
+				});
+
+				$("#draggable2").draggable({
+					containment : "#containment-wrapper",
+					scroll : false
+				});
+
+			});
+		</script>
+	</head>
+	<body>
+
+		<div id="draggable2" class="draggable">
+			<img src="images/agala.png">
+		</div>
+
+
+	</body>
+</html>

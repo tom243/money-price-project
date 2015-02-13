@@ -79,7 +79,7 @@ main > article > p {
 	position: absolute;
 	top: 0px;
 	left: 0px;
-	display:none;
+	display: none;
 }
 .numberOfClicks {
 	text-align: center;
@@ -214,7 +214,8 @@ main > article > p {
 #payment {
 	float: right;
 	width: 278px;
-	height: 595px;
+	height: 100%;
+	position:relative;
 }
 #payment > section:nth-child(1) {
 	width: 278px;
@@ -225,7 +226,8 @@ main > article > p {
 	width: 278px;
 	height: 260px;
 	background: url("../images/cashier.png");
-	margin-top: 19px;
+	bottom: 0%;
+position: absolute;
 }
 #cart {
 	right: 104px;
@@ -334,15 +336,21 @@ main > article > p {
 	margin-top: 8px;
 	margin-right: -14px;
 }
-
+#d3Container{
+	float: right;
+	width: 1000px;
+	height: 100%;
+	margin-right: 109px;
+	position: relative;
+}
 #d3 {
 	float: right;
 	width: 1000px;
-	height: 480px;
-	margin-right: 109px;
+	height: 400px;
 	position: relative;
 	top: 23px;
 }
+
 
 #precentage {
 	position: absolute;
@@ -386,3 +394,20 @@ main > article > p {
 	fill: rgb(159,22,30);
 }
 
+/* /////////////////////////////////// CART ///////////////////// */
+#draggableCart{
+	position:absolute;
+	z-index: 1;
+	direction: rtl;
+	float:right;
+	bottom: 0%;
+}
+.draggable {
+	width: 150px;
+	height: 134px;
+	
+	clear:both;
+}
+#draggable2 {
+	cursor: e-resize;
+}

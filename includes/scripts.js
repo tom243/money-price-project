@@ -5,12 +5,15 @@ var existFood = [];
 var grocerieObj;
 var image;
 var i = 0, clicks = 0, k = 0,idP=0;
+var i = 0, clicks = 0, k = 0, idP = 0;
 var jsonProducts = [];
 var yearsArray = [];
 var objects = [];
 var salaryArray = [];
 var allProductsArray = [];
 var amountOfProducts=[];
+var amountOfProducts = [];
+var firstTimeContinue = true;
 $.getJSON("jsons/objects.json", function(data) {
 	$.each(data, function(key, val) {
 		objects.push(key);
@@ -64,6 +67,7 @@ window.onload = function() {
 	$('#continue').on('click', function() {
 		
 		
+		firstTimeContinue = true;
 		$('#d3').empty();
 		objectsFunc();
 	});
@@ -86,9 +90,11 @@ function Img(imgSrc, id) {
 	var circleCount = document.createElement("section");
 	circleCount.className = 'circlesCounter';
 	circleCount.id = 'circleCounter'+idP;
+	circleCount.id = 'circleCounter' + idP;
 	var clickOnProduct = document.createElement("p");
 	clickOnProduct.className = 'numberOfClicks';
 	clickOnProduct.id = "productClicks"+idP;
+	clickOnProduct.id = "productClicks" + idP;
 	circleCount.appendChild(clickOnProduct);
 	linkObj.setAttribute('href', "#");
 	linkObj.setAttribute('onclick', "clicks()");
@@ -114,6 +120,8 @@ function Img(imgSrc, id) {
 		foodArray[linkObj.getAttribute('id')].count += 1;
 		$("#circleCounter"+idObj).css("display","block");
 		$("#productClicks"+idObj).html(foodArray[idObj].count);
+		$("#circleCounter" + idObj).css("display", "block");
+		$("#productClicks" + idObj).html(foodArray[idObj].count);
 		if ($.inArray(imgSrc, existFood) == -1)//if the img not exist in the whiteboard
 		{
 			existFood.push(imgSrc);
