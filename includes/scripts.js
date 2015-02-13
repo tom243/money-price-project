@@ -63,6 +63,8 @@ window.onload = function() {
 	}
 
 	$('#continue').on('click', function() {
+		
+	
 		$('#d3').empty();
 		objectsFunc();
 	});
@@ -263,9 +265,9 @@ function readyJson() {
 
 	var y = d3.scale.linear().range([height, 0]);
 
-	var xAxis = d3.svg.axis().scale(x).orient("bottom");
+//	var xAxis = d3.svg.axis().scale(x).orient("bottom");
 
-	var yAxis = d3.svg.axis().scale(y).orient("left");
+	//var yAxis = d3.svg.axis().scale(y).orient("left");
 
 	var line = d3.svg.line().x(function(d) {
 		return x(d[0]);
@@ -278,11 +280,13 @@ function readyJson() {
 	var i;
 	if (data.length > 0) {
 		data.length = 0;
+		
 	}
 	for ( i = yearsArrayLength - 1; i >= 0; i--) {
 		data.push([yearsArray[i], sumArray[i]]);
 	}//data = [[2013,9000],[2012,8000]]
-
+	
+	sumArray.length = 0;
 
 	x.domain(d3.extent(data, function(d) {
 		return d[0];
@@ -291,9 +295,9 @@ function readyJson() {
 		return d[1];
 	}));
 
-	svg.append("g").attr("class", "x axis").attr("transform", "translate(0," + height + ")").call(xAxis);
+	//svg.append("g").attr("class", "x axis").attr("transform", "translate(0," + height + ")").call(xAxis);
 
-	svg.append("g").attr("class", "y axis").call(yAxis).append("text").attr("transform", "rotate(-90)").attr("y", 6).attr("dy", ".71em").style("text-anchor", "end").text("Price ($)");
+	//svg.append("g").attr("class", "y axis").call(yAxis).append("text").attr("transform", "rotate(-90)").attr("y", 6).attr("dy", ".71em").style("text-anchor", "end").text("Price ($)");
 
 	svg.append("path").datum(data).attr("class", "line").attr("d", line);
 
@@ -326,6 +330,10 @@ function readyJson() {
 		$("#precentage").html(data[click][1].toPrecision(2) + "%");
 		$("#year").html(data[click][0]);
 		selected_year -= 1;
+		if(selected_year == 2013)
+		{
+			selected_year -= 1;
+		}
 		set_radius();
 	});
 	set_radius();
