@@ -88,11 +88,6 @@
             "id": "\u05de\u05dc\u05e4\u05e4\u05d5\u05e0\u05d9\u05dd"
         },
 		{
-             "name": "פלפל ירוק",
-            "image": "images/pilpel yarok.png",
-            "id": "\u05e4\u05dc\u05e4\u05dc \u05d9\u05e8\u05d5\u05e7"
-        },
-		{
              "name": "פלפל ירוק בהיר",
             "image": "images/pilpel yarok bahir.png",
             "id": "\u05e4\u05dc\u05e4\u05dc \u05d9\u05e8\u05d5\u05e7 \u05d1\u05d4\u05d9\u05e8"

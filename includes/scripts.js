@@ -69,7 +69,7 @@ window.onload = function() {
 	});
 };
 
-var fruitsAndVedgArray = new Array("images/tapuah.png", "images/tapuah yonatan.png", "images/banana.png", "images/tapuz shmuti.png", "images/tapuz valensiya.png", "images/klemantina.png", "images/eshkolit.png", "images/agvaniya.png", "images/melafefon.png", "images/pilpel yarok.png", "images/pilpel yarok bahir.png", "images/pilpel yarok kehe.png", "images/shauit yaruka.png", "images/agas.png", "images/afarsek.png", "images/shezif sagol.png", "images/shezif zahov.png", "images/anavom shorim.png", "images/anavim yarukim.png", "images/kruvit.png", "images/hazil.png", "images/gezer.png", "images/tapuah adama.png", "images/tiras 2.png", "images/mango.png", "images/avokado.png", "images/melon galya.png", "images/avatiah.png", "images/afarsemon.png", "images/limon.png", "images/bazal.png", "images/hasa.png", "images/kruv lavan.png", "images/agvaniot shery.png", "images/znon.png");
+var fruitsAndVedgArray = new Array("images/tapuah.png", "images/tapuah yonatan.png", "images/banana.png", "images/tapuz shmuti.png", "images/tapuz valensiya.png", "images/klemantina.png", "images/eshkolit.png", "images/agvaniya.png", "images/melafefon.png", "images/pilpel yarok bahir.png", "images/pilpel yarok kehe.png", "images/shauit yaruka.png", "images/agas.png", "images/afarsek.png", "images/shezif sagol.png", "images/shezif zahov.png", "images/anavom shorim.png", "images/anavim yarukim.png", "images/kruvit.png", "images/hazil.png", "images/gezer.png", "images/tapuah adama.png", "images/tiras 2.png", "images/mango.png", "images/avokado.png", "images/melon galya.png", "images/avatiah.png", "images/afarsemon.png", "images/limon.png", "images/bazal.png", "images/hasa.png", "images/kruv lavan.png", "images/agvaniot shery.png", "images/znon.png");
 var milkArray = new Array("images/halav be sakit.png", "images/yogurt tevi.png", "images/shamenet hamuza.png", "images/tahlif halav.png", "images/koteg.png", "images/hema.png", "images/leben.png", "images/gvina levana.png", "images/bezim medium.png", "images/bezim larj.png");
 var CannedFoodArray = new Array("images/afunat gina.png", "images/tiras.png", "images/resek sgvaniot.png", "images/salat hazilim.png", "images/salat humus.png", "images/zeitim be mishkal.png");
 var meatArray = new Array("images/haze of.png", "images/karpion.png", "images/file nesihat ha nilus.png", "images/pastrama.png", "images/basar bakar haze.png", "images/basar bakar zlaot.png", "images/naknikiot.png", "images/of tari.png", "images/of kafu.png");
@@ -117,7 +117,6 @@ function Img(imgSrc, id) {
 		if ($.inArray(imgSrc, existFood) == -1)//if the img not exist in the whiteboard
 		{
 			existFood.push(imgSrc);
-
 			$WhiteBoardProduct = $("<section>").attr("id", idObj + "section").appendTo("#whiteBoard").addClass("sectionWhiteBoard");
 
 			$buttons = $('<section>').appendTo($WhiteBoardProduct).addClass("plusMinusButtons");
@@ -145,7 +144,8 @@ function Img(imgSrc, id) {
 				id : linkObj.getAttribute('id'),
 				val : foodArray[linkObj.getAttribute('id')].count
 			}).appendTo($WhiteBoardProduct);
-
+			
+			
 			//product name
 			$.getJSON("jsons/objects.json", function(data) {
 				$.each(data, function(key, val) {
@@ -180,6 +180,7 @@ function Img(imgSrc, id) {
 
 		} else {//the obj is not in the exist array
 			$("input[type='textbox'][id='" + idObj + "']").val(foodArray[linkObj.getAttribute('id')].count);
+			console.log(foodArray[idObj].count);
 		}
 	};
 };
@@ -205,7 +206,6 @@ function objectsFunc() {
 	var jsonProductsLength = jsonProducts.length;
 	var i = 0, j = 0;
 	
-	
 	//initialize the length of yearsArray
 	for ( i = 0; i < yearsArray.length; i++) {
 		sumArray.push(0);
@@ -220,23 +220,25 @@ function objectsFunc() {
 		}
 	}
 	
-		console.log("productsIds = " + productsIds);
+		//console.log("productsIds = " + productsIds);
 	for ( i = 0; i < productsIds.length; i++) {
 		sumBillArray[i] = [];
 		for ( j = 0; j < allProductsArray.length; j++) {
 			for ( k = 0; k < allProductsArray[j].length; k++) {
 				if (productsIds[i] == allProductsArray[j][k][0])
+				{
 					sumBillArray[i].push(allProductsArray[j][k][1]);
+				}
 			}
 		}
 	}
-	
 	console.log("sumBillArray = " + sumBillArray);
 	for ( i = 0; i < sumBillArray.length; i++) {
 		for ( j = 0; j < sumBillArray[i].length; j++) {
-			sumArray[j] += sumBillArray[i][j];
+			sumArray[j] += sumBillArray[i][j] ;
 		}
 	}
+	console.log(foodArray[1].count);
 	for ( i = 0; i < yearsArray.length; i++) {
 		sumArray[i] = (sumArray[i] / salaryArray[i]) * 4;
 	}
@@ -282,7 +284,7 @@ function readyJson(sumArray) {
 		data.push([yearsArray[i], sumArray[i]]);
 	}//data = [[2013,9000],[2012,8000]]
 	
-	console.log("sumArray = " + sumArray);
+	//console.log("sumArray = " + sumArray);
 	x.domain(d3.extent(data, function(d) {
 		return d[0];
 	}));
