@@ -368,15 +368,20 @@ $(function() {
 });
 
 
+<<<<<<< HEAD
     $(window).scroll(function(){
         alert(2);   
     });
+=======
+
+
 window.onscrollLeft = function (event) {
   // called when the window is scrolled.
   alert("asd");
 }
 
 
+>>>>>>> origin/master
 
 
 
