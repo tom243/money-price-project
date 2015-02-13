@@ -239,21 +239,21 @@ function objectsFunc() {
 			}
 		}
 	}
-	console.log("sumBillArray = " + sumBillArray);
+	//console.log("sumBillArray = " + sumBillArray);
 	for (i=0; i<amountOfProducts.length;i++){
 		for( j = 0; j < yearsArray.length; j++)
 		sumBillArray[i][j]*=foodArray[amountOfProducts[i]].count;
 		//console.log("sumBillArray = " + sumBillArray[i][j]);
 		//console.log("counter = " + foodArray[amountOfProducts[i]].count);
 	}
-	console.log("sumBillArray = " + sumBillArray);
+	//console.log("sumBillArray = " + sumBillArray);
 	for ( i = 0; i < sumBillArray.length; i++) {
 		for ( j = 0; j < sumBillArray[i].length; j++) {
 			sumArray[j] += sumBillArray[i][j] ;
 		}
 	}
 	
-	console.log("sumArray = " + sumArray);
+	//console.log("sumArray = " + sumArray);
 	
 	for ( i = 0; i < yearsArray.length; i++) {
 		sumArray[i] = (sumArray[i] / salaryArray[i]) * 4;
@@ -333,12 +333,12 @@ function readyJson(sumArray) {
 	
 	if ($('#precentage').length == 0) {
 		click=0;
-		$("#d3").append("<p id='precentage'>" + data[click][1].toPrecision(2) + "% </p>");
+		$("#d3").append("<p id='precentage'>" + (data[click][1] * 100).toPrecision(5) + "% </p>");
 		$("#d3").append("<p id='year'>" + data[click][0] + "</p>");
 	}
 	$('#d3').on('click', function() {
 		click++;
-		$("#precentage").html(data[click][1].toPrecision(2) + "%");
+		$("#precentage").html((data[click][1] * 100).toPrecision(5) + "%");
 		$("#year").html(data[click][0]);
 		selected_year -= 1;
 		if(selected_year == 2013)
