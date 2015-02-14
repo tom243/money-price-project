@@ -213,17 +213,17 @@ main > article > p {
 }
 #payment {
 	float: right;
-	width: 275px;
+	width: 278px;
 	height: 100%;
 	position:relative;
 }
 #payment > section:nth-child(1) {
-	width: 275px;
+	width: 278px;
 	height: 316px;
 	background: url("../images/shelet kupa.png");
 }
 #payment > section:nth-child(2) {
-	width: 278px;
+	width: 281px;
 	height: 260px;
 	background: url("../images/cashier.png");
 	bottom: 0%;
@@ -344,11 +344,7 @@ position: absolute;
 	padding-right: 109px;
 	position: relative;
 	background: #F2EEE5;
-<<<<<<< HEAD
-	z-index: 2;
-=======
 z-index: 2;
->>>>>>> origin/master
 }
 #d3 {
 	float: right;

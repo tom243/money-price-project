@@ -363,16 +363,4 @@ $(function() {
 		scroll : false
 	});
 
-<<<<<<< HEAD
-
 });
-
-
-
-
-
-
-
-=======
-});
->>>>>>> origin/master
