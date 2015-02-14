@@ -213,7 +213,7 @@ main > article > p {
 }
 #payment {
 	float: right;
-	width: 278px;
+	width: 275px;
 	height: 100%;
 	position:relative;
 }
@@ -227,6 +227,7 @@ main > article > p {
 	height: 260px;
 	background: url("../images/cashier.png");
 	bottom: 0%;
+	z-index:2;
 position: absolute;
 }
 #cart {
@@ -340,8 +341,10 @@ position: absolute;
 	float: right;
 	width: 1000px;
 	height: 100%;
-	margin-right: 109px;
+	padding-right: 109px;
 	position: relative;
+	background: #F2EEE5;
+	z-index: 2;
 }
 #d3 {
 	float: right;
