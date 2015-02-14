@@ -218,7 +218,6 @@ main > article > p {
 	position:relative;
 }
 #payment > section:nth-child(1) {
-	width: 278px;
 	width: 275px;
 	height: 316px;
 	background: url("../images/shelet kupa.png");
