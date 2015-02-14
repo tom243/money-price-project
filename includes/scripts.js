@@ -352,7 +352,6 @@ $(document).ready(function(e) {
 		var y = $("#draggable2").offset().top;
 		console.log('x: ' + x + ' y: ' + y);
 	});
-
 });
 $(function() {
 	$("#draggable2").draggable({
@@ -364,30 +363,4 @@ $(function() {
 		scroll : false
 	});
 
-
 });
-
-
-<<<<<<< HEAD
-    $(window).scroll(function(){
-        alert(2);   
-    });
-=======
-
-
-window.onscrollLeft = function (event) {
-  // called when the window is scrolled.
-  alert("asd");
-}
-
-
->>>>>>> origin/master
-
-
-
-
-
-
-
-
-
