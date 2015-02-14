@@ -352,7 +352,6 @@ $(document).ready(function(e) {
 		var y = $("#draggable2").offset().top;
 		console.log('x: ' + x + ' y: ' + y);
 	});
-
 });
 $(function() {
 	$("#draggable2").draggable({
@@ -364,6 +363,7 @@ $(function() {
 		scroll : false
 	});
 
+<<<<<<< HEAD
 
 });
 
@@ -373,3 +373,6 @@ $(function() {
 
 
 
+=======
+});
+>>>>>>> origin/master
