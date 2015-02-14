@@ -60,10 +60,22 @@ window.onload = function() {
 	for (var i = 0; i < arraySize; i++) {
 		new ImgsManager(imgsManagerArray[i], imgsManagerIdsArray[i]);
 	}
-
+	$('#d3Container').hide();
 	$('#continue').on('click', function() {
-		firstTimeContinue = true;
+		if (existFood.length == 0) {
+			return;
+		}
+		$('#d3Container').show();
+		//$('#draggableCart').css({float: 'right'});
 		$('#d3').empty();
+		$('main').css("width", "9300px");
+		$('footer').css("width", "9300px");
+		$('body').animate({
+			scrollLeft : $("#d3Container").offset().left
+		}, 3000);
+		firstTimeContinue = true;
+
+
 		objectsFunc();
 	});
 };
@@ -144,7 +156,7 @@ function Img(imgSrc, id) {
 				type : 'textbox',
 				id : linkObj.getAttribute('id'),
 				val : foodArray[linkObj.getAttribute('id')].count
-			}).appendTo($WhiteBoardProduct);
+			}).prop('readonly', true).appendTo($WhiteBoardProduct);
 
 			//product name
 			$.getJSON("jsons/objects.json", function(data) {
@@ -262,7 +274,6 @@ function objectsFunc() {
 
 function readyJson(sumArray) {
 	var data = [];
-
 	var click;
 	var selected_year = 2013;
 	var margin = {
@@ -320,39 +331,113 @@ function readyJson(sumArray) {
 			} else {
 				return 18;
 			}
+
 		});
 	}
 
+	//34.07142857142857
 	if ($('#precentage').length == 0 && firstTimeContinue == true) {
 		firstTimeContinue = false;
-		console.log("firstTimeContinue");
 		click = 0;
 		$("#d3").append("<p id='precentage'>" + (data[click][1] * 100).toPrecision(5) + "% </p>");
 		$("#d3").append("<p id='year'>" + data[click][0] + "</p>");
 		set_radius();
 	}
-	$('#d3').unbind('click').on('click', function() {
-		click++;
-		$("#precentage").html((data[click][1] * 100).toPrecision(5) + "%");
-		$("#year").html(data[click][0]);
-		selected_year -= 1;
-		if (selected_year == 2013) {
-			selected_year -= 1;
-		}
-		set_radius();
+	/*
+	 $('#d3').unbind('click').on('click', function() {
+	 click++;
+	 $("#precentage").html((data[click][1] * 100).toPrecision(5) + "%");
+	 $("#year").html(data[click][0]);
+	 selected_year -= 1;
+	 if (selected_year == 2013) {
+	 selected_year -= 1;
+	 }
+	 set_radius();
+	 });*/
+
+	$(function() {
+
+		var prevX = -1;
+		counts = [0, 0, 0];
+		$("#draggable2").draggable({
+
+			start : function(e, ui) {
+				counts[0]++;
+				//updateCounterStatus( $start_counter, counts[ 0 ] );
+				//console.log("start");
+				//ui.position.left = 0;
+			},
+			drag : function(e, ui) {
+				counts[1]++;
+				if (prevX == -1) {
+					prevX = e.pageX;
+					return false;
+				}
+				// dragged left
+
+				if (prevX > e.pageX && counts[1] % 8 == 0) {
+					if (click < yearsArray.length - 1) {
+						click++;
+						$("#precentage").html((data[click][1] * 100).toPrecision(5) + "%");
+						$("#year").html(data[click][0]);
+						selected_year -= 1;
+						if (selected_year == 2013) {
+							selected_year -= 1;
+						}
+						set_radius();
+					}
+
+				}// dragged right
+				else if (prevX < e.pageX && counts[1] % 8 == 0) {
+					if (click > 0) {
+						click--;
+						$("#precentage").html((data[click][1] * 100).toPrecision(5) + "%");
+						$("#year").html(data[click][0]);
+						selected_year += 1;
+						if (selected_year == 1986) {
+							selected_year += 1;
+						}
+						set_radius();
+					}
+				}
+				prevX = e.pageX;
+
+			},
+			stop : function() {
+				counts[2]++;
+				//updateCounterStatus( $stop_counter, counts[ 2 ] );
+				//console.log("stop");
+			}
+		});
+
 	});
+
 }
 
 ////////////////////////////////////////// CART /////////////////////////////////////
 
+/*
 $(document).ready(function(e) {
+$('#draggable2').on('click', function() {
+var oldX = x;
+var x = $("#draggable2").offset().left;
+//console.log('x: ' + x);
 
-	$('#draggable2').on('click', function() {
-		var x = $("#draggable2").offset().left;
-		var y = $("#draggable2").offset().top;
-		console.log('x: ' + x + ' y: ' + y);
-	});
+var newX = x;
+if (newX >= oldX && newX - 34.07142857142857 < newX) {//dragg back
+oldX = newX;
+newX -= 34.07142857142857;
+console.log('newX: ' + newX);
+} else {//dragg front
+oldX = newX;
+newX += 34.07142857142857;
+console.log('newX: ' + newX);
+}
 });
+});
+
+*/
+
 $(function() {
 	$("#draggable2").draggable({
 		axis : "x"
@@ -364,3 +449,4 @@ $(function() {
 	});
 
 });
+

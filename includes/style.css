@@ -21,7 +21,7 @@ body {
 	font-family: "Alef Hebrew", Arial;
 }
 main {
-	width: 9300px;
+	width: 8200px;
 	height: 95%;
 }
 footer {
@@ -29,7 +29,7 @@ footer {
 	bottom: 0px;
 	background: url("../images/rizpa.png") repeat-x;
 	height: 5%;
-	width: 9300px;
+	width: 8200px;
 }
 main > article {
 	width: 400px;
@@ -215,7 +215,7 @@ main > article > p {
 	float: right;
 	width: 278px;
 	height: 100%;
-	position:relative;
+	position: relative;
 }
 #payment > section:nth-child(1) {
 	width: 278px;
@@ -227,8 +227,8 @@ main > article > p {
 	height: 260px;
 	background: url("../images/cashier.png");
 	bottom: 0%;
-	z-index:2;
-position: absolute;
+	z-index: 2;
+	position: absolute;
 }
 #cart {
 	right: 104px;
@@ -337,14 +337,14 @@ position: absolute;
 	margin-top: 8px;
 	margin-right: -14px;
 }
-#d3Container{
+#d3Container {
 	float: right;
 	width: 1000px;
 	height: 100%;
 	padding-right: 109px;
 	position: relative;
 	background: #F2EEE5;
-z-index: 2;
+	z-index: 2;
 }
 #d3 {
 	float: right;
@@ -353,7 +353,6 @@ z-index: 2;
 	position: relative;
 	top: 23px;
 }
-
 
 #precentage {
 	position: absolute;
@@ -398,19 +397,35 @@ z-index: 2;
 }
 
 /* /////////////////////////////////// CART ///////////////////// */
-#draggableCart{
-	position:absolute;
+#draggableCart {
+	position: absolute;
 	z-index: 1;
 	direction: rtl;
-	float:right;
+	float: right;
 	bottom: 0%;
 }
 .draggable {
 	width: 150px;
 	height: 134px;
-	
-	clear:both;
+	clear: both;
 }
 #draggable2 {
 	cursor: e-resize;
+}
+
+
+/*///////////////////////// FLIP STORIES ////////////////////////*/
+#fruitINFO {
+	-moz-transform: scale(1,1);
+	-webkit-transform: scale(1,1);
+	transform: scale(1,1);
+	
+	-webkit-transition: all 600ms ease;
+	-webkit-transition: all 600ms ease;
+	transition: all 600ms ease;
+}
+#fruitINFO:hover{
+	-moz-transform: scale(-1,1);
+	-webkit-transform: scale(-1,1);
+	transform: scale(-1,1);
 }
