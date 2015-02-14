@@ -269,6 +269,22 @@ main > article > p {
 	width: 307px;
 	height: 328px;
 	position: relative;
+	
+	-moz-transform: scale(1,1);
+	-webkit-transform: scale(1,1);
+	transform: scale(1,1);
+	
+	-webkit-transition: all 600ms ease;
+	-webkit-transition: all 600ms ease;
+	transition: all 600ms ease;
+	
+}
+#fruitINFO:hover, #milkINFO:hover, #CannedFoodINFO:hover, #meatINFO:hover, #breadINFO:hover, #oilINFO:hover, #drinksINFO:hover {
+	
+	-moz-transform: scale(-1,1);
+	-webkit-transform: scale(-1,1);
+	transform: scale(-1,1);
+	
 }
 #fruitINFO {
 	background: url("../images/sipur yerakot.png");
@@ -413,19 +429,3 @@ main > article > p {
 	cursor: e-resize;
 }
 
-
-/*///////////////////////// FLIP STORIES ////////////////////////*/
-#fruitINFO {
-	-moz-transform: scale(1,1);
-	-webkit-transform: scale(1,1);
-	transform: scale(1,1);
-	
-	-webkit-transition: all 600ms ease;
-	-webkit-transition: all 600ms ease;
-	transition: all 600ms ease;
-}
-#fruitINFO:hover{
-	-moz-transform: scale(-1,1);
-	-webkit-transform: scale(-1,1);
-	transform: scale(-1,1);
-}
