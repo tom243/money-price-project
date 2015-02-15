@@ -39,13 +39,15 @@ main > article {
 	margin-left: 246px;
 }
 main > article > h1 {
-	font-size: 3.3em;
+	font-size: 5.3em;
 	font-weight: 800;
+	line-height: 36px;
+	margin-bottom: 51px;
 }
 main > article > p {
-	color: #9e8986;
-	font-size: 1.4em;
-	line-height: 30px;
+	color: rgb(65,23,27);
+	font-size: 1.5em;
+	line-height: 27px;
 }
 .groceriesLinks {
 	display: inline-block;
@@ -83,9 +85,10 @@ main > article > p {
 }
 .numberOfClicks {
 	text-align: center;
-	font-size: 30px;
+	font-size: 24px;
 	color: #FFFFFF;
 	margin: -7px;
+	line-height: 45px;
 }
 /*/////////////////////////////////// Main Sections /////////////////////////*/
 #fruitsAndVedgClass, #milkClass, #CannedFoodClass, #meatClass, #breadClass, #oilClass, #drinksClass {
@@ -232,12 +235,22 @@ main > article > p {
 }
 #cart {
 	right: 104px;
-	bottom: 7.5%;
 	width: 150px;
 	height: 134px;
 	background: url("../images/agala.png");
 	position: fixed;
 	z-index: 1;
+}
+
+@media (max-width: 1025px) {
+	#cart {
+		bottom: 5%;
+	}
+}
+@media (min-width: 1026px) {
+	#cart {
+		bottom: 7.5%;
+	}
 }
 #arrows {
 	width: 42px;
@@ -269,18 +282,6 @@ main > article > p {
 	width: 307px;
 	height: 328px;
 	position: relative;
-	-moz-transform: scale(1,1);
-	-webkit-transform: scale(1,1);
-	transform: scale(1,1);
-	-webkit-transition: all 600ms ease;
-	-webkit-transition: all 600ms ease;
-	transition: all 600ms ease;
-}
-#fruitINFO:hover, #milkINFO:hover, #CannedFoodINFO:hover, #meatINFO:hover, #breadINFO:hover, #oilINFO:hover, #drinksINFO:hover {
-
-	-moz-transform: scale(-1,1);
-	-webkit-transform: scale(-1,1);
-	transform: scale(-1,1);
 }
 #fruitINFO {
 	background: url("../images/sipur yerakot.png");
@@ -307,14 +308,10 @@ main > article > p {
 	font-family: "Alef Hebrew", Arial;
 	text-align: center;
 	position: absolute;
-	bottom: 0px;
+	right: 22px;
 	color: #FFFFFF;
-}
-#fruitINFO > p, #breadINFO > p, #oilINFO > p {
-	font-size: 20px;
-}
-#milkINFO > p, #CannedFoodINFO > p, #drinksINFO > p {
-	font-size: 18px;
+	top: 172px;
+	width: 259px;
 }
 .sectionWhiteBoard {
 	width: 292px;
@@ -364,7 +361,8 @@ main > article > p {
 	font-size: 24px;
 	position: absolute;
 	margin: 0px;
-	bottom: 20px;
+	bottom: 24px;
+	margin-right: 52px;
 }
 #d3Salary {
 	color: #000000;
@@ -374,11 +372,11 @@ main > article > p {
 	margin: 0px;
 	bottom: 0px;
 	right: 13px;
-	
 	font-weight: normal;
+	margin-right: 52px;
 }
 #d3Details {
-	width: 924px;
+	width: 1000px;
 	height: 220px;
 	float: right;
 	position: relative;
@@ -436,9 +434,10 @@ main > article > p {
 	position: absolute;
 	z-index: 1;
 	direction: rtl;
-	float: right;
 	bottom: 0%;
 	width: 924px;
+	height: 134px;
+	margin-right: 72px;
 }
 .draggable {
 	width: 150px;
@@ -449,3 +448,21 @@ main > article > p {
 	cursor: e-resize;
 }
 
+#slider {
+	width: 924px;
+}
+
+.ui-slider-horizontal .ui-state-default {
+	background: url("../images/cardD3.png");
+	width: 150px;
+	height: 134px;
+	margin-top: 5px;
+	border: none;
+	outline-color: transparent;
+	z-index: 3;
+}
+
+.ui-widget-content {
+	background: none;
+	border: none;
+}
