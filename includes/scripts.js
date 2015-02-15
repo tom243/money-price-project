@@ -169,9 +169,9 @@ window.onload = function() {
 		$('#d3').empty();
 		$('main').css("width", "9300px");
 		$('footer').css("width", "9300px");
-		$('body').animate({
+		$("html,body").animate({
 			scrollLeft : $("#d3Container").offset().left
-		}, 3000);
+		}, "slow");
 		firstTimeContinue = true;
 
 		objectsFunc();
