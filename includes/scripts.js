@@ -1,3 +1,8 @@
+var audioElement;
+$(document).ready(function() {
+	audioElement = document.createElement('audio');
+	audioElement.setAttribute('src', 'includes/Beep.mp3');
+});
 (function($) {
 	// Detect touch support
 	$.support.touch = 'ontouchend' in document;
@@ -167,10 +172,26 @@ window.onload = function() {
 		$('html,body').animate({
 			scrollLeft : $("#d3Container").offset().left
 		}, 3000);
+
 		firstTimeContinue = true;
 		objectsFunc();
 	});
 };
+
+$(function() {
+	var func = function() {
+		$("#arrows").animate({
+			"right" : "302px"
+		}, 1000, function() {
+			$(this).animate({
+				"right" : "382px"
+			}, 1000)
+		})
+		setTimeout(func, 2000)
+	}
+	func();
+
+});
 
 var fruitsAndVedgArray = new Array("images/tapuah.png", "images/tapuah yonatan.png", "images/banana.png", "images/tapuz shmuti.png", "images/tapuz valensiya.png", "images/klemantina.png", "images/eshkolit.png", "images/agvaniya.png", "images/melafefon.png", "images/pilpel yarok bahir.png", "images/pilpel yarok kehe.png", "images/shauit yaruka.png", "images/agas.png", "images/afarsek.png", "images/shezif sagol.png", "images/shezif zahov.png", "images/anavom shorim.png", "images/anavim yarukim.png", "images/kruvit.png", "images/hazil.png", "images/gezer.png", "images/tapuah adama.png", "images/tiras 2.png", "images/mango.png", "images/avokado.png", "images/melon galya.png", "images/avatiah.png", "images/afarsemon.png", "images/limon.png", "images/bazal.png", "images/hasa.png", "images/kruv lavan.png", "images/agvaniot shery.png", "images/znon.png");
 var milkArray = new Array("images/halav be sakit.png", "images/yogurt tevi.png", "images/shamenet hamuza.png", "images/tahlif halav.png", "images/koteg.png", "images/hema.png", "images/leben.png", "images/gvina levana.png", "images/bezim medium.png", "images/bezim larj.png");
@@ -212,6 +233,7 @@ function Img(imgSrc, id) {
 	//Add the img to the 'section'
 	document.getElementById(id).appendChild(linkObj);
 	linkObj.onclick = function() {
+		audioElement.play();
 		var idObj = linkObj.getAttribute('id');
 		var product = null;
 		foodArray[linkObj.getAttribute('id')].count += 1;
@@ -373,7 +395,7 @@ function readyJson(sumArray) {
 		right : 20,
 		bottom : 30,
 		left : 50
-	}, width = 924 - margin.left - margin.right, height = 230 - margin.top - margin.bottom;
+	}, width = 1024 - margin.left - margin.right, height = 230 - margin.top - margin.bottom;
 
 	var parseDate = d3.time.format("%d-%b-%y").parse;
 
@@ -438,72 +460,40 @@ function readyJson(sumArray) {
 	}
 
 	$(function() {
-
-		var prevX = -1;
-		counts = [0, 0, 0];
-		$("#draggable2").draggable({
-
-			start : function() {
-				counts[0]++;
-			},
-			drag : function(e, ui) {
-				counts[1]++;
-				if (prevX == -1) {
-					prevX = e.pageX;
-					return false;
-				}
-				// dragged left
-
-				if (prevX > e.pageX && counts[1] % 8 == 0) {
-					if (click < yearsArray.length - 1) {
-						click++;
+		var oldPos = 924;
+		$("#slider").slider({
+			value : 954,
+			min : 0,
+			max : 954,
+			step : 35.3,
+			slide : function(event, ui) {
+				//console.log("old: " + oldPos + " ui.value:  " + ui.value);
+				//drag left
+				if (ui.value < oldPos && (click < yearsArray.length - 1)) {
+					oldPos = ui.value;
+					click++;
+					selected_year -= 1;
+					if (selected_year == 2013) {
 						selected_year -= 1;
-						if (selected_year == 2013) {
-							selected_year -= 1;
-						}
-						set_radius();
 					}
-
-				}// dragged right
-				else if (prevX < e.pageX && counts[1] % 8 == 0) {
-					if (click > 0) {
-						click--;
-						selected_year += 1;
-						if (selected_year == 1986) {
-							selected_year += 1;
-						}
-						set_radius();
-					}
+					set_radius();
 				}
-				prevX = e.pageX;
 
+				//drag right
+				if (ui.value > oldPos && (click > 0)) {
+					oldPos = ui.value;
+					click--;
+					selected_year += 1;
+					if (selected_year == 1986) {
+						selected_year += 1;
+					}
+					set_radius();
+				}
 				$("#precentage").html((data[click][1] * 100).toPrecision(3) + "%");
 				$("#d3Salary").html((salaryArray[salaryArray.length - 1 - click]) + ' ש"ח ');
 				$("#year").html(data[click][0]);
-			},
-			stop : function() {
-				counts[2]++;
-				//updateCounterStatus( $stop_counter, counts[ 2 ] );
-				//console.log("stop");
+				oldPos = ui.value;
 			}
 		});
-
 	});
-
 }
-
-////////////////////////////////////////// CART /////////////////////////////////////
-
-$(function() {
-	$("#draggable2").draggable({
-		axis : "x"
-	});
-
-	$("#draggable2").draggable({
-		containment : "#d3Container",
-		scroll : false
-	});
-
-});
-
-//TODO: 1. update when continue click - revert the cart,       2. fix p on the d3
