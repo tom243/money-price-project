@@ -162,9 +162,15 @@ window.onload = function() {
 		}
 		$('#d3Container').show();
 		$('#d3').empty();
+<<<<<<< HEAD
 		$('main').css("width", "9200px");
 		$('footer').css("width", "9200px");
 		$('html,body').animate({
+=======
+		$('main').css("width", "9300px");
+		$('footer').css("width", "9300px");
+		$("html,body").animate({
+>>>>>>> origin/master
 			scrollLeft : $("#d3Container").offset().left
 		}, 3000);
 		}, "slow");
