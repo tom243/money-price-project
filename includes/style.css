@@ -247,9 +247,14 @@ main > article > p {
 		bottom: 5%;
 	}
 }
-@media (min-width: 1026px) {
+@media (min-width:1026px) and (max-width:1400px){
 	#cart {
 		bottom: 7.5%;
+	}
+}
+@media (min-width:1401px) {
+	#cart {
+		bottom: 5%;
 	}
 }
 #arrows {

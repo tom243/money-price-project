@@ -3,6 +3,12 @@ $(document).ready(function() {
 	audioElement = document.createElement('audio');
 	audioElement.setAttribute('src', 'includes/Beep.mp3');
 });
+$(document).ready(function() {
+    $('html, body, *').mousewheel(function(e, delta) {
+        this.scrollLeft += (delta * 100);
+        e.preventDefault();
+    });
+});
 (function($) {
 	// Detect touch support
 	$.support.touch = 'ontouchend' in document;
