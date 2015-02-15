@@ -526,3 +526,5 @@ $(function() {
 	});
 
 });
+
+//TODO: 1. update when continue click - revert the cart,       2. fix p on the d3
