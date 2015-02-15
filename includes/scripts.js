@@ -172,7 +172,6 @@ window.onload = function() {
 		$("html,body").animate({
 >>>>>>> origin/master
 			scrollLeft : $("#d3Container").offset().left
-		}, 3000);
 		}, "slow");
 		firstTimeContinue = true;
 		objectsFunc();
