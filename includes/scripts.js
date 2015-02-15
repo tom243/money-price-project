@@ -1,3 +1,8 @@
+var audioElement;
+$(document).ready(function() {
+	audioElement = document.createElement('audio');
+	audioElement.setAttribute('src', 'includes/Beep.mp3');
+});
 (function($) {
 	// Detect touch support
 	$.support.touch = 'ontouchend' in document;
@@ -213,6 +218,7 @@ function Img(imgSrc, id) {
 	//Add the img to the 'section'
 	document.getElementById(id).appendChild(linkObj);
 	linkObj.onclick = function() {
+		audioElement.play();
 		var idObj = linkObj.getAttribute('id');
 		var product = null;
 		foodArray[linkObj.getAttribute('id')].count += 1;
