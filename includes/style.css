@@ -179,7 +179,7 @@ main > article > p {
     background: url("../images/shelet mashkaot.png");
 }
 #receipt {
-    width: 292px;
+    width: 322px;
     height: 418px;
     background: url("../images/kabala background.png");
     margin-right: 145px;
@@ -188,7 +188,7 @@ main > article > p {
     overflow-x: hidden;
 }
 #whiteBoard {
-    width: 292px;
+    width: 322px;
     height: 319px;
     overflow-x: hidden;
     overflow-y: auto;
@@ -318,7 +318,7 @@ main > article > p {
     display: none;
     width: 14px;
     height: 14px;
-    margin-left: 35px;
+    margin-left: 18px;
     margin-top: 10px;
     background: url("../images/remove.png") no-repeat;
 }
@@ -342,7 +342,7 @@ main > article > p {
 /*///////////////////////////////// D3 Container /////////////////////////*/
 #d3Container {
     float: right;
-    width: 1000px;
+    width: 1073px;
     height: 100%;
     padding-right: 109px;
     position: relative;
@@ -369,7 +369,7 @@ main > article > p {
     margin-right: 52px;
 }
 #d3Details {
-    width: 1000px;
+    width: 1073px;
     height: 220px;
     float: right;
     position: relative;
@@ -422,12 +422,12 @@ main > article > p {
     z-index: 1;
     direction: rtl;
     bottom: 0%;
-    width: 924px;
+    width: 969px;
     height: 134px;
     margin-right: 83px;
 }
 #slider {
-    width: 924px;
+    width: 969px;
 }
 .ui-slider-horizontal .ui-state-default {
     background: url("../images/cartD3.png");

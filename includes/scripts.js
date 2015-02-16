@@ -87,8 +87,8 @@ window.onload = function() {
 		}
 		$('#d3Container').show();
 		$('#d3').empty();
-		$('main').css("width", "9200px");
-		$('footer').css("width", "9200px");
+		$('main').css("width", "9300px");
+		$('footer').css("width", "9300px");
 		//animate to the left screen
 		$('html,body').animate({
 			scrollLeft : $(document).width() * -1
