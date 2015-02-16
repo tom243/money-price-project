@@ -2,12 +2,35 @@ var audioElement;
 $(document).ready(function() {
 	audioElement = document.createElement('audio');
 	audioElement.setAttribute('src', 'includes/Beep.mp3');
+
 });
 $(document).ready(function() {
-    $('html, body, *').mousewheel(function(e, delta) {
-        this.scrollLeft += (delta * 100);
-        e.preventDefault();
-    });
+	var audioBackground = document.createElement('audio');
+	audioBackground.setAttribute('src', 'includes/Supermarket.mp3');
+	audioBackground.setAttribute('autoplay', 'autoplay');
+
+	audioBackground.addEventListener("load", function() {
+		audioBackground.play();
+	}, true);
+
+	$('#play').click(function() {
+		$('#play').css("display","none");
+		$('#pause').css("display","block");
+		audioBackground.pause();
+	});
+
+	$('#pause').click(function() {
+		$('#pause').css("display","none");
+		$('#play').css("display","block");
+		audioBackground.play();
+	});
+});
+
+$(document).ready(function() {
+	$('html, body, *').mousewheel(function(e, delta) {
+		this.scrollLeft += (delta * 100);
+		e.preventDefault();
+	});
 });
 (function($) {
 	// Detect touch support
@@ -176,8 +199,8 @@ window.onload = function() {
 		$('main').css("width", "9200px");
 		$('footer').css("width", "9200px");
 		$('html,body').animate({
-			scrollLeft : $("#d3Container").offset().left
-		}, 3000);
+			scrollLeft : $(document).width() * -1
+		}, 2500);
 
 		firstTimeContinue = true;
 		objectsFunc();
@@ -475,6 +498,7 @@ function readyJson(sumArray) {
 			slide : function(event, ui) {
 				//console.log("old: " + oldPos + " ui.value:  " + ui.value);
 				//drag left
+
 				if (ui.value < oldPos && (click < yearsArray.length - 1)) {
 					oldPos = ui.value;
 					click++;

@@ -1,9 +1,13 @@
 @import url(http://fonts.googleapis.com/earlyaccess/alefhebrew.css);
-
+* {
+	box-sizing: border-box;
+	-moz-box-sizing: border-box;
+}
 header, footer, nav, main, section, article, nav, aside {
 	display: block;
 }
 html, body {
+	direction: rtl;
 	/* get rid of default spacing on the edges */
 	margin: 0;
 	padding: 0;
@@ -11,12 +15,10 @@ html, body {
 	border: 0;
 	/* fill the height of the browser */
 	height: 100%;
-	/* no more scroll bar */
-	overflow-y: hidden;
 }
 body {
+
 	background: #F2EEE5;
-	direction: rtl;
 	position: relative;
 	font-family: "Alef Hebrew", Arial;
 }
@@ -187,8 +189,8 @@ main > article > p {
 #whiteBoard {
 	width: 292px;
 	height: 319px;
-	overflow-y: auto;
 	overflow-x: hidden;
+	overflow-y: auto;
 }
 #whiteBoard > h2 {
 	margin-right: 13px;
@@ -236,27 +238,13 @@ main > article > p {
 #cart {
 	right: 104px;
 	width: 150px;
+	bottom: 5%;
 	height: 134px;
 	background: url("../images/agala.png");
 	position: fixed;
 	z-index: 1;
 }
 
-@media (max-width: 1025px) {
-	#cart {
-		bottom: 5%;
-	}
-}
-@media (min-width:1026px) and (max-width:1400px){
-	#cart {
-		bottom: 7.5%;
-	}
-}
-@media (min-width:1401px) {
-	#cart {
-		bottom: 5%;
-	}
-}
 #arrows {
 	width: 42px;
 	height: 55px;
@@ -470,4 +458,35 @@ main > article > p {
 .ui-widget-content {
 	background: none;
 	border: none;
+}
+
+#music {
+	position: absolute;
+	top: 0px;
+	right: 0px;
+	width: 58px;
+	height: 47px;
+	background: url("../images/mute.png");
+	border: none;
+	outline-color: transparent;
+}
+#music:hover {
+	background: url("../images/sound.png");
+}
+
+/* /////////////////////////////////// mp3 ///////////////////// */
+#play, #pause {
+	width: 58px;
+	height: 47px;
+	position: absolute;
+	top: 0px;
+	right: 10px;
+}
+#play {
+	display:block;
+	background: url("../images/sound.png");
+}
+#pause{
+	display:none;
+	background: url("../images/mute.png");
 }
