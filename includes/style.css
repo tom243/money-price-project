@@ -17,7 +17,6 @@ html, body {
 	height: 100%;
 }
 body {
-
 	background: #F2EEE5;
 	position: relative;
 	font-family: "Alef Hebrew", Arial;
@@ -49,7 +48,7 @@ main > article > h1 {
 main > article > p {
 	color: rgb(65,23,27);
 	font-size: 1.5em;
-	line-height: 27px;
+	line-height: 24px;
 }
 .groceriesLinks {
 	display: inline-block;
@@ -60,6 +59,9 @@ main > article > p {
 	height: 120px;
 	margin-left: 15px;
 	margin-bottom: 10px;
+}
+.groceries:hover{
+	opacity: 0.7;
 }
 .products {
 	font-family: "Alef Hebrew", Arial;
@@ -121,7 +123,6 @@ main > article > p {
 	width: 527px;
 }
 /*/////////////////////////////////// Sections //////////////////////////////*/
-
 #fruitsAndVedg, #milk, #CannedFood, #meat, #bread, #oil, #drinks {
 	float: right;
 }
@@ -228,10 +229,11 @@ main > article > p {
 	background: url("../images/shelet kupa.png");
 }
 #payment > section:nth-child(2) {
-	width: 281px;
+	width: 278px;
 	height: 260px;
-	background: url("../images/cashier.png");
+	background: #F2EEE5 url("../images/cashier.png");
 	bottom: 0%;
+	left:0px;
 	z-index: 2;
 	position: absolute;
 }
@@ -244,13 +246,12 @@ main > article > p {
 	position: fixed;
 	z-index: 1;
 }
-
 #arrows {
 	width: 42px;
 	height: 55px;
 	background: url("../images/scroll left.png");
 	bottom: 10%;
-	position: absolute;
+	position: fixed;
 	right: 302px;
 }
 #whiteBoard input[type=textbox] {
@@ -321,7 +322,6 @@ main > article > p {
 	margin-top: 10px;
 	background: url("../images/remove.png") no-repeat;
 }
-
 .plusMinusButtons {
 	width: 11px;
 	float: right;
@@ -339,6 +339,7 @@ main > article > p {
 	margin-top: 8px;
 	margin-right: -14px;
 }
+/*///////////////////////////////// D3 Container /////////////////////////*/
 #d3Container {
 	float: right;
 	width: 1000px;
@@ -364,7 +365,6 @@ main > article > p {
 	position: absolute;
 	margin: 0px;
 	bottom: 0px;
-	right: 13px;
 	font-weight: normal;
 	margin-right: 52px;
 }
@@ -382,13 +382,12 @@ main > article > p {
 	position: relative;
 	clear: both;
 }
-
 #precentage {
 	color: #9f1620;
 	font-family: "Alef Hebrew", Arial;
 	font-size: 72px;
 	margin: 0px;
-	bottom: 33px;
+	bottom: 39px;
 	position: absolute;
 }
 #year {
@@ -400,19 +399,15 @@ main > article > p {
 	left: 0px;
 	line-height: 161px;
 }
-
-/*//////////// D3 ///////////////*/
-
+/*//////////// D3  SVG ///////////////*/
 .axis path, .axis line {
 	fill: none;
 	stroke: #000;
 	shape-rendering: crispEdges;
 }
-
 .x.axis path {
 	display: none;
 }
-
 .line {
 	fill: none;
 	stroke: #4f241d;
@@ -421,8 +416,7 @@ main > article > p {
 .point {
 	fill: rgb(159,22,30);
 }
-
-/* /////////////////////////////////// CART ///////////////////// */
+/* /////////////////////////////////// CART SLIDER ///////////////////// */
 #draggableCart {
 	position: absolute;
 	z-index: 1;
@@ -432,19 +426,9 @@ main > article > p {
 	height: 134px;
 	margin-right: 83px;
 }
-.draggable {
-	width: 150px;
-	height: 134px;
-	clear: both;
-}
-#draggable2 {
-	cursor: e-resize;
-}
-
 #slider {
 	width: 924px;
 }
-
 .ui-slider-horizontal .ui-state-default {
 	background: url("../images/cartD3.png");
 	width: 150px;
@@ -454,27 +438,11 @@ main > article > p {
 	outline-color: transparent;
 	z-index: 3;
 }
-
 .ui-widget-content {
 	background: none;
 	border: none;
 }
-
-#music {
-	position: absolute;
-	top: 0px;
-	right: 0px;
-	width: 58px;
-	height: 47px;
-	background: url("../images/mute.png");
-	border: none;
-	outline-color: transparent;
-}
-#music:hover {
-	background: url("../images/sound.png");
-}
-
-/* /////////////////////////////////// mp3 ///////////////////// */
+/* /////////////////////////////////// mp3 - BACKGROUND MUSIC ///////////////////// */
 #play, #pause {
 	width: 58px;
 	height: 47px;

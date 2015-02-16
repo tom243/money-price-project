@@ -2,7 +2,6 @@ var audioElement;
 $(document).ready(function() {
 	audioElement = document.createElement('audio');
 	audioElement.setAttribute('src', 'includes/Beep.mp3');
-
 });
 $(document).ready(function() {
 	var audioBackground = document.createElement('audio');
