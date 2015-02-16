@@ -1,460 +1,460 @@
 @import url(http://fonts.googleapis.com/earlyaccess/alefhebrew.css);
 * {
-	box-sizing: border-box;
-	-moz-box-sizing: border-box;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
 }
 header, footer, nav, main, section, article, nav, aside {
-	display: block;
+    display: block;
 }
 html, body {
-	direction: rtl;
-	/* get rid of default spacing on the edges */
-	margin: 0;
-	padding: 0;
-	/* get rid of that 2px window border in Internet Explorer 6 */
-	border: 0;
-	/* fill the height of the browser */
-	height: 100%;
+    direction: rtl;
+    /* get rid of default spacing on the edges */
+    margin: 0;
+    padding: 0;
+    /* get rid of that 2px window border in Internet Explorer 6 */
+    border: 0;
+    /* fill the height of the browser */
+    height: 100%;
 }
 body {
-	background: #F2EEE5;
-	position: relative;
-	font-family: "Alef Hebrew", Arial;
+    background: #F2EEE5;
+    position: relative;
+    font-family: "Alef Hebrew", Arial;
 }
 main {
-	width: 8200px;
-	height: 95%;
+    width: 8200px;
+    height: 95%;
 }
 footer {
-	position: absolute;
-	bottom: 0px;
-	background: url("../images/rizpa.png") repeat-x;
-	height: 5%;
-	width: 8200px;
+    position: absolute;
+    bottom: 0px;
+    background: url("../images/rizpa.png") repeat-x;
+    height: 5%;
+    width: 8200px;
 }
 main > article {
-	width: 400px;
-	float: right;
-	margin-right: 104px;
-	color: #9f161e;
-	margin-left: 246px;
+    width: 400px;
+    float: right;
+    margin-right: 104px;
+    color: #9f161e;
+    margin-left: 246px;
 }
 main > article > h1 {
-	font-size: 5.3em;
-	font-weight: 800;
-	line-height: 36px;
-	margin-bottom: 51px;
+    font-size: 5.3em;
+    font-weight: 800;
+    line-height: 36px;
+    margin-bottom: 51px;
 }
 main > article > p {
-	color: rgb(65,23,27);
-	font-size: 1.5em;
-	line-height: 24px;
+    color: rgb(65,23,27);
+    font-size: 1.5em;
+    line-height: 24px;
 }
 .groceriesLinks {
-	display: inline-block;
-	position: relative;
+    display: inline-block;
+    position: relative;
 }
 .groceries {
-	width: 76px;
-	height: 120px;
-	margin-left: 15px;
-	margin-bottom: 10px;
+    width: 76px;
+    height: 120px;
+    margin-left: 15px;
+    margin-bottom: 10px;
 }
-.groceries:hover{
-	opacity: 0.7;
+.groceries:hover {
+    opacity: 0.7;
 }
 .products {
-	font-family: "Alef Hebrew", Arial;
-	font-size: 25px;
-	color: #59332a;
-	float: right;
-	display: inline;
-	margin: 0px;
+    font-family: "Alef Hebrew", Arial;
+    font-size: 25px;
+    color: #59332a;
+    float: right;
+    display: inline;
+    margin: 0px;
 }
 .links {
-	text-decoration: none;
-	color: #9c1823;
+    text-decoration: none;
+    color: #9c1823;
 }
 .circlesCounter {
-	width: 33px;
-	height: 33px;
-	border-radius: 33px;
-	text-align: center;
-	background: #a1161b;
-	z-index: 1;
-	position: absolute;
-	top: 0px;
-	left: 0px;
-	display: none;
+    width: 33px;
+    height: 33px;
+    border-radius: 33px;
+    text-align: center;
+    background: #a1161b;
+    z-index: 1;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    display: none;
 }
 .numberOfClicks {
-	text-align: center;
-	font-size: 24px;
-	color: #FFFFFF;
-	margin: -7px;
-	line-height: 45px;
+    text-align: center;
+    font-size: 24px;
+    color: #FFFFFF;
+    margin: -7px;
+    line-height: 45px;
 }
 /*/////////////////////////////////// Main Sections /////////////////////////*/
 #fruitsAndVedgClass, #milkClass, #CannedFoodClass, #meatClass, #breadClass, #oilClass, #drinksClass {
-	min-height: 408px;
-	margin-top: 45px;
-	float: right;
-	margin-left: 114px;
+    min-height: 408px;
+    margin-top: 45px;
+    float: right;
+    margin-left: 114px;
 }
 #fruitsAndVedgClass {
-	width: 1580px;
+    width: 1580px;
 }
 #milkClass {
-	width: 726px;
+    width: 726px;
 }
 #CannedFoodClass {
-	width: 622px;
+    width: 622px;
 }
 #meatClass {
-	width: 722px;
+    width: 722px;
 }
 #breadClass {
-	width: 716px;
+    width: 716px;
 }
 #oilClass {
-	width: 817px;
+    width: 817px;
 }
 #drinksClass {
-	width: 527px;
+    width: 527px;
 }
 /*/////////////////////////////////// Sections //////////////////////////////*/
 #fruitsAndVedg, #milk, #CannedFood, #meat, #bread, #oil, #drinks {
-	float: right;
+    float: right;
 }
 #fruitsAndVedg {
-	width: 1240px;
+    width: 1240px;
 }
 #milk {
-	width: 386px;
+    width: 386px;
 }
 #CannedFood {
-	width: 282px;
+    width: 282px;
 }
 #meat {
-	width: 382px;
+    width: 382px;
 }
 #bread {
-	width: 376px;
+    width: 376px;
 }
 #oil {
-	width: 477px;
+    width: 477px;
 }
 #drinks {
-	width: 187px;
+    width: 187px;
 }
 /*/////////////////////////////////// Signs //////////////////////////////*/
 .stories {
-	margin-top: -45px;
-	float: right;
-	margin-left: 33px;
+    margin-top: -45px;
+    float: right;
+    margin-left: 33px;
 }
 #fruitsAndVedgSign, #milkSign, #CannedFoodSign, #meatSign, #breadSign, #oilSign, #drinksSign {
-	width: 307px;
-	height: 114px;
+    width: 307px;
+    height: 114px;
 }
 #fruitsAndVedgSign {
-	background: url("../images/shelet yarakot.png");
+    background: url("../images/shelet yarakot.png");
 }
 #milkSign {
-	background: url("../images/shelet musrei halav.png");
+    background: url("../images/shelet musrei halav.png");
 }
 #CannedFoodSign {
-	background: url("../images/shelet shimurim.png");
+    background: url("../images/shelet shimurim.png");
 }
 #meatSign {
-	background: url("../images/shelet of ve dagim.png");
+    background: url("../images/shelet of ve dagim.png");
 }
 #breadSign {
-	background: url("../images/shelet lehem dganim.png");
+    background: url("../images/shelet lehem dganim.png");
 }
 #oilSign {
-	background: url("../images/shelet shemen sukar mamtakim.png");
+    background: url("../images/shelet shemen sukar mamtakim.png");
 }
 #drinksSign {
-	background: url("../images/shelet mashkaot.png");
+    background: url("../images/shelet mashkaot.png");
 }
 #receipt {
-	width: 292px;
-	height: 418px;
-	background: url("../images/kabala background.png");
-	margin-right: 145px;
-	margin-left: 89px;
-	float: right;
-	overflow-x: hidden;
+    width: 292px;
+    height: 418px;
+    background: url("../images/kabala background.png");
+    margin-right: 145px;
+    margin-left: 89px;
+    float: right;
+    overflow-x: hidden;
 }
 #whiteBoard {
-	width: 292px;
-	height: 319px;
-	overflow-x: hidden;
-	overflow-y: auto;
+    width: 292px;
+    height: 319px;
+    overflow-x: hidden;
+    overflow-y: auto;
 }
 #whiteBoard > h2 {
-	margin-right: 13px;
-	color: #9e151c;
-	font-size: 25px;
-	font-family: "Alef Hebrew", Arial;
-	margin-bottom: 15px;
-	margin-top: 15px;
+    margin-right: 13px;
+    color: #9e151c;
+    font-size: 25px;
+    font-family: "Alef Hebrew", Arial;
+    margin-bottom: 15px;
+    margin-top: 15px;
 }
 #whiteBoard > h5 {
-	margin-top: 45px;
-	margin-right: 13px;
-	color: #9e151c;
+    margin-top: 45px;
+    margin-right: 13px;
+    color: #9e151c;
 }
 #whiteBoard > h5 > a {
-	color: #9e151c;
+    color: #9e151c;
 }
 #receipt > a:last-child {
-	width: 180px;
-	height: 31px;
-	margin-top: 34px;
-	margin-right: 56px;
-	display: block;
-	background: url("../images/continue.png");
+    width: 180px;
+    height: 31px;
+    margin-top: 34px;
+    margin-right: 56px;
+    display: block;
+    background: url("../images/continue.png");
 }
 #payment {
-	float: right;
-	width: 278px;
-	height: 100%;
-	position: relative;
+    float: right;
+    width: 278px;
+    height: 100%;
+    position: relative;
 }
 #payment > section:nth-child(1) {
-	width: 278px;
-	height: 316px;
-	background: url("../images/shelet kupa.png");
+    width: 278px;
+    height: 316px;
+    background: url("../images/shelet kupa.png");
 }
 #payment > section:nth-child(2) {
-	width: 278px;
-	height: 260px;
-	background: #F2EEE5 url("../images/cashier.png");
-	bottom: 0%;
-	left:0px;
-	z-index: 2;
-	position: absolute;
+    width: 278px;
+    height: 260px;
+    background: #F2EEE5 url("../images/cashier.png");
+    bottom: 0%;
+    left: 0px;
+    z-index: 2;
+    position: absolute;
 }
 #cart {
-	right: 104px;
-	width: 150px;
-	bottom: 5%;
-	height: 134px;
-	background: url("../images/agala.png");
-	position: fixed;
-	z-index: 1;
+    right: 104px;
+    width: 150px;
+    bottom: 5%;
+    height: 134px;
+    background: url("../images/agala.png");
+    position: fixed;
+    z-index: 1;
 }
 #arrows {
-	width: 42px;
-	height: 55px;
-	background: url("../images/scroll left.png");
-	bottom: 10%;
-	position: fixed;
-	right: 302px;
+    width: 42px;
+    height: 55px;
+    background: url("../images/scroll left.png");
+    bottom: 10%;
+    position: fixed;
+    right: 302px;
 }
 #whiteBoard input[type=textbox] {
-	width: 50px;
-	border: 0;
-	color: #9e171e;
-	font-family: "Alef Hebrew", Arial;
-	font-size: 25px;
-	text-align: center;
-	background: transparent;
-	border: none;
-	float: right;
-	margin-right: 8px;
+    width: 50px;
+    border: 0;
+    color: #9e171e;
+    font-family: "Alef Hebrew", Arial;
+    font-size: 25px;
+    text-align: center;
+    background: transparent;
+    border: none;
+    float: right;
+    margin-right: 8px;
 }
 #whiteBoard input[type=button] {
-	width: 30px;
-	height: 30px;
-	vertical-align: 85px;
+    width: 30px;
+    height: 30px;
+    vertical-align: 85px;
 }
 /*/////////////////////////////////// INFO //////////////////////////////*/
 #fruitINFO, #milkINFO, #CannedFoodINFO, #meatINFO, #breadINFO, #oilINFO, #drinksINFO {
-	width: 307px;
-	height: 328px;
-	position: relative;
+    width: 307px;
+    height: 328px;
+    position: relative;
 }
 #fruitINFO {
-	background: url("../images/sipur yerakot.png");
+    background: url("../images/sipur yerakot.png");
 }
 #milkINFO {
-	background: url("../images/sipur halav.png");
+    background: url("../images/sipur halav.png");
 }
 #CannedFoodINFO {
-	background: url("../images/sipur shimurim.png");
+    background: url("../images/sipur shimurim.png");
 }
 #meatINFO {
-	background: url("../images/sipur basar.png");
+    background: url("../images/sipur basar.png");
 }
 #breadINFO {
-	background: url("../images/sipur dganim.png");
+    background: url("../images/sipur dganim.png");
 }
 #oilINFO {
-	background: url("../images/sipur shemen sucar.png");
+    background: url("../images/sipur shemen sucar.png");
 }
 #drinksINFO {
-	background: url("../images/sipur drinks.png");
+    background: url("../images/sipur drinks.png");
 }
 #fruitINFO > p, #milkINFO > p, #CannedFoodINFO > p, #meatINFO > p, #breadINFO > p, #oilINFO > p, #drinksINFO > p {
-	font-family: "Alef Hebrew", Arial;
-	text-align: center;
-	position: absolute;
-	right: 22px;
-	color: #FFFFFF;
-	top: 172px;
-	width: 259px;
+    font-family: "Alef Hebrew", Arial;
+    text-align: center;
+    position: absolute;
+    right: 31px;
+    color: #FFFFFF;
+    top: 167px;
+    width: 237px;
 }
 .sectionWhiteBoard {
-	width: 292px;
-	margin-right: 13px;
-	margin-bottom: 10px;
-	height: 27px;
+    width: 292px;
+    margin-right: 13px;
+    margin-bottom: 10px;
+    height: 27px;
 }
 .WhiteBoardHover {
-	float: left;
-	display: none;
-	width: 14px;
-	height: 14px;
-	margin-left: 35px;
-	margin-top: 10px;
-	background: url("../images/remove.png") no-repeat;
+    float: left;
+    display: none;
+    width: 14px;
+    height: 14px;
+    margin-left: 35px;
+    margin-top: 10px;
+    background: url("../images/remove.png") no-repeat;
 }
 .plusMinusButtons {
-	width: 11px;
-	float: right;
-	height: 14px;
+    width: 11px;
+    float: right;
+    height: 14px;
 }
 .plusMinusButtons > a {
-	width: 11px;
-	height: 7px;
-	display: block;
+    width: 11px;
+    height: 7px;
+    display: block;
 }
 .plusMinusButtons > a:first-child {
-	margin-bottom: 6px;
+    margin-bottom: 6px;
 }
 #minus {
-	margin-top: 8px;
-	margin-right: -14px;
+    margin-top: 8px;
+    margin-right: -14px;
 }
 /*///////////////////////////////// D3 Container /////////////////////////*/
 #d3Container {
-	float: right;
-	width: 1000px;
-	height: 100%;
-	padding-right: 109px;
-	position: relative;
-	background: #F2EEE5;
-	z-index: 2;
+    float: right;
+    width: 1000px;
+    height: 100%;
+    padding-right: 109px;
+    position: relative;
+    background: #F2EEE5;
+    z-index: 2;
 }
 #d3salaryDetails {
-	color: #9f1620;
-	font-family: "Alef Hebrew", Arial;
-	font-size: 24px;
-	position: absolute;
-	margin: 0px;
-	bottom: 24px;
-	margin-right: 52px;
+    color: #9f1620;
+    font-family: "Alef Hebrew", Arial;
+    font-size: 24px;
+    position: absolute;
+    margin: 0px;
+    bottom: 72px;
+    margin-right: 52px;
 }
 #d3Salary {
-	color: #000000;
-	font-family: "Alef Hebrew", Arial;
-	font-size: 24px;
-	position: absolute;
-	margin: 0px;
-	bottom: 0px;
-	font-weight: normal;
-	margin-right: 52px;
+    color: #000000;
+    font-family: "Alef Hebrew", Arial;
+    font-size: 24px;
+    position: absolute;
+    margin: 0px;
+    bottom: 45px;
+    font-weight: normal;
+    margin-right: 52px;
 }
 #d3Details {
-	width: 1000px;
-	height: 220px;
-	float: right;
-	position: relative;
-	font-weight: bolder;
+    width: 1000px;
+    height: 220px;
+    float: right;
+    position: relative;
+    font-weight: bolder;
 }
 #d3 {
-	float: right;
-	width: 1000px;
-	height: 230px;
-	position: relative;
-	clear: both;
+    float: right;
+    width: 1000px;
+    height: 230px;
+    position: relative;
+    clear: both;
 }
 #precentage {
-	color: #9f1620;
-	font-family: "Alef Hebrew", Arial;
-	font-size: 72px;
-	margin: 0px;
-	bottom: 39px;
-	position: absolute;
+    color: #9f1620;
+    font-family: "Alef Hebrew", Arial;
+    font-size: 72px;
+    margin: 0px;
+    bottom: 87px;
+    position: absolute;
 }
 #year {
-	color: #9f1620;
-	font-family: "Alef Hebrew", Arial;
-	font-size: 220px;
-	margin: 0px;
-	position: absolute;
-	left: 0px;
-	line-height: 161px;
+    color: #9f1620;
+    font-family: "Alef Hebrew", Arial;
+    font-size: 220px;
+    margin: 0px;
+    position: absolute;
+    left: 0px;
+    line-height: 161px;
 }
 /*//////////// D3  SVG ///////////////*/
 .axis path, .axis line {
-	fill: none;
-	stroke: #000;
-	shape-rendering: crispEdges;
+    fill: none;
+    stroke: #000;
+    shape-rendering: crispEdges;
 }
 .x.axis path {
-	display: none;
+    display: none;
 }
 .line {
-	fill: none;
-	stroke: #4f241d;
-	stroke-width: 3px;
+    fill: none;
+    stroke: #4f241d;
+    stroke-width: 3px;
 }
 .point {
-	fill: rgb(159,22,30);
+    fill: rgb(159,22,30);
 }
 /* /////////////////////////////////// CART SLIDER ///////////////////// */
 #draggableCart {
-	position: absolute;
-	z-index: 1;
-	direction: rtl;
-	bottom: 0%;
-	width: 924px;
-	height: 134px;
-	margin-right: 83px;
+    position: absolute;
+    z-index: 1;
+    direction: rtl;
+    bottom: 0%;
+    width: 924px;
+    height: 134px;
+    margin-right: 83px;
 }
 #slider {
-	width: 924px;
+    width: 924px;
 }
 .ui-slider-horizontal .ui-state-default {
-	background: url("../images/cartD3.png");
-	width: 150px;
-	height: 134px;
-	margin-top: 5px;
-	border: none;
-	outline-color: transparent;
-	z-index: 3;
+    background: url("../images/cartD3.png");
+    width: 150px;
+    height: 134px;
+    margin-top: 5px;
+    border: none;
+    outline-color: transparent;
+    z-index: 3;
 }
 .ui-widget-content {
-	background: none;
-	border: none;
+    background: none;
+    border: none;
 }
 /* /////////////////////////////////// mp3 - BACKGROUND MUSIC ///////////////////// */
 #play, #pause {
-	width: 58px;
-	height: 47px;
-	position: absolute;
-	top: 0px;
-	right: 10px;
+    width: 31px;
+    height: 25px;
+    position: absolute;
+    top: 10px;
+    right: 10px;
 }
 #play {
-	display:block;
-	background: url("../images/sound.png");
+    display: block;
+    background: url("../images/sound.png");
 }
-#pause{
-	display:none;
-	background: url("../images/mute.png");
+#pause {
+    display: none;
+    background: url("../images/mute.png");
 }
